@@ -1,0 +1,34 @@
+# endocrine--regulate.yaml — formation gate contract
+
+identity:
+  name: endocrine--regulate
+  mechanism: endocrine
+  verb: regulate
+  signal_inputs: [STATE, TRACE, VALIDATION]
+  signal_outputs: [STATE, REPORT, CONSTRAINT]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [pulse/]
+    lines: 7900
+  - repo: meta-organvm/organvm-ontologia
+    modules: [inference/, sensing/]
+    lines: 1100
+
+gate:
+  - id: G1
+    check: INFERENCE_BRIDGES_CONSOLIDATED
+    condition: "engine/ontologia/inference_bridge.py and engine/pulse/inference_bridge.py merged into one bridge"
+    status: PENDING
+
+  - id: G2
+    check: HOMEOSTASIS_ABSORBED
+    condition: "universal-node-network/homeostasis.py (507 lines) absorbed here"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "pulse + inference + sensing tests pass after consolidation"
+    status: PENDING
+
+state: CALLING

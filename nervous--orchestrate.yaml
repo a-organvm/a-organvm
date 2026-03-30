@@ -1,0 +1,40 @@
+# nervous--orchestrate.yaml — formation gate contract
+
+identity:
+  name: nervous--orchestrate
+  mechanism: nervous
+  verb: orchestrate
+  signal_inputs: [TRACE, REPORT, STATE, CONSTRAINT]
+  signal_outputs: [DIRECTIVE, CONSTRAINT, STATE]
+
+sources:
+  - repo: organvm-iv-taxis/tool-interaction-design
+    modules: [conductor/session.py, conductor/oracle.py, conductor/guardian.py,
+              conductor/patchbay.py, conductor/executor.py, conductor/fleet*.py,
+              conductor/cross_verify.py, conductor/handoff.py, conductor/observability.py,
+              conductor/policy.py, conductor/commands/, exports/]
+    lines: 8450
+    note: unique conductor capabilities — NOT isotopes of engine
+
+gate:
+  - id: G1
+    check: ISOTOPES_RESOLVED
+    condition: "governance.py, constants.py::ORGANS, schemas.py dissolved — imports from nervous--govern and skeletal--define"
+    status: PENDING
+
+  - id: G2
+    check: SIGNAL_DECLARED
+    condition: "DIRECTIVE signal type defined — conductor emits directives that no other formation does"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "conductor tests pass after isotope dissolution"
+    status: PENDING
+
+  - id: G4
+    check: WORKQUEUE_MERGED
+    condition: "workqueue.py merged with digestive--measure (overlaps deadlines/irf)"
+    status: PENDING
+
+state: CALLING

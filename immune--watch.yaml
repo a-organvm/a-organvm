@@ -1,0 +1,27 @@
+# immune--watch.yaml — formation gate contract
+
+identity:
+  name: immune--watch
+  mechanism: immune
+  verb: watch
+  signal_inputs: [STATE, KNOWLEDGE, ARCHIVE]
+  signal_outputs: [REPORT, VALIDATION, QUESTION]
+
+sources:
+  - repo: meta-organvm/vigiles-aeternae--agon-cosmogonicum
+    modules: [src/vigiles_engine/]
+    lines: 1600
+    note: unique methodology — mythological regime perspectives, NOT an engine isotope
+
+gate:
+  - id: G1
+    check: TESTS_PASS
+    condition: "vigiles test suite passes"
+    status: PENDING
+
+  - id: G2
+    check: REGISTRY_IMPORT_CANONICAL
+    condition: "auditor.py imports registry from skeletal--define, not direct JSON read"
+    status: PENDING
+
+state: CALLING

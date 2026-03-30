@@ -1,0 +1,43 @@
+# skeletal--define.yaml — formation gate contract
+
+identity:
+  name: skeletal--define
+  mechanism: skeletal
+  verb: define
+  signal_inputs: [RULE, KNOWLEDGE, CONTRACT]
+  signal_outputs: [CONTRACT, KNOWLEDGE, STATE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [registry/, organ_config.py, paths.py, project_slug.py, ontology/, prompting/]
+    lines: 2643
+  - repo: meta-organvm/organvm-ontologia
+    modules: [entity/, structure/, variables/, registry/, bootstrap/]
+    lines: 2783
+  - repo: meta-organvm/schema-definitions
+    modules: [schemas/, scripts/validate.py]
+    lines: 200
+    note: 28 JSON Schema definitions — the organism's bones
+
+gate:
+  - id: G1
+    check: CANONICAL_REGISTRY
+    condition: "ONE registry loader — all 6 isotopes dissolved, importing from here"
+    status: PENDING
+
+  - id: G2
+    check: CANONICAL_ORGAN_MAP
+    condition: "ONE organ/mechanism config — conductor + alchemia copies dissolved"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "registry + ontologia + schema tests pass"
+    status: PENDING
+
+  - id: G4
+    check: GRANULARITY
+    condition: "may split: skeletal--define (schemas), skeletal--identify (ontologia), skeletal--record (registry)"
+    status: PENDING
+
+state: CALLING

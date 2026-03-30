@@ -1,0 +1,32 @@
+# muscular--titan.yaml — formation gate contract
+
+identity:
+  name: muscular--titan
+  mechanism: muscular
+  verb: agent
+  signal_inputs: [CONTRACT, DIRECTIVE, STATE]
+  signal_outputs: [TRACE, REPORT, SYNTHESIS]
+
+sources:
+  - repo: organvm-iv-taxis/agentic-titan
+    modules: [entire repo]
+    lines: 94700
+    note: product — full agent framework, carries assets, has own API/dashboard/runtime
+
+gate:
+  - id: G1
+    check: ORGANVM_BRIDGE_CLEAN
+    condition: "tools/organvm_bridge.py connects via MCP protocol — no direct engine imports"
+    status: PENDING
+
+  - id: G2
+    check: PERSONA_ABSORBED
+    condition: "collective-persona-operations (400 lines) absorbed into titan persona system"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "titan test suite passes"
+    status: PENDING
+
+state: CALLING

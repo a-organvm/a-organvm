@@ -1,0 +1,35 @@
+# immune--verify.yaml — formation gate contract
+
+identity:
+  name: immune--verify
+  mechanism: immune
+  verb: verify
+  signal_inputs: [TRACE, STATE, CONTRACT, KNOWLEDGE]
+  signal_outputs: [REPORT, VALIDATION]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [audit/, ci/, omega/, verification/, debt/, distillatio/]
+    lines: 5527
+  - repo: organvm-iv-taxis/reverse-engine-recursive-run
+    modules: [scripts/]
+    lines: 880
+    note: security analysis scripts absorbed
+
+gate:
+  - id: G1
+    check: TESTS_PASS
+    condition: "audit + ci + omega + verification + debt tests pass"
+    status: PENDING
+
+  - id: G2
+    check: SECURITY_SCRIPTS_ABSORBED
+    condition: "reverse-engine-recursive-run scripts integrated into immune verification"
+    status: PENDING
+
+  - id: G3
+    check: STANDALONE_SCRIPTS_DISSOLVED
+    condition: "orchestration-start-here/scripts/organ-audit.py dissolved"
+    status: PENDING
+
+state: CALLING

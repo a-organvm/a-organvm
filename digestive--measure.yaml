@@ -1,0 +1,42 @@
+# digestive--measure.yaml — formation gate contract
+
+identity:
+  name: digestive--measure
+  mechanism: digestive
+  verb: measure
+  signal_inputs: [SOURCE, KNOWLEDGE, TRACE]
+  signal_outputs: [KNOWLEDGE, STATE, SYNTHESIS]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [metrics/, atoms/, indexer/, ecosystem/, trivium/, plans/,
+              prompts/, session/, deadlines/, irf/, sop/, content/,
+              domain/, distill/]
+    lines: 21485
+  - repo: meta-organvm/organvm-ontologia
+    modules: [metrics/]
+    lines: 380
+
+gate:
+  - id: G1
+    check: GRANULARITY
+    condition: "15 modules under one mechanism — granularity rule may require split into measure + index + parse"
+    status: PENDING
+
+  - id: G2
+    check: SIGNAL_DECLARED
+    condition: "each sub-module's inputs/outputs declared"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "all 15 module test suites pass"
+    status: PENDING
+
+  - id: G4
+    check: STANDALONE_SCRIPTS_DISSOLVED
+    condition: "orchestration-start-here/scripts/calculate-metrics.py dissolved — engine's metrics is canonical"
+    status: PENDING
+
+state: CALLING
+expected_splits: [digestive--measure, digestive--index, digestive--parse]

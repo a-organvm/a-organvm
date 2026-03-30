@@ -1,0 +1,51 @@
+# nervous--govern.yaml — formation gate contract
+# The repo doesn't move. This contract CALLS it.
+# When all gates pass, the formation emerges.
+
+identity:
+  name: nervous--govern
+  mechanism: nervous
+  verb: govern
+  signal_inputs: [TRACE, REPORT, STATE, VALIDATION]
+  signal_outputs: [RULE, STATE, VALIDATION, CONSTRAINT]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [governance/, coordination/]
+    lines: 10500
+  - repo: meta-organvm/organvm-ontologia
+    modules: [governance/]
+    lines: 365
+  - repo: organvm-iv-taxis/tool-interaction-design
+    modules: [conductor/governance.py]
+    lines: 700
+    isotope: true
+    resolution: dissolve — import from canonical engine governance
+
+gate:
+  - id: G1
+    check: ISOTOPES_RESOLVED
+    condition: "conductor/governance.py imports from engine governance, not reimplements"
+    status: PENDING
+
+  - id: G2
+    check: SIGNAL_DECLARED
+    condition: "signal_inputs and signal_outputs match actual imports/exports"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "all governance + coordination tests pass after consolidation"
+    status: PENDING
+
+  - id: G4
+    check: NO_PROHIBITED_COUPLING
+    condition: "no memory function emitting RULE as canonical authority"
+    status: PENDING
+
+  - id: G5
+    check: TRACEABILITY
+    condition: "upward trace to A6 (organizational closure) stated"
+    status: PENDING
+
+state: CALLING

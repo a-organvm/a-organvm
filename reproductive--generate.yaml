@@ -1,0 +1,30 @@
+# reproductive--generate.yaml — formation gate contract
+
+identity:
+  name: reproductive--generate
+  mechanism: reproductive
+  verb: generate
+  signal_inputs: [KNOWLEDGE, CONTRACT, RULE]
+  signal_outputs: [KNOWLEDGE, CONTRACT, TEACHING]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [contextmd/]
+    lines: 1650
+    note: shared with integumentary — molt decides which cocoon absorbs
+  - repo: meta-organvm/organvm-ontologia
+    modules: [bootstrap/]
+    lines: 213
+
+gate:
+  - id: G1
+    check: CONTEXTMD_PLACEMENT
+    condition: "contextmd lives here (generation) OR integumentary (presentation) — not both"
+    status: PENDING
+
+  - id: G2
+    check: TESTS_PASS
+    condition: "contextmd + bootstrap tests pass"
+    status: PENDING
+
+state: CALLING

@@ -1,0 +1,32 @@
+# circulatory--contribute.yaml — formation gate contract
+
+identity:
+  name: circulatory--contribute
+  mechanism: circulatory
+  verb: contribute
+  signal_inputs: [KNOWLEDGE, DIRECTIVE]
+  signal_outputs: [TRACE, REPORT, SOURCE]
+
+sources:
+  - repo: organvm-iv-taxis/orchestration-start-here
+    modules: [contrib_engine/]
+    lines: 2800
+    note: contribution scanning, campaign management, outreach
+
+gate:
+  - id: G1
+    check: ISOTOPES_DISSOLVED
+    condition: "scripts/validate-deps.py, calculate-metrics.py, organ-audit.py, validate-all-seeds.py, generate-seed-from-registry.py all dissolved — functions absorbed by engine cocoons"
+    status: PENDING
+
+  - id: G2
+    check: REGISTRY_IMPORT_CANONICAL
+    condition: "contrib_engine imports registry from skeletal--define, not hardcoded paths"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "contrib_engine tests pass after isotope dissolution"
+    status: PENDING
+
+state: CALLING

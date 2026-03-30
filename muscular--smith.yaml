@@ -1,0 +1,27 @@
+# muscular--smith.yaml — formation gate contract
+
+identity:
+  name: muscular--smith
+  mechanism: muscular
+  verb: smith
+  signal_inputs: [DIRECTIVE, CONTRACT]
+  signal_outputs: [TRACE, REPORT]
+
+sources:
+  - repo: organvm-iv-taxis/agent--claude-smith
+    modules: [src/]
+    lines: 6300
+    note: TypeScript — Claude-specific agent orchestrator
+
+gate:
+  - id: G1
+    check: TESTS_PASS
+    condition: "agent-claude-smith test suite passes"
+    status: PENDING
+
+  - id: G2
+    check: SIGNAL_DECLARED
+    condition: "inputs (DIRECTIVE from nervous--orchestrate) and outputs (TRACE) declared"
+    status: PENDING
+
+state: CALLING

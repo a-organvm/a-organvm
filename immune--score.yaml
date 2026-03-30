@@ -1,0 +1,31 @@
+# immune--score.yaml — formation gate contract
+
+identity:
+  name: immune--score
+  mechanism: immune
+  verb: score
+  signal_inputs: [SOURCE, KNOWLEDGE, AESTHETIC]
+  signal_outputs: [VALIDATION, REPORT]
+
+sources:
+  - repo: organvm-iv-taxis/vox--architectura-gubernatio
+    modules: [src/vox/]
+    lines: 4100
+  - repo: organvm-iv-taxis/vox--publica
+    modules: [src/]
+    lines: 1300
+    isotope: true
+    resolution: keep both — Python for internal, TypeScript for Cloudflare
+
+gate:
+  - id: G1
+    check: TESTS_PASS
+    condition: "vox test suite passes"
+    status: PENDING
+
+  - id: G2
+    check: SIGNAL_DECLARED
+    condition: "AESTHETIC input type defined — vox scores against voice/style constraints"
+    status: PENDING
+
+state: CALLING

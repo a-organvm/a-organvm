@@ -1,0 +1,31 @@
+# respiratory--ingest.yaml — formation gate contract
+
+identity:
+  name: respiratory--ingest
+  mechanism: respiratory
+  verb: ingest
+  signal_inputs: [SOURCE, MIGRATION]
+  signal_outputs: [SOURCE, KNOWLEDGE]
+
+sources:
+  - repo: meta-organvm/alchemia-ingestvm
+    modules: [src/alchemia/]
+    lines: 3053
+
+gate:
+  - id: G1
+    check: ISOTOPES_DISSOLVED
+    condition: "absorb/registry_loader.py dissolved — imports from skeletal--define"
+    status: PENDING
+
+  - id: G2
+    check: ORGAN_MAP_DISSOLVED
+    condition: "synthesize.py::ORGAN_MAP dissolved — imports from skeletal--define"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "alchemia test suite passes after isotope dissolution"
+    status: PENDING
+
+state: CALLING

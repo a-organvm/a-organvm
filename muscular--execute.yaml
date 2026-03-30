@@ -1,0 +1,26 @@
+# muscular--execute.yaml — formation gate contract
+
+identity:
+  name: muscular--execute
+  mechanism: muscular
+  verb: execute
+  signal_inputs: [CONTRACT, STATE, RULE]
+  signal_outputs: [TRACE, REPORT]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [cli/, git/]
+    lines: 14070
+
+gate:
+  - id: G1
+    check: CLI_REFACTORED
+    condition: "38 CLI subcommands reference cocoon formations, not internal engine modules"
+    status: PENDING
+
+  - id: G2
+    check: TESTS_PASS
+    condition: "CLI + git tests pass"
+    status: PENDING
+
+state: CALLING

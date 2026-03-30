@@ -1,0 +1,41 @@
+# integumentary--present.yaml — formation gate contract
+
+identity:
+  name: integumentary--present
+  mechanism: integumentary
+  verb: present
+  signal_inputs: [KNOWLEDGE, STATE, SYNTHESIS, AESTHETIC]
+  signal_outputs: [SYNTHESIS, CONTRACT]
+
+sources:
+  - repo: meta-organvm/system-dashboard
+    modules: [src/dashboard/]
+    lines: 2772
+  - repo: meta-organvm/organvm-mcp-server
+    modules: [src/organvm_mcp/]
+    lines: 7256
+  - repo: meta-organvm/stakeholder-portal
+    modules: [src/]
+    lines: 18600
+  - repo: meta-organvm/organvm-engine
+    modules: [pitchdeck/, contextmd/]
+    lines: 3400
+
+gate:
+  - id: G1
+    check: GRANULARITY
+    condition: "37K lines across 4 repos — will split: present (dashboard), expose (MCP), render (portal)"
+    status: PENDING
+
+  - id: G2
+    check: PORTAL_REGISTRY_CANONICAL
+    condition: "stakeholder-portal TypeScript registry parser imports from canonical source or uses MCP"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "dashboard + mcp-server + portal tests pass"
+    status: PENDING
+
+state: CALLING
+expected_splits: [integumentary--present, integumentary--expose, integumentary--render]

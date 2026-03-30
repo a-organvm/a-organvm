@@ -1,0 +1,31 @@
+# circulatory--route.yaml — formation gate contract
+
+identity:
+  name: circulatory--route
+  mechanism: circulatory
+  verb: route
+  signal_inputs: [CONTRACT, STATE, TRACE]
+  signal_outputs: [TRACE, CONTRACT, STATE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [dispatch/, seed/, network/]
+    lines: 3900
+
+gate:
+  - id: G1
+    check: SIGNAL_DECLARED
+    condition: "seed/signals.py signal graph output persisted as signal-graph.yaml"
+    status: PENDING
+
+  - id: G2
+    check: TESTS_PASS
+    condition: "dispatch + seed + network tests pass"
+    status: PENDING
+
+  - id: G3
+    check: UNIVERSAL_NODE_ABSORBED
+    condition: "universal-node-network unique parts (homeostasis → endocrine) absorbed, routing → here"
+    status: PENDING
+
+state: CALLING

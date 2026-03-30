@@ -1,0 +1,48 @@
+# memory--remember.yaml — formation gate contract
+
+identity:
+  name: memory--remember
+  mechanism: memory
+  verb: remember
+  signal_inputs: [TRACE, ARCHIVE, KNOWLEDGE, REPORT, SYNTHESIS]
+  signal_outputs: [ARCHIVE, KNOWLEDGE, TEACHING]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [events/, fossil/, ledger/, testament/]
+    lines: 8300
+  - repo: meta-organvm/organvm-ontologia
+    modules: [events/, state/]
+    lines: 1150
+  - repo: meta-organvm/organvm-corpvs-testamentvm
+    modules: [docs/]
+    lines: 0
+    note: 400K+ words of constitutional corpus — docs, not code
+  - repo: meta-organvm/praxis-perpetua
+    modules: [docs/]
+    lines: 0
+    note: process governance SOPs — docs, not code
+
+gate:
+  - id: G1
+    check: RESERVOIR_LAW
+    condition: "memory formation does NOT emit RULE or KNOWLEDGE as canonical authority"
+    status: PENDING
+
+  - id: G2
+    check: CORPUS_SCRIPTS_DISSOLVED
+    condition: "corpvs-testamentvm/scripts/ (13,900 lines) dissolved — functions absorbed by other cocoons"
+    status: PENDING
+
+  - id: G3
+    check: GRANULARITY
+    condition: "may split: memory--remember (fossil/events), memory--witness (testament), memory--record (corpus)"
+    status: PENDING
+
+  - id: G4
+    check: TESTS_PASS
+    condition: "events + fossil + ledger + testament + ontologia events/state tests pass"
+    status: PENDING
+
+state: CALLING
+expected_splits: [memory--remember, memory--witness, memory--record]
