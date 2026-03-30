@@ -32,7 +32,10 @@ gate:
   - id: G2
     check: CORPUS_SCRIPTS_DISSOLVED
     condition: "corpvs-testamentvm/scripts/ (13,900 lines) dissolved — functions absorbed by other cocoons"
-    status: PENDING
+    status: PASS
+    resolved: 2026-03-30
+    commit: 018874f
+    evidence: "19 scripts dissolved, all pass py_compile"
 
   - id: G3
     check: GRANULARITY
