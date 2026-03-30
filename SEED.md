@@ -691,6 +691,37 @@ function. Unrouted reusable outputs are ephemeral — they will be lost when the
 producing function changes or dissolves. This violates A3 (persistence) and A9
 (inheritance).
 
+### Law 3a — Metabolic Relationships
+
+Every relationship between functions must produce emergent value that neither
+side produces alone. If a connection does not transform, enrich, or enable —
+if it merely relays — one side should consume the other (A5).
+
+Four relationship types, each with a metabolic test:
+
+| Relationship | Metabolic test | If it fails |
+|-------------|---------------|-------------|
+| Sibling (same mechanism) | Does removing one lose a capability the other can't cover? | The weaker is consumed by the stronger |
+| Consumer | Does the consumer's output differ qualitatively from its input? | Consumer is a redundant relay — merge into producer |
+| Producer | Does the producer emit something the consumer couldn't generate itself? | Producer is unnecessary — consumer does the work directly |
+| Isotope | Do both do the same verb on the same types? | The weaker is consumed by the stronger (always) |
+
+A function that consumes another function absorbs its unique contributions
+and the consumed function dissolves (A9: lineage preserved). The organism
+grows by metabolizing its own redundancy — fewer functions, each doing more,
+each enriched by what it consumed.
+
+**Modulation tracking.** Each function has a declared scope (what it does) and
+an observed range (what it actually touches). The deviation between scope and
+range reveals drift:
+
+- Range exceeds scope → the function is doing work outside its boundary.
+  Either expand the scope (if the work is legitimate) or split the function.
+- Range is a subset of scope → the function's declared scope is aspirational.
+  Either shrink the scope to match reality or grow the function to fill it.
+- Range overlaps a sibling's range → the functions are converging. Apply the
+  metabolic test: does the overlap produce emergent value, or is it redundancy?
+
 ### Law 4 — Multiplex Flow
 
 The organism maintains at least four independent relationship types on its
