@@ -19,8 +19,11 @@ sources:
 gate:
   - id: G1
     check: ISOTOPES_RESOLVED
-    condition: "governance.py, constants.py::ORGANS, schemas.py dissolved — imports from nervous--govern and skeletal--define"
-    status: PENDING
+    condition: "governance.py, constants.py::ORGANS dissolved — imports from engine registry and organ_config"
+    status: PASS
+    resolved: 2026-03-30
+    commit: a6a6c7d
+    evidence: "635 passed, 1 skipped in 516.49s"
 
   - id: G2
     check: SIGNAL_DECLARED
