@@ -16,16 +16,22 @@ gate:
   - id: G1
     check: ISOTOPES_DISSOLVED
     condition: "absorb/registry_loader.py dissolved — imports from skeletal--define"
-    status: PENDING
+    status: PASS
+    resolved: 2026-03-30
+    commit: e800061
 
   - id: G2
     check: ORGAN_MAP_DISSOLVED
     condition: "synthesize.py::ORGAN_MAP dissolved — imports from skeletal--define"
-    status: PENDING
+    status: PASS
+    resolved: 2026-03-30
+    commit: e800061
 
   - id: G3
     check: TESTS_PASS
     condition: "alchemia test suite passes after isotope dissolution"
-    status: PENDING
+    status: PASS
+    resolved: 2026-03-30
+    evidence: "136 passed in 0.13s"
 
-state: CALLING
+state: CONVERGING
