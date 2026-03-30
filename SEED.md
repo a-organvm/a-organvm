@@ -406,6 +406,14 @@ fails, the failure identifies what is wrong:
 
 Each failure is a diagnostic. The fix is derivable from the failed predicate.
 
+**Self-test (BIST).** The organism can run its own health checks without
+operator intervention. On startup, on schedule, or on-demand, the organism
+walks its signal graph, runs CHECK 18 (integration) on every active edge,
+and surfaces any dead connections as REPORT signals. This is the built-in
+self-test: the organism probes its own wiring and tells the operator what's
+broken before the operator has to guess. An organism that cannot self-test
+cannot self-correct (A4).
+
 **Reversal.** When a growth event introduces a defect that cannot be fixed by
 the procedures above, the growth event may be reversed: the function is
 removed, the signal graph is restored to its pre-event state, and the reversal
@@ -736,8 +744,8 @@ Governance scales with the organism. Not all checks apply at birth:
 | Activation     | Checks |
 |----------------|--------|
 | From function 1 | 1 (FLAT), 2 (NAMED), 3 (SIGNED), 11 (GENOME), 16 (VERIFIED), 17 (EXECUTION) |
-| From function 2 | + 5 (ACYCLIC), 7 (CONNECTED), 12 (VALID), 15 (TRACED) |
-| From function 3 | + 4 (CIRCULATING), 6 (CYCLIC), 13 (PROHIBITED), 14 (MULTIPLEX) |
+| From function 2 | + 5 (ACYCLIC), 7 (CONNECTED), 12 (VALID), 15 (TRACED), 18 (INTEGRATION) |
+| From function 3 | + 4 (CIRCULATING), 6 (CYCLIC), 13 (PROHIBITED), 14 (MULTIPLEX), 19 (CIRCULATION), 20 (RESILIENCE) |
 | When relevant   | 8 (RESERVOIR — when memory-class exists), 9 (PRODUCT — when products exist), 10 (WASTE — at operator's cadence) |
 
 ```
@@ -828,9 +836,52 @@ CHECK 17 — EXECUTION SUBSTRATE
   and multiplex edge separation.
   Violation → the organism has a signal graph but no way to run it. Declare the
   execution substrate (even if it is "manual invocation by the operator").
+
+CHECK 18 — INTEGRATION (the strand)
+  For every information edge (f → g) in the signal graph:
+    f actually produces an output that g actually consumes. Not declared —
+    DEMONSTRATED. Run f, capture its output, feed it to g, verify g processes
+    it without error. This is the continuity test: does current flow through
+    the wire, or is the connection declared but dead?
+  Violation → declared connection that does not carry signal. Either the
+  producer's output format changed, or the consumer's input expectations
+  drifted. Fix the interface or remove the edge.
+  Activation: when |functions| ≥ 2 and at least one information edge exists.
+
+CHECK 19 — CIRCULATION (the full cycle)
+  At least one complete signal cycle executes end-to-end:
+    f₁ → f₂ → ... → fₙ → f₁ (where the chain follows information edges
+    and the final output feeds back to the first function's input).
+  This is the system test: does the tree light up? Not each bulb individually
+  (CHECK 16), not each strand (CHECK 18), but the whole display.
+  Violation → the organism has functions and connections but no demonstrated
+  end-to-end cycle. The information graph says feedback exists; this check
+  proves it flows.
+  Activation: when |functions| ≥ 3 and CHECK 6 (CYCLIC) passes.
+
+CHECK 20 — RESILIENCE
+  A failing function does not kill the signal graph. The organism must
+  demonstrate that when one function errors, raises, or produces no output:
+    (a) other functions continue to operate (circuit breaker pattern)
+    (b) the failure is recorded in the signal graph as a REPORT signal
+    (c) the operator is informed (the failure is visible, not silent)
+  This is not a design prescription — it is a survivability test. HOW the
+  organism achieves resilience (try/except, process isolation, queue retry,
+  manual intervention) is its own business. THAT it achieves it is required
+  by A3 (persistence: the organism must not decay from a single failure).
+  Activation: when |functions| ≥ 3.
 ```
 
-If all checks pass, the organism is structurally healthy.
+Checks 1–17 verify STRUCTURE (is the organism correctly wired?).
+Checks 18–20 verify SIGNAL FLOW (does current actually move through the wires?).
+
+The testing hierarchy:
+  CHECK 16 — the bulb (does each function work alone?)
+  CHECK 18 — the strand (does signal flow between connected functions?)
+  CHECK 19 — the tree (does the full cycle complete?)
+  CHECK 20 — the fuse (does one blown bulb leave the rest lit?)
+
+If all checks pass, the organism is structurally healthy AND operationally alive.
 If any check fails, the check identifies the defect and the axiom it
 violates. The fix is derivable.
 
@@ -1066,7 +1117,7 @@ the old axiom's lineage is preserved even as the new axiom replaces it).
 ## Summary
 
 Nine axioms. One structural constraint (depth = 1). Six growth procedures.
-Seven structural laws. Seventeen health checks. Eleven convergence conjectures.
+Seven structural laws. Twenty health checks. Eleven convergence conjectures.
 
 The organism is not defined by its final form. It is defined by how it grows.
 
