@@ -300,6 +300,21 @@ products:
 For the first function, create this file with one entry in `functions:`,
 its signal types in `signal_types:`, and empty edge lists.
 
+**Signal attraction.** When a function is added to the signal graph, it
+emits a gravitational query: "what else in the organism shares my signal
+types?" The graph surfaces every function whose outputs intersect this
+function's inputs (potential producers) and every function whose inputs
+intersect this function's outputs (potential consumers). These are not
+connections yet — they are CANDIDATES. The function's signal signature is
+a magnet that reveals the orbit it belongs in.
+
+During a molt (Procedure 5), signal attraction also operates across the
+predecessor's material: when a function bolts into a cocoon and declares
+its signature, any module in the old system with a matching signature is
+surfaced as a candidate for the same cocoon, for connection, or for isotope
+merger. The function doesn't just arrive — it broadcasts, and compatible
+material responds.
+
 For subsequent functions:
 
 **5a — Classify edge type.** Every connection is one of four independent
