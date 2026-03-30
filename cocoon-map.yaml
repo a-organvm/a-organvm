@@ -1,0 +1,323 @@
+# cocoon-map.yaml — the molt plan
+# Each cocoon is the NEW identity. The old code lives inside it.
+# State: PLANNED → ERECTED → MOLTING → EMERGED
+
+# NERVOUS SYSTEM (governance, control, coordination)
+nervous--govern:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/governance/     # 9400 lines — enforcement, state machine, dependency, audit, invariants
+    - organvm-engine/coordination/   # 1100 lines — multi-agent claims, tool locks
+    - organvm-ontologia/governance/  # 365 lines — policies, revision workflow
+  verb: govern
+  signal_inputs: [TRACE, REPORT, STATE, VALIDATION]
+  signal_outputs: [RULE, STATE, VALIDATION, CONSTRAINT]
+
+# CIRCULATORY SYSTEM (signal routing, dispatch, mapping)
+circulatory--route:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/dispatch/       # 600 lines — event routing, payload validation
+    - organvm-engine/seed/           # 1600 lines — seed discovery, signal graph building
+    - organvm-engine/network/        # 1700 lines — mirror mappings, engagement
+  verb: route
+  signal_inputs: [CONTRACT, STATE, TRACE]
+  signal_outputs: [TRACE, CONTRACT, STATE]
+
+# DIGESTIVE SYSTEM (metrics, indexing, decomposition, parsing)
+digestive--measure:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/metrics/        # 4400 lines — calculator, organism, gates, timeseries
+    - organvm-engine/atoms/          # 1900 lines — Jaccard linking pipeline
+    - organvm-engine/indexer/        # 900 lines — repo-to-leaf scanning
+    - organvm-engine/ecosystem/      # 2300 lines — product profiles, gap analysis
+    - organvm-engine/trivium/        # 2200 lines — structural isomorphisms
+    - organvm-engine/plans/          # 1500 lines — plan atomization
+    - organvm-engine/prompts/        # 2960 lines — prompt extraction, classification
+    - organvm-engine/session/        # 2700 lines — transcript parsing
+    - organvm-engine/deadlines/      # 270 lines — deadline parsing
+    - organvm-engine/irf/            # 370 lines — IRF parsing
+    - organvm-engine/sop/            # 620 lines — SOP discovery
+    - organvm-engine/content/        # 530 lines — content pipeline discovery
+    - organvm-engine/domain/         # 35 lines — fingerprinting
+    - organvm-engine/distill/        # 800 lines — pattern taxonomy
+    - organvm-ontologia/metrics/     # 380 lines — entity-level metrics
+  verb: measure
+  signal_inputs: [SOURCE, KNOWLEDGE, TRACE]
+  signal_outputs: [KNOWLEDGE, STATE, SYNTHESIS]
+  note: >
+    This cocoon is LARGE (21,485 lines from 15 modules). It will likely
+    SPLIT during the molt into digestive--measure, digestive--index,
+    digestive--parse. The granularity rule determines the splits.
+
+# ENDOCRINE SYSTEM (slow regulation, sensing, density)
+endocrine--regulate:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/pulse/          # 7900 lines — heartbeat, mood, density, rhythm, advisories
+    - organvm-ontologia/inference/   # 360 lines — cluster detection, tension analysis
+    - organvm-ontologia/sensing/     # 740 lines — workspace change sensors
+  verb: regulate
+  signal_inputs: [STATE, TRACE, VALIDATION]
+  signal_outputs: [STATE, REPORT, CONSTRAINT]
+
+# IMMUNE SYSTEM (defense, verification, auditing)
+immune--verify:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/audit/          # 1600 lines — 6-layer infrastructure verification
+    - organvm-engine/ci/             # 1700 lines — CI workflow auditing
+    - organvm-engine/omega/          # 830 lines — completion scorecard
+    - organvm-engine/verification/   # 780 lines — Hoare Logic contracts, model checking
+    - organvm-engine/debt/           # 230 lines — DEBT: header scanning
+    - organvm-engine/distillatio/    # 387 lines — depth stress test (probatio)
+  verb: verify
+  signal_inputs: [TRACE, STATE, CONTRACT, KNOWLEDGE]
+  signal_outputs: [REPORT, VALIDATION]
+
+# SKELETAL SYSTEM (structure, identity, definition)
+skeletal--define:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/registry/       # 1200 lines — registry load/query/validate
+    - organvm-engine/organ_config    # 338 lines — organ/mechanism mapping
+    - organvm-engine/paths           # 153 lines — path resolution
+    - organvm-engine/project_slug    # 132 lines — slug derivation
+    - organvm-engine/ontology/       # 640 lines — BFO classification
+    - organvm-engine/prompting/      # 180 lines — provider standards
+    - organvm-ontologia/entity/      # 650 lines — ULID identity
+    - organvm-ontologia/structure/   # 500 lines — hierarchy edges
+    - organvm-ontologia/variables/   # 450 lines — scoped variable resolution
+    - organvm-ontologia/registry/    # 970 lines — persistent store
+    - organvm-ontologia/bootstrap/   # 213 lines — registry migration
+    - schema-definitions/            # 200 lines + 28 JSON schemas
+  verb: define
+  signal_inputs: [RULE, KNOWLEDGE, CONTRACT]
+  signal_outputs: [CONTRACT, KNOWLEDGE, STATE]
+  note: >
+    Skeletal is also large (5,626 lines + schemas). May split into
+    skeletal--define (schemas), skeletal--identify (ontologia entity),
+    skeletal--record (registry).
+
+# MUSCULAR SYSTEM (execution, git operations, CLI)
+muscular--execute:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/cli/            # 13200 lines — all CLI subcommands
+    - organvm-engine/git/            # 870 lines — superproject management
+  verb: execute
+  signal_inputs: [CONTRACT, STATE, RULE]
+  signal_outputs: [TRACE, REPORT]
+  note: >
+    The CLI is the largest single module (13K lines). In the molt, it
+    becomes the primary muscular function. The 38 subcommand files may
+    flatten into the cocoon or stay as internal structure.
+
+# RESPIRATORY SYSTEM (intake, ingestion)
+respiratory--ingest:
+  state: PLANNED
+  absorbs_from:
+    - alchemia-ingestvm/             # 3053 lines — full intake pipeline
+  verb: ingest
+  signal_inputs: [SOURCE, MIGRATION]
+  signal_outputs: [SOURCE, KNOWLEDGE]
+  isotopes_to_resolve:
+    - alchemia/absorb/registry_loader.py → use skeletal--define/registry instead
+    - alchemia/synthesize.py::ORGAN_MAP → use skeletal--define/organ_config instead
+
+# INTEGUMENTARY SYSTEM (presentation, exposure, outer membrane)
+integumentary--present:
+  state: PLANNED
+  absorbs_from:
+    - system-dashboard/              # 2772 lines — FastAPI web dashboard
+    - organvm-mcp-server/            # 7256 lines — MCP tool surface
+    - organvm-engine/pitchdeck/      # 1750 lines — pitch deck generation
+    - organvm-engine/contextmd/      # 1650 lines — context file generation
+    - stakeholder-portal/            # ~24000 lines — Next.js portal
+  verb: present
+  signal_inputs: [KNOWLEDGE, STATE, SYNTHESIS, AESTHETIC]
+  signal_outputs: [SYNTHESIS, CONTRACT]
+  note: >
+    This cocoon is the LARGEST by absorbed code (~37K lines). It will
+    definitely split: integumentary--present (dashboard),
+    integumentary--expose (MCP/API), integumentary--render (portal).
+
+# REPRODUCTIVE SYSTEM (generation, distillation)
+reproductive--generate:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/contextmd/      # 1650 lines (shared with integumentary)
+    - organvm-ontologia/bootstrap/   # 213 lines (shared with skeletal)
+  verb: generate
+  signal_inputs: [KNOWLEDGE, CONTRACT, RULE]
+  signal_outputs: [KNOWLEDGE, CONTRACT, TEACHING]
+  note: >
+    Thin at birth. Grows as the organism develops generation capability.
+    contextmd may live here OR in integumentary. The molt decides.
+
+# MEMORY SYSTEM (fossil record, testament, events)
+memory--remember:
+  state: PLANNED
+  absorbs_from:
+    - organvm-engine/events/         # 500 lines — event spine
+    - organvm-engine/fossil/         # 3200 lines — git archaeology
+    - organvm-engine/ledger/         # 1300 lines — hash-linked chain
+    - organvm-engine/testament/      # 3300 lines — self-rendering
+    - organvm-ontologia/events/      # 580 lines — entity mutation bus
+    - organvm-ontologia/state/       # 570 lines — temporal snapshots
+    - organvm-corpvs-testamentvm/    # constitutional corpus (docs, not code)
+    - praxis-perpetua/               # process governance (docs, not code)
+  verb: remember
+  signal_inputs: [TRACE, ARCHIVE, KNOWLEDGE, REPORT, SYNTHESIS]
+  signal_outputs: [ARCHIVE, KNOWLEDGE, TEACHING]
+  note: >
+    Memory absorbs both code (9,450 lines) and docs (corpvs + praxis).
+    May split: memory--remember (fossil/events), memory--witness
+    (testament), memory--record (corpus).
+
+# ═══════════════════════════════════════════════════════
+# TAXIS REPOS (from Stranger B report)
+# ═══════════════════════════════════════════════════════
+
+# CONDUCTOR → merges into nervous--govern (unique parts) + isotopes dissolve
+nervous--orchestrate:
+  state: PLANNED
+  absorbs_from:
+    - tool-interaction-design/conductor/session.py      # 600 lines — FRAME/SHAPE/BUILD/PROVE lifecycle (UNIQUE)
+    - tool-interaction-design/conductor/oracle.py        # 1200 lines — contextual advisories (UNIQUE)
+    - tool-interaction-design/conductor/guardian.py       # 200 lines — wisdom enrichment (UNIQUE)
+    - tool-interaction-design/conductor/patchbay.py      # 500 lines — layer composition (UNIQUE)
+    - tool-interaction-design/conductor/executor.py      # 400 lines — workflow DSL (UNIQUE)
+    - tool-interaction-design/conductor/fleet*.py        # 1050 lines — agent fleet management (UNIQUE)
+    - tool-interaction-design/conductor/cross_verify.py  # 200 lines — agent output verification (UNIQUE)
+    - tool-interaction-design/conductor/handoff.py       # 300 lines — agent handoff (UNIQUE)
+    - tool-interaction-design/conductor/observability.py # 300 lines — structured event logging (UNIQUE)
+    - tool-interaction-design/conductor/policy.py        # 200 lines — policy bundles (UNIQUE)
+    - tool-interaction-design/conductor/commands/        # 1500 lines — CLI
+    - tool-interaction-design/exports/                   # 2000 lines — MCP server export
+  verb: orchestrate
+  signal_inputs: [TRACE, REPORT, STATE, CONSTRAINT]
+  signal_outputs: [DIRECTIVE, CONSTRAINT, STATE]
+  isotopes_dissolved:
+    - conductor/governance.py → USE nervous--govern/governance (engine's version)
+    - conductor/constants.py::ORGANS → USE skeletal--define/organ_config
+    - conductor/schemas.py → USE skeletal--define/schemas
+    - conductor/workqueue.py → MERGE with digestive--measure (overlaps deadlines/irf)
+
+# VOX (voice governance) → unique, gets own cocoon
+immune--score:
+  state: PLANNED
+  absorbs_from:
+    - vox--architectura-gubernatio/   # 4100 lines — Python voice scorer
+    - vox--publica/                   # 1300 lines — TypeScript port (ISOTOPE of Python version)
+  verb: score
+  signal_inputs: [SOURCE, KNOWLEDGE, AESTHETIC]
+  signal_outputs: [VALIDATION, REPORT]
+  isotopes_to_resolve:
+    - vox--publica IS a TypeScript port of vox--architectura-gubernatio
+    - Keep both: Python for internal use, TypeScript for Cloudflare deployment
+
+# AGENTIC-TITAN → product (94,700 lines, too large for a function)
+muscular--titan:
+  state: PLANNED
+  absorbs_from:
+    - agentic-titan/                  # 94700 lines — full agent framework
+  verb: agent
+  signal_inputs: [CONTRACT, DIRECTIVE, STATE]
+  signal_outputs: [TRACE, REPORT, SYNTHESIS]
+  note: >
+    This is the largest single codebase. It is a PRODUCT (carries assets,
+    has its own API, dashboard, runtime deployment). During molt, it stays
+    as a product directory. Its internal structure is its own business.
+
+# AGENT-CLAUDE-SMITH → separate agent orchestrator (TypeScript)
+muscular--smith:
+  state: PLANNED
+  absorbs_from:
+    - agent--claude-smith/            # 6300 lines TypeScript — Claude-specific agent orchestrator
+  verb: smith
+  signal_inputs: [DIRECTIVE, CONTRACT]
+  signal_outputs: [TRACE, REPORT]
+
+# CONTRIBUTION ENGINE → unique, gets own cocoon
+circulatory--contribute:
+  state: PLANNED
+  absorbs_from:
+    - orchestration-start-here/contrib_engine/  # ~2800 lines — contribution scanning, campaign, outreach
+  verb: contribute
+  signal_inputs: [KNOWLEDGE, DIRECTIVE]
+  signal_outputs: [TRACE, REPORT, SOURCE]
+  isotopes_dissolved:
+    - orchestration-start-here/scripts/validate-deps.py → USE nervous--govern (engine's dep graph)
+    - orchestration-start-here/scripts/calculate-metrics.py → USE digestive--measure (engine's metrics)
+    - orchestration-start-here/scripts/organ-audit.py → USE immune--verify (engine's audit)
+    - orchestration-start-here/scripts/validate-all-seeds.py → USE circulatory--route (engine's seed validator)
+    - orchestration-start-here/scripts/generate-seed-from-registry.py → USE reproductive--generate
+
+# MATERIA-COLLIDER → product (film database)
+digestive--collider:
+  state: PLANNED
+  absorbs_from:
+    - materia-collider/               # 1500 lines — film scrubbing database
+  verb: collide
+  signal_inputs: [SOURCE]
+  signal_outputs: [KNOWLEDGE, ARCHIVE]
+  note: Product — carries video/film assets.
+
+# VIGILES → unique methodology, gets own cocoon
+immune--watch:
+  state: PLANNED
+  absorbs_from:
+    - vigiles-aeternae--agon-cosmogonicum/  # 1600 lines — mythological audit engine
+  verb: watch
+  signal_inputs: [STATE, KNOWLEDGE, ARCHIVE]
+  signal_outputs: [REPORT, VALIDATION, QUESTION]
+  note: NOT an isotope of engine audit. Uses fundamentally different methodology.
+
+# CORPUS SCRIPTS → isotopes dissolved into engine cocoons
+# organvm-corpvs-testamentvm/scripts/ (13,900 lines of standalone scripts)
+# DISSOLVED — each script absorbed by the engine cocoon that owns its function:
+#   calculate-metrics.py → digestive--measure
+#   organ-audit.py → immune--verify
+#   generate-seed-yaml.py → reproductive--generate
+#   convergence-validate.py → immune--verify
+#   The docs (400K+ words) → memory--remember (constitutional corpus)
+
+# UNIVERSAL-NODE-NETWORK → absorbs into circulatory--route
+# 1700 lines of inter-organ messaging — same domain as dispatch + seed graph
+# Unique part: homeostasis monitor (507 lines) → endocrine--regulate
+
+# SMALL REPOS → dissolved
+# petasum-super-petasum (350 lines) → ISOTOPE of engine governance → dissolved
+# system-governance-framework (200 lines) → INCOMPATIBLE state machine → dissolved, states reconciled
+# collective-persona-operations (400 lines) → small, absorbs into muscular--titan (persona management)
+# reverse-engine-recursive-run (880 lines) → absorbs into immune--verify (security analysis)
+# a-i--skills → NOT CODE, skill bundles stay as reference → skeletal--skills/ (if kept)
+
+# ═══════════════════════════════════════════════════════
+# ISOTOPE RESOLUTION PLAN
+# ═══════════════════════════════════════════════════════
+
+# 7x REGISTRY LOADING → skeletal--define owns the canonical loader
+#   engine/registry/loader.py = CANONICAL
+#   conductor/governance.py = DISSOLVE (import from skeletal--define)
+#   orchestration-start-here/scripts/* = DISSOLVE
+#   stakeholder-portal/src/data/* = KEEP (TypeScript, different runtime)
+#   vigiles/auditor.py = DISSOLVE (import from skeletal--define)
+#   alchemia/absorb/registry_loader.py = DISSOLVE (import from skeletal--define)
+#   corpvs-testamentvm/scripts/* = DISSOLVE
+
+# 3x ORGAN MAPPING → skeletal--define owns the canonical map
+#   engine/organ_config.py = CANONICAL
+#   conductor/constants.py::ORGANS = DISSOLVE
+#   alchemia/synthesize.py::ORGAN_MAP = DISSOLVE
+
+# 3x PROMOTION STATE MACHINE → nervous--govern owns the canonical machine
+#   engine/governance/state_machine.py = CANONICAL (5 states)
+#   conductor/constants.py = COMPATIBLE (same 5 states)
+#   system-governance-framework/promotion.py = INCOMPATIBLE → dissolved, reconciled
+
+# 2x INFERENCE BRIDGES → endocrine--regulate consolidates
+#   engine/ontologia/inference_bridge.py = MERGE with
+#   engine/pulse/inference_bridge.py = MERGE → single bridge
