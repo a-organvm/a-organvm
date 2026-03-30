@@ -1,0 +1,20 @@
+# Vendored / generated (not functions)
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.egg-info/
+dist/
+build/
+.next/
+coverage/
+.ruff_cache/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment (secrets live in 1Password, not files)
+.env
+.env.*
