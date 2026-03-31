@@ -1,4 +1,4 @@
-# RELAY.md — S45 close
+# RELAY.md — S46 review (meta-organvm handoff session)
 
 ## What was done
 
@@ -40,23 +40,37 @@ Two SVG scopes, zero dependencies beyond pyyaml:
 22 tests passing
 ```
 
+## S46 actions (2026-03-31)
+
+1. Third observation recorded — 15 mechanisms, 97 gates (10 lit / 87 dim), 0 gate changes in 4h
+2. Board updated: GH#1 (SKL-001), GH#23 (GEN-002), GH#18 (SIG-001) → CLOSED with commit refs
+3. Second function candidate selected: **circulatory--route**
+
+### Why circulatory--route
+
+Assessed all 3 relay candidates:
+- `digestive--measure`: 21K lines, 15 modules, contract admits needs 3-way split. Too heavy.
+- `nervous--govern`: 3 repos, isotope dissolution required. Dependency-heavy.
+- `circulatory--route`: 3,900 lines, 3 gates, clean source. Creates INFORMATION edge by reading signal-graph.yaml (KNOWLEDGE output from skeletal--define). The circulatory system moves things around — it's how the organism routes work to itself.
+
 ## What is next
 
-The death cantation from S44 is satisfied: GEN-002 decided, SKL-001 embodied (CHECK 16 passes), SIG-001 created. The throttle lifts.
-
 **Immediate** (next session):
-1. Commit and push this session's work (5 new files + .gitignore edit)
-2. Run `python3 skeletal_define.py` at session start — third observation, first real variance
-3. Update a-organvm project board: GEN-002 → DONE, SKL-001 → DONE, SIG-001 → DONE
-
-**Next function** (the organism's second act):
-- The signal graph has one function. CHECK 7 (CONNECTED) activates at function 2. CHECK 5 (ACYCLIC) activates. The second function must connect to skeletal--define via at least one information edge.
-- Candidates: `circulatory--route` (reads signal-graph.yaml, routes dispatch), `nervous--govern` (reads gate states, enforces policy), `digestive--measure` (reads observation data, computes metrics). Pick whichever has the most urgent cocoon gates near PASS.
+1. Run `python3 skeletal_define.py` at session start
+2. Build `circulatory_route.py` following SEED §II Procedure 1 (Steps 1-7)
+   - Step 1: signal signature already in contract: `[CONTRACT, STATE, TRACE] → [TRACE, CONTRACT, STATE]`
+   - Step 2: not a product (logic only)
+   - Step 3: mechanism = circulatory (already classified)
+   - Step 4: name = `circulatory--route` → `circulatory_route.py` (GEN-002)
+   - Step 5: add to signal-graph.yaml with INFORMATION edge from skeletal--define
+   - Step 6: write tests
+   - Step 7: run observation to verify CHECK 7 (CONNECTED) becomes assessable
+3. After function 2: the third function unlocks SEED modifications (CHECK 19)
 
 **Do not**:
-- Add to SEED.md (still sealed until the organism has ≥3 functions and CHECK 19 can be attempted)
+- Add to SEED.md (still sealed until ≥3 functions)
 - Create gate contracts without matching issues
-- Skip the `python3 skeletal_define.py` observation at session start — the fossil record is the organism's temporal memory
+- Skip the observation at session start
 
 ## Read order
 
