@@ -27,4 +27,17 @@ gate:
     commit: aec93ac
     evidence: "47 passed in 0.92s"
 
+dna:
+  - 22 mythological regimes as governance philosophies — each with audit_rules, phaethon blind spots, health model, and narrative voice
+  - Agon competitive deliberation: multiple regimes audit same state, consensus = constitutional law candidates
+  - Divergence classifier (perspective, priority conflict, structural contradiction) — genuinely novel pattern
+  - Append-only chronicle (JSONL) — immutable audit history, proper witness function
+  - 8 Watcher Orders as cross-cutting domain audit perspectives, 47 tests passing
+
+defect:
+  - No declared seed.yaml edges — vigiles operates in isolation despite reading registry, seeds, metrics
+  - Reporter/narrative voice generation untested against actual regime YAMLs at scale — could produce hallucinated findings
+  - 22 regimes is ambitious naming without evidence all 22 have distinct, non-overlapping check coverage
+  - STATUS: LOCAL despite passing G2 and having 47 tests — promotion not yet pursued
+
 state: CONVERGING

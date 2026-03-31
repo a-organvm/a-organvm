@@ -40,4 +40,18 @@ gate:
     condition: "may split: skeletal--define (schemas), skeletal--identify (ontologia), skeletal--record (registry)"
     status: PENDING
 
+dna:
+  - registry/ — load/save/query/validate/update registry-v2.json (SSOT for 128 repos)
+  - organ_config.py — canonical organ key/directory/registry mappings
+  - paths.py — workspace path resolution
+  - ontology/ — UID-based entity identity from organvm-ontologia
+  - schema-definitions — 28 JSON Schemas (the organism's bones)
+  - prompting/ — agent-specific prompting guidelines
+
+defect:
+  - 6 isotopes of organ_config exist across repos — all must dissolve into this
+  - project_slug.py — naming utility that may belong in immune--verify
+  - ontologia bootstrap/ — heavy initialization, may need lazy loading
+  - registry save_registry() has a 50-repo guard — correct but brittle
+
 state: CALLING

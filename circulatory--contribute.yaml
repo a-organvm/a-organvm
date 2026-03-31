@@ -35,4 +35,17 @@ gate:
     resolved: 2026-03-30
     evidence: "150 passed in 0.50s"
 
+dna:
+  - Signal scanner discovers and ranks open-source contribution targets from application-pipeline + GitHub API
+  - Campaign sequencer with prescriptive action queue, completion tracking, YAML persistence
+  - Capabilities matching (match_capabilities) against ORGANVM skill surface — symbiotic targeting
+  - GitHub client integration (forks, stars, issue search) for real network intelligence
+  - 150 tests passing, isotopes dissolved, registry import canonical — all 3 gates PASS
+
+defect:
+  - Hardcoded path to application-pipeline (Path.home() / "Workspace" / "4444J99" / "application-pipeline") — breaks on any other machine
+  - Campaign generation returns existing campaign if non-empty — no merge/update logic, only create-or-return
+  - Outreach protocol exists as markdown (outreach_protocol.md) not code — the actual contribution workflow is manual
+  - inbound-opportunity-protocol.zip is a compressed file inside a Python package — dead artifact
+
 state: CONVERGING

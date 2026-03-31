@@ -23,4 +23,12 @@ gate:
     condition: "Every emission generates a unique identifier for glyph rendering (SIG-005)"
     status: PENDING
 
+dna:
+  - "assessment pending — source directory emission/ does not exist in engine; no code to absorb"
+
+defect:
+  - "Source directory src/organvm_engine/emission/ is declared but absent — directory does not exist"
+  - "SIG-004 signal materialization has no implementation — density recording (G1) is pure spec"
+  - "Shadow link generation (G2) references SIG-005 glyph rendering which also has no implementation"
+
 state: CALLING

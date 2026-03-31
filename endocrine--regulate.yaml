@@ -31,4 +31,17 @@ gate:
     condition: "pulse + inference + sensing tests pass after consolidation"
     status: PENDING
 
+dna:
+  - Pulse module (6,259 lines, 40 test files) — heartbeat, rhythm, flow, density, temporal, affective, nerve — comprehensive system vital signs
+  - Inference bridge wiring ontologia entities/names/edges into pulse cycle with fail-safe zeroed defaults
+  - AMMOI density metric (56% measured) — single-number system health indicator with multi-dimensional inputs
+  - Metric policies, default policies, variable bridge — configurable regulation without code changes
+  - Ecosystem bridge + edge bridge for cross-repo health propagation
+
+defect:
+  - Two inference_bridge.py files exist (engine/pulse/ and engine/ontologia/) — G1 PENDING, duplication acknowledged
+  - universal-node-network/homeostasis.py (507 lines) not yet absorbed (G2 PENDING) — regulation logic split across repos
+  - Pulse module at 6,259 lines with 24 files is the largest single engine module — risk of scope creep beyond "regulate"
+  - Neon sink (neon_sink.py) and shared memory (shared_memory.py) suggest infrastructure concerns leaked into the regulation module
+
 state: CALLING

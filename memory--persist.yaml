@@ -24,4 +24,13 @@ gate:
     condition: "Archive is AES-256 encrypted before transport"
     status: PENDING
 
+dna:
+  - "assessment pending — source script scripts/sync-memory.sh does not exist in domus-semper-palingenesis"
+
+defect:
+  - "Source script scripts/sync-memory.sh is declared but absent — no file found at that path in domus"
+  - "Contract claims 150 lines but the source file does not exist — either deleted, renamed, or never written"
+  - "Remote parity (G1) and encryption verification (G2) are spec-only with no backing implementation"
+  - "No JSONL session transcript archival logic exists in domus — memory persistence is unimplemented"
+
 state: CALLING

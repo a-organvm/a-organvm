@@ -23,4 +23,17 @@ gate:
     condition: "CLI + git tests pass"
     status: PENDING
 
+dna:
+  - 38 CLI subcommands across 24 modules (13,244 lines) — comprehensive system control surface
+  - Git superproject management (reproduce, sync, status, drift detection) — tested, 830 lines
+  - Consistent dispatch pattern: argparse tree with {(command, subcommand): handler} mapping
+  - Dry-run-by-default convention on destructive operations — safety built into the interface
+  - Each CLI module exports cmd_* functions taking argparse.Namespace, returning int — uniform contract
+
+defect:
+  - 13,244 lines of CLI code references engine internals directly (G1 PENDING) — not yet refactored to reference cocoon formations
+  - Two dispatch patterns coexist: tuple-dict for original commands, inline if-branches for newer ones — inconsistent wiring
+  - CLI module count (24) exceeds the number of biological mechanisms — suggests incomplete consolidation
+  - Git module (830 lines) is thin relative to the complexity of multi-organ superproject sync
+
 state: CALLING

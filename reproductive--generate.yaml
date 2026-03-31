@@ -27,4 +27,16 @@ gate:
     condition: "contextmd + bootstrap tests pass"
     status: PENDING
 
+dna:
+  - Contextmd generator produces per-repo CLAUDE.md/GEMINI.md/AGENTS.md with 15+ template sections (1,670 lines, 4 test files)
+  - Template-driven generation from registry + seed data — not string concatenation but structured section assembly
+  - Surfaces sync module for cross-repo context file deployment across 127 repos
+  - Ontologia bootstrap (213 lines) — entity seeding from registry for identity initialization
+
+defect:
+  - Placement ambiguity (G1 PENDING) — contextmd could live in reproductive (generation) OR integumentary (presentation), not both
+  - Bootstrap module (213 lines) is minimal — may be a one-shot script disguised as a module
+  - Content module referenced in contract sources but not listed in engine CLAUDE.md architecture table — orphan or undocumented
+  - Test coverage (4 files for 1,670 lines) is thin for code that auto-generates context across the entire workspace
+
 state: CALLING

@@ -34,4 +34,15 @@ gate:
     resolved: 2026-03-30
     evidence: "136 passed in 0.13s"
 
+dna:
+  - alchemia intake→absorb→alchemize pipeline — 3-phase material processing
+  - taste.yaml cascades — aesthetic nervous system (style governance per organ)
+  - capture command — URL/note/screenshot quick-capture to intake
+  - Google Docs OAuth integration for gdocs source channel
+
+defect:
+  - absorb/registry_loader.py was isotope of engine registry — DISSOLVED (G1 PASS)
+  - synthesize.py::ORGAN_MAP was isotope of organ_config — DISSOLVED (G2 PASS)
+  - gdocs-auth OAuth flow incomplete — token refresh untested in production
+
 state: CONVERGING

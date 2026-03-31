@@ -28,4 +28,17 @@ gate:
     condition: "AESTHETIC input type defined — vox scores against voice/style constraints"
     status: PENDING
 
+dna:
+  - HeuristicScorer with 4-dimensional voice scoring (structural_architecture, rhetorical_signature, register_integrity, signal_density) — weighted 30/30/20/20
+  - 11 anti-pattern rules (AP-01 through AP-11) + 8 invariant rules (INV-01 through INV-08) — configurable via StyleSheet
+  - textstat integration for readability metrics grounded in established NLP
+  - TypeScript port (vox--publica) for Cloudflare edge deployment — deliberate dual-stack, not accidental isotope
+  - Corpus ingestion, deep analysis, diff tracking, worksheet delta — full voice governance lifecycle
+
+defect:
+  - Python and TypeScript implementations could drift — no cross-language conformance test proving they produce identical scores
+  - AESTHETIC signal input type not yet defined (G2 PENDING) — vox scores against voice rules but the aesthetic constraint integration is unspecified
+  - Formalizer module exists but assessment pending on whether formalization is tested or aspirational
+  - 4100 lines in Python scorer is large for a heuristic system — may contain over-engineered rule infrastructure
+
 state: CALLING

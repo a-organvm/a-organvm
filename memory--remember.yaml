@@ -47,5 +47,18 @@ gate:
     condition: "events + fossil + ledger + testament + ontologia events/state tests pass"
     status: PENDING
 
+dna:
+  - Fossil module (2,549 lines, 20 test files) — living stratigraphy with Jungian archetype classification, epoch chronicles, drift detection, witness hooks
+  - Ledger module (1,046 lines, 18 test files) — Merkle chain, rotation, tiered digest — cryptographic integrity for event history
+  - Events/spine (498 lines) — event bus backbone for system-wide state changes
+  - Testament module (1,751 lines, 8 test files) — aesthetic catalog, manifest, network, pipeline, sources — the system rendering its own density
+  - Ontologia events/state modules for UID-based entity lifecycle tracking
+
+defect:
+  - Corpus scripts already dissolved (G2 PASS) but 400K+ words of docs have no code interface — memory formation has no retrieval mechanism for the corpus it remembers
+  - May need to split into 3 cocoons (remember/witness/record) — current shape is too broad for single formation
+  - Reservoir law (G1) not yet enforced — risk of memory emitting RULE or KNOWLEDGE as canonical authority
+  - Ontologia state/events integration depth is assessment pending — 1,150 lines across two modules may be thin glue
+
 state: CALLING
 expected_splits: [memory--remember, memory--witness, memory--record]

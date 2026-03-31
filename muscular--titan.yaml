@@ -29,4 +29,17 @@ gate:
     condition: "titan test suite passes"
     status: PENDING
 
+dna:
+  - Full agent framework (94,700 lines) with own API, dashboard, orchestrator, and runtime — a product, not a library
+  - Persona coordination system with learning module and archetype-based agent specialization
+  - Adapter layer for external integrations, gateway for API access
+  - Hive architecture for multi-agent coordination, network topology management
+  - Ecosystem YAML and deploy infrastructure — production deployment capability
+
+defect:
+  - 94,700 lines is an order of magnitude larger than any other cocoon source — high risk of dead scaffolding and speculative infrastructure
+  - organvm_bridge.py status unknown (G1 PENDING) — may still import engine directly rather than via MCP protocol
+  - collective-persona-operations (400 lines) not yet absorbed (G2 PENDING) — persona duplication across repos
+  - Assessment of test coverage pending — at this scale, untested code is near-certain
+
 state: CALLING

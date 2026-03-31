@@ -41,5 +41,17 @@ gate:
     condition: "dashboard + mcp-server + portal tests pass"
     status: PENDING
 
+dna:
+  - FastAPI + Jinja2 + HTMX dashboard with 19 route modules (health, registry, graph, soak, essays, omega, pulse, ontologia, etc.)
+  - MCP server exposing 27 tool groups across 5 domains — proven stdio transport, production-ready
+  - Stakeholder portal with canonical organ bridge (organs.ts), 265 tests passing, typecheck clean
+  - Contextmd generator producing per-repo CLAUDE.md with 15+ template sections — tested, deployed across 127 repos
+
+defect:
+  - 37K lines across 4 repos is acknowledged oversize (G1 PENDING) — must split into present/expose/render
+  - Dashboard has no auth middleware yet (listed in task queue as pending)
+  - Pitchdeck generator has ORGAN-III special-casing (market section) baked into generator.py — organ-specific logic in generic module
+  - MCP server imports 27 tool modules but has thin test coverage relative to surface area (7256 lines)
+
 state: CALLING
 expected_splits: [integumentary--present, integumentary--expose, integumentary--render]

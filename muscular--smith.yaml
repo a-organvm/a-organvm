@@ -34,4 +34,17 @@ gate:
     condition: "agent-claude-smith test suite passes once dispatch envelope and room isolation are wired together"
     status: PENDING
 
+dna:
+  - TypeScript Claude-specific agent orchestrator (6,281 lines) — focused scope, single-provider specialization
+  - Scope validator (scope-validator.ts) for room isolation — enforces read-only boundaries on cocoon mounts
+  - Security layer with command-validator.ts (457 lines) — input sanitization before Claude execution
+  - Session manager, agent registry, orchestrator pattern — clean separation of concerns in core/
+  - AI bridge abstraction, code reviewer, task executor, security auditor agents
+
+defect:
+  - No dispatch envelope consumption (G1 PENDING) — smith invents its own task format instead of accepting NRV-003 packets
+  - Room isolation not yet proven (G2 PENDING) — scope-validator.ts exists but evidence of enforcement absent
+  - Signal inputs/outputs not declared (G3 PENDING) — integration contract with nervous--orchestrate undefined
+  - Tests status unknown — G4 depends on G1+G2 being wired; untested integration is likely
+
 state: CALLING

@@ -23,4 +23,14 @@ gate:
     condition: "Map system operations to public sensory encounters"
     status: PENDING
 
+dna:
+  - "INST-INDEX-RERUM-FACIENDARUM.md — IRF-INST-019 gap identification for artistic output metric"
+  - "Omega scorecard infrastructure in engine (omega/ module) — 17-criterion binary scorecard, tested and operational"
+  - "Existing omega CLI: 'organvm omega status' and 'organvm omega detail <criterion>' — ready to receive new criteria"
+
+defect:
+  - "No 'Artistic Evidence' criterion currently exists in the omega scorecard — gap is identified but not filled"
+  - "Sensory mapping (G2) — no code maps system operations to public sensory encounters"
+  - "The contract absorbs from corpus (gap identification) but the implementation target is engine (omega module) — dual-repo coordination required"
+
 state: CALLING

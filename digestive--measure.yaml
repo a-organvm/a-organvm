@@ -38,5 +38,24 @@ gate:
     condition: "orchestration-start-here/scripts/calculate-metrics.py dissolved — engine's metrics is canonical"
     status: PENDING
 
+dna:
+  - metrics/ — system metric calculation, propagation, timeseries, variable resolution
+  - atoms/ — cross-system linking pipeline (Jaccard matching, git reconciliation)
+  - indexer/ — code structure AST analysis
+  - ecosystem/ — product business profiles, competitive matrix
+  - trivium/ — 8-dialect universal logic translation
+  - plans/ — plan file atomization, indexing, overlap detection
+  - session/ — multi-agent transcript parsing (Claude, Gemini, Codex)
+  - prompts/ — prompt extraction, classification, narrative threading
+  - deadlines/ — deadline parsing from rolling-todo.md
+  - irf/ — IRF parser for Index Rerum Faciendarum
+
+defect:
+  - 15 modules under one mechanism violates granularity rule — MUST split into 3+
+  - orchestration-start-here/scripts/calculate-metrics.py is isotope — engine is canonical
+  - session/ and prompts/ may belong in memory--remember, not digestive--measure
+  - 21,485 lines is too heavy for a single cocoon — the split is mandatory, not optional
+  - Some modules (distill/, sop/) are barely tested or used
+
 state: CALLING
 expected_splits: [digestive--measure, digestive--index, digestive--parse]

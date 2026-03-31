@@ -23,4 +23,16 @@ gate:
     condition: "Log S-CC-review ('Does CC fund what we make?') as the first institutional entry"
     status: PENDING
 
+dna:
+  - Inquiry log pattern (inquiry-log.yaml) — structured commission tracking from inception through defense
+  - Rich metadata per commission: tier, faculty, advisory_faculty, needs, evidence trail with dates/sessions
+  - Two active dissertations with concrete ICC thresholds and evidence chains
+  - Faculty-based organization enables cross-organ research routing
+
+defect:
+  - Source is a single YAML file with 2 entries — pattern is proven but scale is untested
+  - No code to validate, query, or extend the inquiry log programmatically — all operations are manual YAML edits
+  - G1 (institutional faculty extension) and G2 (first entry) are documentation tasks, not engineering tasks
+  - No tests — this is a data schema, not a tested module; risk of schema drift as entries accumulate
+
 state: CALLING

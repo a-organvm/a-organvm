@@ -24,4 +24,13 @@ gate:
     condition: "Detects emergent functional clusters not yet declared as mechanisms"
     status: PENDING
 
+dna:
+  - "assessment pending — source directory swarm/ does not exist in engine; no code to absorb"
+
+defect:
+  - "Source directory src/organvm_engine/swarm/ is declared but absent — directory does not exist"
+  - "Contract claims 1,200 lines of boids-inspired signal affinity code — zero lines exist"
+  - "Affinity mapping (G1) and cluster discovery (G2) are pure spec with no backing implementation"
+  - "No signal proximity computation or emergent mechanism detection exists anywhere in the engine"
+
 state: CALLING

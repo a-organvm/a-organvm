@@ -32,4 +32,17 @@ gate:
     condition: "orchestration-start-here/scripts/organ-audit.py dissolved"
     status: PENDING
 
+dna:
+  - 6-layer bottom-up infrastructure audit (filesystem, reconcile, seeds, edges, content, absorption) — tested with 22 test files
+  - Formal verification with 4 logic layers (Hoare, temporal, linear, bounded model checking) — addresses vacuous truths, race conditions, idempotency
+  - CI health triage from soak-test data (18 test files), mandate + scaffold + protect modules
+  - Omega 19-criterion scorecard with constitutional amendments for craft-first revenue gates
+  - DEBT header scanner with regex-based pattern recognition (pre-SPEC, SPEC-ref, untracked)
+
+defect:
+  - distillatio/probatio.py has 0 test files — executable proofs module is itself unproven
+  - verification module has only 2 test files for 4 formal logic layers (908 lines) — thin coverage for the most critical correctness code
+  - reverse-engine scripts (880 lines) are standalone bash/python — no integration tests verifying they compose with engine audit
+  - debt scanner (252 lines) is thin — single-file module may miss non-comment debt patterns (TODO, FIXME, HACK)
+
 state: CALLING

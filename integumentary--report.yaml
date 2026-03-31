@@ -23,4 +23,13 @@ gate:
     condition: "Identify structural mirrors across organs (e.g., sensing vs sensors) (Ref: IRF-MON-006)"
     status: PENDING
 
+dna:
+  - "assessment pending — source directory reporting/ does not exist in engine; no code to absorb"
+
+defect:
+  - "Source directory src/organvm_engine/reporting/ is declared but absent — no stranger.py exists"
+  - "Context-free legibility (G1) — no code generates stranger reports for 117 repos"
+  - "Surface isomorphism detection (G2) — no structural mirror identification logic exists"
+  - "Module name 'stranger.py' suggests stranger-test-protocol influence but no implementation materialized"
+
 state: CALLING

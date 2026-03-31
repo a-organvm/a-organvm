@@ -28,4 +28,15 @@ gate:
     condition: "NRV-005 + GEN-004 — the relay surface and AGENTS routing surface complete one handoff handshake: RELAY says what was completed, what is next, and the active boundary; AGENTS says which agent is allowed to take that next work"
     status: PENDING
 
+dna:
+  - "NerveBundle subscription indexing — fast O(1) lookup by event type and subscriber (nerve.py, tested)"
+  - "Subscription resolution from seed.yaml — walks all seeds, collects event subscriptions, builds dispatch graph"
+  - "Source pattern matching — supports exact, prefix-wildcard, and catch-all patterns for event routing"
+  - "Propagation engine — matches events against subscriptions and generates dispatch records with provenance"
+
+defect:
+  - "No async runtime — nerve.py is synchronous despite contract requiring non-blocking dispatch (G1)"
+  - "No provenance preservation across relay boundaries — subscriptions carry identity but not trace chains"
+  - "Handshake envelope (G3) has no implementation — no RELAY-to-AGENTS routing surface exists in engine"
+
 state: CALLING

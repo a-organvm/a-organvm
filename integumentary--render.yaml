@@ -23,4 +23,13 @@ gate:
     condition: "Renders internal complexity into perceptible visual archetypes (A10: self-rendering)"
     status: PENDING
 
+dna:
+  - "assessment pending — source directory glyphs/ does not exist in engine; no code to absorb"
+
+defect:
+  - "Source directory src/organvm_engine/glyphs/ is declared but absent — directory does not exist"
+  - "SIG-005 glyph language has no implementation — no rendering code, no visual archetype logic"
+  - "Glyph parity (G1) and experiential truth (G2) are pure spec claims with zero backing code"
+  - "Depends on integumentary--emit output (SIG-004) which is also unimplemented"
+
 state: CALLING

@@ -24,4 +24,15 @@ gate:
     condition: "Implements metabolic test from Law 3a to identify merge candidates"
     status: PENDING
 
+dna:
+  - "IRF parser — robust markdown table parser with section-aware status inference (parser.py, 227 lines, tested)"
+  - "IRFItem dataclass — typed model with id/priority/domain/action/owner/source/blocker/status/section"
+  - "Domain extraction from IRF IDs — regex-based IRF-SYS-001 to SYS, DONE-003 to DONE"
+  - "Query interface — composable AND-logic filters on priority/domain/status/owner (query.py, tested)"
+
+defect:
+  - "No dead-signal detection — parser reads items but cannot identify producers or consumers of signals (G1 unimplemented)"
+  - "No isotope resolution — no metabolic test logic exists in parser.py; it only parses, does not analyze"
+  - "Contract claims 370 lines but actual file is 227 — line count is stale or inflated"
+
 state: CALLING

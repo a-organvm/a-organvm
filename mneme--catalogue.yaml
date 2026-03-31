@@ -28,4 +28,16 @@ gate:
     condition: "Build INST-INDEX-RERUM.md — ontological inventory of every artifact, its type, and state (Ref: IRF-IDX-003)"
     status: PENDING
 
+dna:
+  - Clear mandate: build 3 canonical indices (Locorum, Nominum, Rerum) from live system state
+  - Index Locorum = spatial map of all repos/directories/infrastructure — grounded in filesystem reality
+  - Index Nominum = registry of all 8 mechanisms and 117 named entities — grounded in registry-v2.json
+  - Index Rerum = ontological inventory of every artifact, type, and state — grounded in seed.yaml contracts
+
+defect:
+  - All 3 gates PENDING — no code exists yet, this cocoon is pure specification
+  - Source is a single markdown file (INST-INDEX-LOCORUM.md) — no scripts, no generation logic, no tests
+  - No declared line count for code — this is a documentation cocoon masquerading as a formation
+  - Risk of manual maintenance burden if indices are not auto-generated from engine/registry data
+
 state: CALLING

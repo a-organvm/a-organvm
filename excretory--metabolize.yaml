@@ -23,4 +23,13 @@ gate:
     condition: "Ensure unique logic from consumed functions is preserved in the survivor (A9)"
     status: PENDING
 
+dna:
+  - "assessment pending — source module irf/cribrum.py does not exist in engine; no code to absorb"
+
+defect:
+  - "Source module irf/cribrum.py is declared but absent — only irf/parser.py and irf/query.py exist"
+  - "Isotope consumption logic (G1) has no implementation anywhere in the engine"
+  - "Lineage transfer (G2) has no implementation — no function merger or logic preservation code exists"
+  - "Contract references immune--score.yaml isotopes but no immune mechanism contracts exist yet"
+
 state: CALLING

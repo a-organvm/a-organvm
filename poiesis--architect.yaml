@@ -23,4 +23,15 @@ gate:
     condition: "Design git architecture for a-organvm/ instance root (Ref: IRF-SYS-036)"
     status: PENDING
 
+dna:
+  - "distillatio/probatio.py — language-aware packaging physics (LANGUAGE_PHYSICS dict with 7 patterns)"
+  - "detect_language() — auto-detection of Python src/flat, Next.js app/src, TypeScript, JVM, Rust, docs"
+  - "Palingenesis v3 spec (if present) — modular synthesis architecture design with 6 proofs"
+
+defect:
+  - "Source listed as 'palingenesis.md' but file existence unverified in engine root — may be a plan file, not code"
+  - "Python packaging pattern (G1) for {system}--{function} flat namespace has no implementation"
+  - "Git superproject architecture (G2) for a-organvm/ instance root has no implementation"
+  - "probatio.py measures existing depth but does not prescribe or generate new packaging structures"
+
 state: CALLING

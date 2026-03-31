@@ -50,4 +50,22 @@ gate:
     condition: "NRV-005 + GEN-004 — relay envelope and AGENTS routing surface form one handshake: the relay says what was done and what is next, AGENTS declares which agent is allowed to do it"
     status: PENDING
 
+dna:
+  - session lifecycle (FRAME→SHAPE→BUILD→PROVE) — the 4-phase workflow. 40+ MCP tool calls use this.
+  - oracle advisory system — pattern detection + rated suggestions. Unique to conductor.
+  - fleet router with weighted scoring (6 factors, W_HISTORICAL_SURVIVAL from contribution ledger)
+  - cross-verification (agent output vs handoff constraints)
+  - patchbay (signal routing between conductor components)
+  - contribution ledger Wave 1+2 (receipt, timecard, energy, scorecard, prompt patches)
+  - 653+ tests verified across conductor package
+
+defect:
+  - governance.py was isotope of engine governance — DISSOLVED (G1 PASS, commit a6a6c7d)
+  - constants.py::ORGANS hardcoded organ list — DISSOLVED (imports from engine organ_config)
+  - workqueue.py overlaps deadlines/irf modules in digestive--measure — PENDING dissolution (G4)
+  - 358 pending tasks in sprint ledger — accumulated debt, never triaged
+  - sprint_ledger.py prompt analysis features — scope creep, not core orchestration
+  - .venv corrupted (Python 3.11, no pytest) — fell back to system Python 3.14
+  - GRADUATED status was premature — significant pending gates remained
+
 state: CALLING

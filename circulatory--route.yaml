@@ -28,4 +28,15 @@ gate:
     condition: "universal-node-network unique parts (homeostasis → endocrine) absorbed, routing → here"
     status: PENDING
 
+dna:
+  - dispatch/ module — event payload validation, routing, cascade logic
+  - seed/ module — seed.yaml discovery, reader, produces/consumes graph builder
+  - network/ module — cross-repo dependency tracing, signal edge computation
+  - signal-graph.yaml generation from actual code analysis (seed/signals.py)
+
+defect:
+  - universal-node-network homeostasis logic → belongs in endocrine--regulate, not here
+  - orchestration-start-here/scripts/calculate-metrics.py → isotope of engine metrics (digestive--measure owns this)
+  - seed discovery scans workspace on every call — no caching, slow on 128 repos
+
 state: CALLING

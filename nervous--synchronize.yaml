@@ -23,4 +23,14 @@ gate:
     condition: "Persist pipeline-manifest.json with last_run_at and stages_completed (Ref: IRF-MON-005)"
     status: PENDING
 
+dna:
+  - "INST-INDEX-RERUM-FACIENDARUM.md — 1,408-line universal work registry, machine-parseable markdown tables"
+  - "IRF parser identifies DONE-ID collision data — completed items use DONE-NNN format, detectable via parse_irf()"
+  - "irf_stats() computes completion rates, priority distribution, domain breakdown — foundation for sync validation"
+
+defect:
+  - "No 'organvm irf complete' CLI command exists — atomic DONE-S{session}-{id} generation is unimplemented"
+  - "No pipeline-manifest.json persistence exists — last_run_at and stages_completed tracking is unimplemented"
+  - "DONE-ID collision detection is theoretically parseable but no deduplication or uniqueness enforcement exists"
+
 state: CALLING

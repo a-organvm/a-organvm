@@ -23,4 +23,16 @@ gate:
     condition: "Repoint legacy IRF-IDs to new naming-law compliant identifiers while preserving provenance"
     status: PENDING
 
+dna:
+  - "distillatio/probatio.py — depth analysis with language-aware physics (Python src/flat, Next.js, TS, JVM, docs)"
+  - "DepthReport/DepthVerdict dataclasses — structural measurement with AT_FLOOR/COMPRESSIBLE/BLOATED verdicts"
+  - "Vendored directory exclusion — 16 patterns excluded from depth measurement (node_modules, .venv, etc.)"
+  - "Source file detection — extension-based filtering for .py/.ts/.tsx/.js/.jsx/.rs/.go/.kt"
+
+defect:
+  - "Source module irf/distillatio.py does not exist — only distillatio/probatio.py exists (different module)"
+  - "MEM-003 Index Palingenesis has no implementation — probatio.py measures depth, not migration"
+  - "Selective absorption (G1) references digestive--filter-migration output which does not exist"
+  - "Lineage healing (G2) — no IRF-ID repointing or naming-law migration code exists"
+
 state: CALLING

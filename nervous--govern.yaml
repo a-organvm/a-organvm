@@ -54,4 +54,16 @@ gate:
     condition: "upward trace to A6 (organizational closure) stated"
     status: PENDING
 
+dna:
+  - governance/ — promotion state machine (LOCAL→CANDIDATE→PUBLIC_PROCESS→GRADUATED→ARCHIVED)
+  - governance/dependency_graph.py — unidirectional flow enforcement (I→II→III)
+  - governance/audit.py — blast-radius impact analysis
+  - coordination/ — multi-agent claims registry (punch-in/out), tool checkout line
+  - governance-rules.json — codified dependency rules + promotion constraints
+
+defect:
+  - conductor/governance.py was isotope — MUST import from engine canonical
+  - tool-interaction-design conductor board duplicates a-organvm index (NRV-004/G1b)
+  - governance tests assume V1 organ structure — may need updating for V2
+
 state: CALLING

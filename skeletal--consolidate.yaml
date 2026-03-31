@@ -26,4 +26,16 @@ gate:
     condition: "All 117 repos mapped to biological mechanisms"
     status: PENDING
 
+dna:
+  - IRF (Index Rerum Faciendarum) — 1,124 lines of universal work registry with IRF-prefixed IDs, priority/domain/status filtering
+  - Governance trilemma declaration — formal recognition that speed/quality/scope cannot all be maximized simultaneously
+  - Syntactic-semantic boundary governance — principled distinction between naming rules and meaning rules
+  - Grounded in constitutional corpus (praxis-perpetua governance docs) — not invented but derived from operational experience
+
+defect:
+  - IRF is markdown (1,124 lines), not structured data — querying requires parsing markdown rather than reading JSON/YAML
+  - No code in this contract's sources — skeletal consolidation has no executable component, only documents
+  - G2 (universal namespace — 117 repos mapped to biological mechanisms) is a massive manual classification task with no automation
+  - Governance docs (2,400 lines) are declarations, not enforcement — the skeleton defines law but has no muscles to enforce it
+
 state: CALLING

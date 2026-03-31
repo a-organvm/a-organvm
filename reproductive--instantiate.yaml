@@ -24,4 +24,14 @@ gate:
     condition: "Offspring root hash matches SEED.md recorded lineage"
     status: PENDING
 
+dna:
+  - "assessment pending — source directory reproductive/ does not exist in engine; no code to absorb"
+
+defect:
+  - "Source directory src/organvm_engine/reproductive/ is declared but absent — directory does not exist"
+  - "Contract claims 800 lines of von Neumann constructor code — zero lines exist"
+  - "Genome-only transmission (G1) has no implementation — no grammar/phenotype separation logic"
+  - "Integrity hash verification (G2) against SEED.md lineage has no implementation"
+  - "The entire reproductive mechanism is speculative scaffolding with no code behind it"
+
 state: CALLING

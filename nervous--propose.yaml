@@ -36,4 +36,16 @@ gate:
     condition: "When enactment is underspecified, the inbox emits post-derivation context deficits as explicit questions instead of dropping the proposal or pretending closure"
     status: PENDING
 
+dna:
+  - "inquiry-log.yaml — structured commission tracking with id/title/tier/faculty/status/needs/evidence (2+ active commissions)"
+  - "INST-INDEX-RERUM-FACIENDARUM.md — 1,408-line universal work registry with IRF-prefixed items, priority, domain, status"
+  - "SPEC-008 Evolution & Migration Law — formal impact dispositions: Compatible / Requires update / Unaffected"
+  - "IRF parser + query (engine) — typed parsing of the work registry into filterable IRFItem objects (tested)"
+
+defect:
+  - "No proposal inbox exists — inquiry-log.yaml tracks commissions but has no submission intake mechanism"
+  - "SPEC-008 dispositions exist as spec text but no automated impact assessment code implements them"
+  - "Shard extraction (G3) is pure design — no code emits reusable amendment/implication/doctrine fragments"
+  - "Context deficit output (G4) — no mechanism detects underspecification or emits explicit questions"
+
 state: CALLING
