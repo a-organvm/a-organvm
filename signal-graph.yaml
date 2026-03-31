@@ -1,0 +1,44 @@
+# signal-graph.yaml — the organism's wiring diagram
+#
+# Created with the FIRST function (SEED §II, Step 5).
+# Python naming convention (GEN-002): canonical '--' maps to '_' in .py filenames.
+#   skeletal--define → skeletal_define.py
+
+signal_types:
+  QUERY:
+    description: "a request for specific structural information"
+    discovered_by: skeletal--define
+
+  KNOWLEDGE:
+    description: "structured metadata about the organism's composition"
+    discovered_by: skeletal--define
+
+  TRACE:
+    description: "temporal observation recording what was found, what changed, what decayed"
+    discovered_by: skeletal--define
+
+functions:
+  skeletal--define:
+    inputs: [QUERY]
+    outputs: [KNOWLEDGE, TRACE]
+    mechanism: skeletal
+    temporal_mode: on-demand
+    ontological_type: Capability
+    traceability:
+      upward: "A1 + A3 + A4: the organism has no way to read its own structure or observe its change over time"
+      downward: "mechanism metadata dicts (KNOWLEDGE) + timestamped observation snapshots (TRACE) persisted to observations.jsonl"
+
+edges:
+  dependency: []
+  information: []
+  governance: []
+  evolution: []
+
+products: {}
+
+boundary_signals:
+  - name: pyyaml
+    type: EXTERNAL
+    source: "PyPI: pyyaml"
+    direction: inbound
+    consumed_by: skeletal--define

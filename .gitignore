@@ -15,6 +15,10 @@ coverage/
 .DS_Store
 Thumbs.db
 
+# Temporal artifacts (invocation output, not source)
+observations.jsonl
+scope-*.svg
+
 # Environment (secrets live in 1Password, not files)
 .env
 .env.*

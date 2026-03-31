@@ -1,0 +1,26 @@
+# Execution substrate declaration (CHECK 17).
+# The organism is not a distributable package. This file configures tools.
+#
+# GEN-002: canonical names use -- (double hyphen): skeletal--define
+#          Python filenames use _ (single underscore): skeletal_define.py
+#          The mapping is 1:1 and bidirectional.
+
+[project]
+name = "a-organvm"
+version = "0.0.1"
+requires-python = ">=3.11"
+dependencies = ["pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[tool.pytest.ini_options]
+# D=1: tests are siblings in the flat namespace, not nested
+testpaths = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
