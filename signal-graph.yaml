@@ -3,6 +3,7 @@
 # Created with the FIRST function (SEED §II, Step 5).
 # Python naming convention (GEN-002): canonical '--' maps to '_' in .py filenames.
 #   skeletal--define → skeletal_define.py
+#   circulatory--route → circulatory_route.py
 
 signal_types:
   QUERY:
@@ -17,6 +18,14 @@ signal_types:
     description: "temporal observation recording what was found, what changed, what decayed"
     discovered_by: skeletal--define
 
+  CONTRACT:
+    description: "a declared behavioral agreement between organism functions — gate contracts, signal signatures, formation pledges"
+    discovered_by: circulatory--route
+
+  STATE:
+    description: "the current configuration of the organism's elements at a point in time — routing tables, connection maps, defect inventories"
+    discovered_by: circulatory--route
+
 functions:
   skeletal--define:
     inputs: [QUERY]
@@ -28,9 +37,24 @@ functions:
       upward: "A1 + A3 + A4: the organism has no way to read its own structure or observe its change over time"
       downward: "mechanism metadata dicts (KNOWLEDGE) + timestamped observation snapshots (TRACE) persisted to observations.jsonl"
 
+  circulatory--route:
+    inputs: [CONTRACT, STATE, TRACE]
+    outputs: [TRACE, CONTRACT, STATE]
+    mechanism: circulatory
+    temporal_mode: on-demand
+    ontological_type: Capability
+    traceability:
+      upward: "A2 + A3: the organism can read its structure (skeletal) but has no way to compute what flows between its parts, what could flow, or what is broken"
+      downward: "routing tables (STATE) + signal attraction candidates (CONTRACT) + defect inventories (STATE) + routing snapshots persisted to routes.jsonl (TRACE)"
+
 edges:
   dependency: []
-  information: []
+  information:
+    - from: skeletal--define
+      to: circulatory--route
+      signal: KNOWLEDGE
+      direction: feedfront
+      rationale: "the router reads the structure that the skeleton defines — signal-graph.yaml is KNOWLEDGE output consumed as routing input"
   governance: []
   evolution: []
 
@@ -42,3 +66,9 @@ boundary_signals:
     source: "PyPI: pyyaml"
     direction: inbound
     consumed_by: skeletal--define
+
+  - name: pyyaml
+    type: EXTERNAL
+    source: "PyPI: pyyaml"
+    direction: inbound
+    consumed_by: circulatory--route

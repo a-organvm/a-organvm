@@ -26,7 +26,7 @@ gate:
 dna:
   - 38 CLI subcommands across 24 modules (13,244 lines) — comprehensive system control surface
   - Git superproject management (reproduce, sync, status, drift detection) — tested, 830 lines
-  - Consistent dispatch pattern: argparse tree with {(command, subcommand): handler} mapping
+  - "Consistent dispatch pattern: argparse tree with {(command, subcommand): handler} mapping"
   - Dry-run-by-default convention on destructive operations — safety built into the interface
   - Each CLI module exports cmd_* functions taking argparse.Namespace, returning int — uniform contract
 
