@@ -1,0 +1,26 @@
+# integumentary--render.yaml — formation gate contract
+
+identity:
+  name: integumentary--render
+  mechanism: integumentary
+  verb: render
+  signal_inputs: [ARCHIVE, AESTHETIC]
+  signal_outputs: [SYNTHESIS, REPORT]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/glyphs/]
+    note: "Implementation of SIG-005 — The Glyph Language"
+
+gate:
+  - id: G1
+    check: GLYPH_PARITY
+    condition: "Visual shadow matches the material density of the emitted signal (Ref: SIG-004)"
+    status: PENDING
+
+  - id: G2
+    check: EXPERIENTIAL_TRUTH
+    condition: "Renders internal complexity into perceptible visual archetypes (A10: self-rendering)"
+    status: PENDING
+
+state: CALLING

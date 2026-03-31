@@ -25,8 +25,14 @@ sources:
 gate:
   - id: G1
     check: ISOTOPES_RESOLVED
-    condition: "conductor/governance.py imports from engine governance, not reimplements"
+    condition: "NRV-001 — conductor/governance.py imports from engine governance, not reimplements; the duplicate governance surface is swallowed into the canonical engine"
     status: PENDING
+
+  - id: G1b
+    check: INDEX_CANONICALIZED
+    condition: "NRV-004 — the old taxis conductor board folds into the a-organvm index; planning/governance work is tracked in one canonical surface, not two parallel boards"
+    status: PENDING
+    note: "Same act as G1 on a different substrate: code duplicate swallowed by canonical governance, board duplicate swallowed by canonical index"
 
   - id: G2
     check: SIGNAL_DECLARED

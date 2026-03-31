@@ -1,0 +1,26 @@
+# digestive--filter-migration.yaml — formation gate contract
+
+identity:
+  name: digestive--filter-migration
+  mechanism: digestive
+  verb: filter-migration
+  signal_inputs: [SOURCE, TRACE]
+  signal_outputs: [KNOWLEDGE, STATE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/irf/cribrum.py]
+    note: "Implementation of SIG-001 — Liveness detection"
+
+gate:
+  - id: G1
+    check: LIVENESS_PROBATION
+    condition: "Cross-reference IRF items with active signal-graph.yaml edges to identify ghosts"
+    status: PENDING
+
+  - id: G2
+    check: GHOST_CLASSIFICATION
+    condition: "Identify items with no active input/output provenance as dead tissue (Ref: Law 3a)"
+    status: PENDING
+
+state: CALLING

@@ -1,0 +1,26 @@
+# theoria--define-omega.yaml — formation gate contract
+
+identity:
+  name: theoria--define-omega
+  mechanism: theoria
+  verb: define
+  signal_inputs: [AESTHETIC, KNOWLEDGE]
+  signal_outputs: [RULE, CONTRACT]
+
+sources:
+  - repo: meta-organvm/organvm-corpvs-testamentvm
+    modules: [INST-INDEX-RERUM-FACIENDARUM.md]
+    note: "Gap identified: no artistic output metric (Ref: IRF-INST-019)"
+
+gate:
+  - id: G1
+    check: ARTISTIC_CRITERION
+    condition: "Define 'Artistic Evidence' criterion for the omega scorecard"
+    status: PENDING
+
+  - id: G2
+    check: SENSORY_MAPPING
+    condition: "Map system operations to public sensory encounters"
+    status: PENDING
+
+state: CALLING

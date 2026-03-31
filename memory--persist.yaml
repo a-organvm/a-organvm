@@ -1,0 +1,27 @@
+# memory--persist.yaml — formation gate contract
+
+identity:
+  name: memory--persist
+  mechanism: memory
+  verb: persist
+  signal_inputs: [TRACE, STATE]
+  signal_outputs: [ARCHIVE, VALIDATION]
+
+sources:
+  - repo: 4444J99/domus-semper-palingenesis
+    modules: [scripts/sync-memory.sh]
+    lines: 150
+    note: "Legacy local-only sync"
+
+gate:
+  - id: G1
+    check: REMOTE_PARITY
+    condition: "JSONL session transcripts exist in private remote archive"
+    status: PENDING
+
+  - id: G2
+    check: ENCRYPTION_VERIFIED
+    condition: "Archive is AES-256 encrypted before transport"
+    status: PENDING
+
+state: CALLING

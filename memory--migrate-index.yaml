@@ -1,0 +1,26 @@
+# memory--migrate-index.yaml — formation gate contract
+
+identity:
+  name: memory--migrate-index
+  mechanism: memory
+  verb: migrate-index
+  signal_inputs: [KNOWLEDGE, STATE]
+  signal_outputs: [ARCHIVE, CONTRACT]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/irf/distillatio.py]
+    note: "Implementation of MEM-003 — Index Palingenesis"
+
+gate:
+  - id: G1
+    check: SELECTIVE_ABSORPTION
+    condition: "Read output from digestive--filter-migration to absorb only living items (SIG-001)"
+    status: PENDING
+
+  - id: G2
+    check: LINEAGE_HEALING
+    condition: "Repoint legacy IRF-IDs to new naming-law compliant identifiers while preserving provenance"
+    status: PENDING
+
+state: CALLING

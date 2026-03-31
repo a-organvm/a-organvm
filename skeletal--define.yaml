@@ -32,7 +32,7 @@ gate:
 
   - id: G3
     check: TESTS_PASS
-    condition: "registry + ontologia + schema tests pass"
+    condition: "registry + ontologia + schema tests pass under the ratified GEN-002 package/import spine"
     status: PENDING
 
   - id: G4

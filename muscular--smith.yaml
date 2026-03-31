@@ -15,13 +15,23 @@ sources:
 
 gate:
   - id: G1
-    check: TESTS_PASS
-    condition: "agent-claude-smith test suite passes"
+    check: DISPATCH_CONSUMED
+    condition: "muscular--smith accepts NRV-003 dispatch packets from nervous--orchestrate as its ingress contract rather than inventing its own task envelope"
     status: PENDING
 
   - id: G2
+    check: ROOM_ISOLATION
+    condition: "MSC-004 — scoped rooms exist: cocoon-specific mounts, read-only canonical sources, and hidden unrelated work; scope validator enforces the boundary (GitHub #48)"
+    status: PENDING
+
+  - id: G3
     check: SIGNAL_DECLARED
     condition: "inputs (DIRECTIVE from nervous--orchestrate) and outputs (TRACE) declared"
+    status: PENDING
+
+  - id: G4
+    check: TESTS_PASS
+    condition: "agent-claude-smith test suite passes once dispatch envelope and room isolation are wired together"
     status: PENDING
 
 state: CALLING

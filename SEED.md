@@ -916,16 +916,54 @@ CHECK 20 — RESILIENCE
   manual intervention) is its own business. THAT it achieves it is required
   by A3 (persistence: the organism must not decay from a single failure).
   Activation: when |functions| ≥ 3.
+
+CHECK 21 — ISOTOPE PURITY
+  ∀ functions f, g: (mechanism(f) = mechanism(g) ∧ verb(f) = verb(g) ∧ 
+  signals(f) ≈ signals(g)) → f = g
+  Violation → Isotope detected. Two functions perform the same work on the 
+  same material. Apply metabolic test (Law 3a): consume the weaker.
+
+CHECK 22 — STRATUM COMPLIANCE
+  ∀ evolution events e: stratum(e) is declared ∧ rigor(e) ≥ required_rigor(stratum)
+  Violation → Stratum bypass. A structural or ontological change was applied 
+  with only state-level rigor. Revert and apply governed review (Law 6).
+
+CHECK 23 — SIGNAL STARVATION
+  ∀ functions f: ∀ s ∈ input(f): ∃ g: s ∈ output(g)
+  Violation → Signal starvation. A function hungers for a signal that no 
+  other function produces. Add the producer or remove the requirement.
+
+CHECK 24 — INCOMPATIBILITY VISIBILITY
+  Every automated verdict (VALIDATION/REPORT) must include an explicit 
+  scope statement listing unverified semantic properties.
+  Violation → Opaque verdict. The operator does not know what was NOT 
+  checked. Add a scope/limitations section to the output.
+
+CHECK 25 — TEMPORAL STAGING
+  Governance must validate the previous state using the current state, 
+  never the current state using itself (unless formally initialized).
+  Violation → Self-referential validation. The organism is assuming its 
+  own correctness before proof.
+
+CHECK 26 — DESIGN PHASE COVERAGE
+  ∀ mechanisms: verify coverage across four phases: Naming, Structuring, 
+  Computing, and Reflecting.
+  Violation → Phase gap. A mechanism exists but has no way to reflect on 
+  its own computation or has no formal structure.
 ```
 
 Checks 1–17 verify STRUCTURE (is the organism correctly wired?).
-Checks 18–20 verify SIGNAL FLOW (does current actually move through the wires?).
+Checks 18–26 verify SIGNAL FLOW, METABOLISM, and SELF-AWARENESS.
 
 The testing hierarchy:
   CHECK 16 — the bulb (does each function work alone?)
   CHECK 18 — the strand (does signal flow between connected functions?)
   CHECK 19 — the tree (does the full cycle complete?)
   CHECK 20 — the fuse (does one blown bulb leave the rest lit?)
+  CHECK 21 — the isotope (is the organism lean?)
+  CHECK 23 — the hunger (is the organism fed?)
+  CHECK 24 — the mask (is the organism honest about its limits?)
+  CHECK 26 — the mirror (can the organism see its own growth phases?)
 
 If all checks pass, the organism is structurally healthy AND operationally alive.
 If any check fails, the check identifies the defect and the axiom it

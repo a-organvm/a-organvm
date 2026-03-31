@@ -26,8 +26,8 @@ gate:
     evidence: "635 passed, 1 skipped in 516.49s"
 
   - id: G2
-    check: SIGNAL_DECLARED
-    condition: "DIRECTIVE signal type defined — conductor emits directives that no other formation does"
+    check: DISPATCH_PACKET
+    condition: "NRV-003 — conductor emits a scoped dispatch packet: target cocoon, task boundary, required room shape, mounted repos, canonical read-only sources, and verification policy (GitHub #49)"
     status: PENDING
 
   - id: G3
@@ -38,6 +38,16 @@ gate:
   - id: G4
     check: WORKQUEUE_MERGED
     condition: "workqueue.py merged with digestive--measure (overlaps deadlines/irf)"
+    status: PENDING
+
+  - id: G5
+    check: ROOM_INTERFACE_DECLARED
+    condition: "dispatch contract is stable enough for MSC-004 isolation to consume — the conductor tells the room what kind of worker enters before the room is built around that worker"
+    status: PENDING
+
+  - id: G6
+    check: HANDOFF_HANDSHAKE
+    condition: "NRV-005 + GEN-004 — relay envelope and AGENTS routing surface form one handshake: the relay says what was done and what is next, AGENTS declares which agent is allowed to do it"
     status: PENDING
 
 state: CALLING

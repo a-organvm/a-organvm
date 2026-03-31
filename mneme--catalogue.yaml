@@ -1,0 +1,31 @@
+# mneme--catalogue.yaml — formation gate contract
+
+identity:
+  name: mneme--catalogue
+  mechanism: memory
+  verb: catalogue
+  signal_inputs: [KNOWLEDGE, SOURCE, TRACE]
+  signal_outputs: [KNOWLEDGE, STATE]
+
+sources:
+  - repo: meta-organvm/organvm-corpvs-testamentvm
+    modules: [INST-INDEX-LOCORUM.md]
+    note: "Primary location index"
+
+gate:
+  - id: G1
+    check: LOCORUM_SYNC
+    condition: "Build INST-INDEX-LOCORUM.md — canonical map of all repos, directories, and infrastructure (Ref: IRF-IDX-001)"
+    status: PENDING
+
+  - id: G2
+    check: NOMINUM_SYNC
+    condition: "Build INST-INDEX-NOMINUM.md — registry of all 8 mechanisms and 117 named entities (Ref: IRF-IDX-002)"
+    status: PENDING
+
+  - id: G3
+    check: RERUM_SYNC
+    condition: "Build INST-INDEX-RERUM.md — ontological inventory of every artifact, its type, and state (Ref: IRF-IDX-003)"
+    status: PENDING
+
+state: CALLING

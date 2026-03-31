@@ -29,8 +29,12 @@ gate:
 
   - id: G2
     check: PORTAL_REGISTRY_CANONICAL
-    condition: "stakeholder-portal TypeScript registry parser imports from canonical source or uses MCP"
-    status: PENDING
+    condition: "stakeholder-portal TypeScript organ bridge created (organs.ts), organ-colors.ts re-exports canonical, file-reader.ts uses getOrganDir(), testament.ts keys normalized"
+    status: PASS
+    resolved: 2026-03-30
+    commit: "cc400a4 + 29768c9"
+    evidence: "265 tests pass, lint clean, typecheck clean"
+    agent: "minimax-m2.5-free (OpenCode — scoped to stakeholder-portal only)"
 
   - id: G3
     check: TESTS_PASS

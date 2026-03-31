@@ -1,0 +1,31 @@
+# circulatory--relay.yaml — formation gate contract
+
+identity:
+  name: circulatory--relay
+  mechanism: circulatory
+  verb: relay
+  signal_inputs: [TRACE, STATE]
+  signal_outputs: [TRACE, VALIDATION]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/pulse/nerve.py]
+    note: "Asynchronous signal relay implementation"
+
+gate:
+  - id: G1
+    check: ASYNC_DISPATCH
+    condition: "Ensures signal dispatch does not block producing function execution"
+    status: PENDING
+
+  - id: G2
+    check: LINEAGE_PRESERVATION
+    condition: "Relayed signals maintain their provenance traces across asynchronous boundaries"
+    status: PENDING
+
+  - id: G3
+    check: HANDSHAKE_ENVELOPE
+    condition: "NRV-005 + GEN-004 — the relay surface and AGENTS routing surface complete one handoff handshake: RELAY says what was completed, what is next, and the active boundary; AGENTS says which agent is allowed to take that next work"
+    status: PENDING
+
+state: CALLING

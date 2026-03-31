@@ -1,0 +1,26 @@
+# integumentary--report.yaml — formation gate contract
+
+identity:
+  name: integumentary--report
+  mechanism: integumentary
+  verb: report
+  signal_inputs: [SOURCE, KNOWLEDGE, STATE]
+  signal_outputs: [SYNTHESIS, TRACE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/reporting/stranger.py]
+    note: "Context-free code audit reporting engine"
+
+gate:
+  - id: G1
+    check: CONTEXT_FREE_LEGIBILITY
+    condition: "Generate stranger-report-meta.md for all 117 repos without reading SEED or governance"
+    status: PENDING
+
+  - id: G2
+    check: SURFACE_ISOMORPHISMS
+    condition: "Identify structural mirrors across organs (e.g., sensing vs sensors) (Ref: IRF-MON-006)"
+    status: PENDING
+
+state: CALLING

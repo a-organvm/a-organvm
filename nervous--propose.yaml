@@ -1,0 +1,39 @@
+# nervous--propose.yaml — proposal-order formation gate contract
+
+identity:
+  name: nervous--propose
+  mechanism: nervous
+  verb: propose
+  signal_inputs: [RULE, KNOWLEDGE, TRACE, QUESTION]
+  signal_outputs: [RULE, CONTRACT, TRACE, QUESTION]
+
+sources:
+  - repo: meta-organvm/praxis-perpetua
+    modules: [commissions/inquiry-log.yaml]
+    note: "Existing inbox for commissioned thought and unresolved needs"
+  - repo: meta-organvm/organvm-corpvs-testamentvm
+    modules: [INST-INDEX-RERUM-FACIENDARUM.md, specs/SPEC-008.md]
+    note: "Universal work registry + constrained-extension impact assessment law"
+
+gate:
+  - id: G1
+    check: WHOLE_PACKET_INTAKE
+    condition: "Proposal inbox accepts the whole submission packet: raw suggestion, origin context, implicated rules/laws, and intended object of change (Ref: IRF-SYS-039)"
+    status: PENDING
+
+  - id: G2
+    check: IMPACT_DISPOSITIONS
+    condition: "Each proposal derives an impact assessment over downstream artifacts using SPEC-008 dispositions: Compatible / Requires update / Unaffected"
+    status: PENDING
+
+  - id: G3
+    check: SHARD_EXTRACTION
+    condition: "Inbox emits reusable shards: local amendment, cross-cocoon implication, index update, and doctrine fragment that may apply elsewhere"
+    status: PENDING
+
+  - id: G4
+    check: CONTEXT_DEFICIT_OUTPUT
+    condition: "When enactment is underspecified, the inbox emits post-derivation context deficits as explicit questions instead of dropping the proposal or pretending closure"
+    status: PENDING
+
+state: CALLING

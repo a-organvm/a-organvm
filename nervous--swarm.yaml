@@ -1,0 +1,27 @@
+# nervous--swarm.yaml — formation gate contract
+
+identity:
+  name: nervous--swarm
+  mechanism: nervous
+  verb: swarm
+  signal_inputs: [TRACE, STATE, KNOWLEDGE]
+  signal_outputs: [STATE, SYNTHESIS]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/swarm/]
+    lines: 1200
+    note: "Boids-inspired signal affinity computation"
+
+gate:
+  - id: G1
+    check: AFFINITY_MAPPING
+    condition: "Computes signal proximity between functions across all edge families"
+    status: PENDING
+
+  - id: G2
+    check: CLUSTER_DISCOVERY
+    condition: "Detects emergent functional clusters not yet declared as mechanisms"
+    status: PENDING
+
+state: CALLING

@@ -1,0 +1,26 @@
+# poiesis--architect.yaml — formation gate contract
+
+identity:
+  name: poiesis--architect
+  mechanism: poiesis
+  verb: architect
+  signal_inputs: [CONTRACT, RULE]
+  signal_outputs: [STATE, TRACE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [palingenesis.md]
+    note: "Modular synthesis v3 spec"
+
+gate:
+  - id: G1
+    check: PYTHON_PACKAGING
+    condition: "Design Python import patterns for {system}--{function} flat namespace (Ref: IRF-SYS-035)"
+    status: PENDING
+
+  - id: G2
+    check: GIT_SUPERPROJECT
+    condition: "Design git architecture for a-organvm/ instance root (Ref: IRF-SYS-036)"
+    status: PENDING
+
+state: CALLING

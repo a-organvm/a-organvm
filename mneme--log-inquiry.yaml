@@ -1,0 +1,26 @@
+# mneme--log-inquiry.yaml — formation gate contract
+
+identity:
+  name: mneme--log-inquiry
+  mechanism: mneme
+  verb: log
+  signal_inputs: [QUESTION, KNOWLEDGE, TRACE]
+  signal_outputs: [KNOWLEDGE, STATE]
+
+sources:
+  - repo: meta-organvm/praxis-perpetua
+    modules: [commissions/inquiry-log.yaml]
+    note: "Pattern for SGO research commissions"
+
+gate:
+  - id: G1
+    check: INSTITUTIONAL_FACULTY
+    condition: "Extend inquiry-log.yaml with 'institutional' faculty for strategy/IP decisions (Ref: IRF-INST-021)"
+    status: PENDING
+
+  - id: G2
+    check: INITIAL_ENTRY
+    condition: "Log S-CC-review ('Does CC fund what we make?') as the first institutional entry"
+    status: PENDING
+
+state: CALLING

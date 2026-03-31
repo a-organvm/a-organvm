@@ -1,0 +1,26 @@
+# nervous--synchronize.yaml — formation gate contract
+
+identity:
+  name: nervous--synchronize
+  mechanism: nervous
+  verb: synchronize
+  signal_inputs: [STATE, TRACE]
+  signal_outputs: [STATE, VALIDATION]
+
+sources:
+  - repo: meta-organvm/organvm-corpvs-testamentvm
+    modules: [INST-INDEX-RERUM-FACIENDARUM.md]
+    note: "Source of DONE-ID collision data"
+
+gate:
+  - id: G1
+    check: ATOMIC_ID_GEN
+    condition: "Implement organvm irf complete CLI to enforce unique DONE-S{session}-{id} mapping (Ref: IRF-MON-008)"
+    status: PENDING
+
+  - id: G2
+    check: PIPELINE_MANIFEST
+    condition: "Persist pipeline-manifest.json with last_run_at and stages_completed (Ref: IRF-MON-005)"
+    status: PENDING
+
+state: CALLING

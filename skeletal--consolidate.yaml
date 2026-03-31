@@ -1,0 +1,29 @@
+# skeletal--consolidate.yaml — formation gate contract
+
+identity:
+  name: skeletal--consolidate
+  mechanism: skeletal
+  verb: consolidate
+  signal_inputs: [KNOWLEDGE, RULE]
+  signal_outputs: [CONTRACT, TRACE]
+
+sources:
+  - repo: meta-organvm/organvm-corpvs-testamentvm
+    modules: [INST-INDEX-RERUM-FACIENDARUM.md]
+    lines: 1124
+  - repo: meta-organvm/praxis-perpetua
+    modules: [governance/2026-03-21-governance-trilemma-declaration.md, governance/2026-03-21-syntactic-semantic-boundary.md]
+    lines: 2400
+
+gate:
+  - id: G1
+    check: NO_DRIFT
+    condition: "SEED.md Health Checks match IRF governance items"
+    status: PENDING
+
+  - id: G2
+    check: UNIVERSAL_NAMESPACE
+    condition: "All 117 repos mapped to biological mechanisms"
+    status: PENDING
+
+state: CALLING

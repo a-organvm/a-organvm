@@ -1,0 +1,27 @@
+# excretory--filter.yaml — formation gate contract
+
+identity:
+  name: excretory--filter
+  mechanism: excretory
+  verb: filter
+  signal_inputs: [STATE, VALIDATION, REPORT]
+  signal_outputs: [WASTE, TRACE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/irf/parser.py]
+    lines: 370
+    note: "Extracting glomerular filtration logic"
+
+gate:
+  - id: G1
+    check: DEAD_SIGNAL_DETECTION
+    condition: "Identifies inputs with no producers (Starvation) and outputs with no consumers (Waste)"
+    status: PENDING
+
+  - id: G2
+    check: ISOTOPE_RESOLUTION
+    condition: "Implements metabolic test from Law 3a to identify merge candidates"
+    status: PENDING
+
+state: CALLING

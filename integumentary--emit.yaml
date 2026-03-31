@@ -1,0 +1,26 @@
+# integumentary--emit.yaml — formation gate contract
+
+identity:
+  name: integumentary--emit
+  mechanism: integumentary
+  verb: emit
+  signal_inputs: [STATE, TRACE, SYNTHESIS]
+  signal_outputs: [KNOWLEDGE, ARCHIVE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/emission/]
+    note: "Implementation of SIG-004 — Signal materialization"
+
+gate:
+  - id: G1
+    check: DENSITY_RECORDING
+    condition: "Signal metadata includes token count, provenance, and entropy delta"
+    status: PENDING
+
+  - id: G2
+    check: SHADOW_LINK
+    condition: "Every emission generates a unique identifier for glyph rendering (SIG-005)"
+    status: PENDING
+
+state: CALLING

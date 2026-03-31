@@ -1,0 +1,27 @@
+# reproductive--instantiate.yaml — formation gate contract
+
+identity:
+  name: reproductive--instantiate
+  mechanism: reproductive
+  verb: instantiate
+  signal_inputs: [CONTRACT, RULE]
+  signal_outputs: [MIGRATION, TRACE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [src/organvm_engine/reproductive/]
+    lines: 800
+    note: "von Neumann constructor implementation"
+
+gate:
+  - id: G1
+    check: GENOME_ONLY
+    condition: "Ensures only constitutional grammar is transmitted, not phenotype (formations/memory)"
+    status: PENDING
+
+  - id: G2
+    check: INTEGRITY_HASH
+    condition: "Offspring root hash matches SEED.md recorded lineage"
+    status: PENDING
+
+state: CALLING
