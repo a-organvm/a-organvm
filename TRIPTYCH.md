@@ -29,13 +29,15 @@ The SEED contains gate contracts. Each contract CALLS code from the BODY or the 
 - Wave 1+2 of contribution ledger shipped (receipt, timecard, energy, scorecard, prompt patches)
 
 ### THE SEED (a-organvm)
-- 1 function exists: `skeletal_define.py` (510 lines, 22 tests)
-- 36 gate contracts in state CALLING
+- 2 functions exist: `skeletal_define.py` (510 lines, 22 tests) + `circulatory_route.py` (255 lines, 27 tests)
+- 35 gate contracts in state CALLING
 - 97 gates total (10 lit / 87 dim)
 - 15 mechanisms classified
-- 3 observations recorded
-- Second function selected: `circulatory--route`
-- signal-graph edges: empty (activates at function 2)
+- 5 observations recorded
+- 5 signal types: QUERY, KNOWLEDGE, TRACE, CONTRACT, STATE
+- 1 INFORMATION edge: skeletal--define → circulatory--route
+- 453 signal attractions discovered, 3 structural defects detected
+- Third function: TBD (must close CHECK 19 cycle)
 
 ## The Cocoon Map
 
