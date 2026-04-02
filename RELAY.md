@@ -1,69 +1,92 @@
-# RELAY.md — S48 (philosophical grounding + navigation surface)
+# RELAY.md — S54 (archaeology + full audit)
 
 ## What was done
 
-No new functions built. This session was FRAME-phase discourse: grounding the organism's philosophy, naming its operational principles, and creating the navigation surface for future sessions.
+Multi-agent session: Codex (archaeology/research) + Claude (audit/close).
 
-| Artifact | Lines | Purpose |
-|----------|-------|---------|
-| `CLAUDE.md` | 107 | Navigation surface — commands, architecture, naming conventions, session protocol, constraints. Committed. |
+### Codex archaeology (sibling worker)
 
-### Principles grounded (captured in Claude Code memory)
+Read-only research pass over the meta-organvm GitHub org surface, local organism state, and predecessor documents. Key findings:
 
-| Principle | Memory file | Core statement |
-|-----------|------------|----------------|
-| Autopoietic charter | `user_philosophy.md` | The organism is self-creating; biological isomorphism is convergence target, not metaphor. |
-| Absorption purity | `feedback_absorption_purity.md` | Only bare intent crosses from predecessor to organism. No names, no implementations, no suggestions. Firewall is absolute. |
-| Predecessor lineage | `project_predecessor_lineage.md` | 8 prior-art repos identified as philosophical ancestors (scale-threshold-emergence, sema-metra, atomic-substrata, UNN, alchemical-synthesizer, etc.). |
-| Two portals | `reference_two_portals.md` | Portal 1: ORGAN-REPORT.md (post-mortem). Portal 2: meta-organvm/post-flood/ (genesis chamber with unembodied theories). |
-| Session metabolism | `feedback_session_metabolism.md` | 5 output types: ingestion fiber, parry transcripts, mid-creative insights, waste, new knowledge. All butchered in place. |
-| Gate superposition | `project_gate_superposition.md` | Gate contracts hold three simultaneous forms: identity (ideal), defect (degraded), state (rendered). Passage = collapse. |
-| Three rendering languages | `project_three_rendering_languages.md` | Logic (YAML/gates), Math (JSONL/measurements), Biology (Python/functions). Same referent, three simultaneous languages. |
+- Confirmed lineage: post-flood raw corpus → constitutional genome → BODY (meta-organvm) → SEED (a-organvm)
+- Diagnosed system as **documentation-prima**: strong at self-description, weak at temporal endurance
+- Ingest→digest→suggest chain is uneven: only `respiratory--ingest` converging; `digestive--measure` must split; `nervous--propose` has no intake mechanism
+- Memory preserves 400K+ words but cannot retrieve or operationalize
+- Temporal maturity sequence proposed: event spine → retrieval memory → proposal inbox → impact dispositions → external feedback loops
 
-### Session waste (what was missed)
+### Claude audit (this agent)
 
-- Did NOT run `skeletal_define.py` or `circulatory_route.py` at session start (violated S47 relay directive)
-- Initially identified only one portal; required correction to see post-flood/
-- Utopia/dystopia framework not connected to defect/identity poles until operator forced the connection
+Full session-close audit with 10-index check. Ran all 3 functions + all 82 tests. Findings:
+
+| Finding | Status |
+|---------|--------|
+| IRF-AOR-001 (third function) was DONE but not marked | **Marked DONE** |
+| IRF-AOR-004 (QUERY starvation) was DONE but not marked | **Marked DONE** |
+| IRF-AOR-009 ID collision (two items share same ID) | **Logged as IRF-AOR-018** |
+| RELAY.md was 4+ sessions stale (S48 → post-S52) | **Fixed (this file)** |
+| CLT-001 not registered in concordance | **Logged as IRF-AOR-019** |
+| Memory updated with current vitals | **Done** |
+| 13 active vacuums catalogued | **See IRF-AOR-002/003/005/007/009/010-017** |
+
+### Session waste
+
+- Codex session was pure research — no files written, no persistent output beyond this transcript
+- The Codex archaeology findings exist only in conversation context, not in any committed file
 
 ### Organism vitals at close
 
 ```
-No change from S47 — no functions added, no gates advanced, no signals wired.
-2 functions · 765 lines of living code
-49 tests passing (22 skeletal + 27 circulatory)
-5 signal types · 2 routes · 453 attractions · 3 defects
-15 mechanisms · 97 gates (10 lit / 87 dim)
+3 functions · ~1,020 lines of living code
+82 tests passing (22 skeletal + 27 circulatory + 33 cultvra)
+5 signal types (graph) · 18 signal types (contracts)
+8 routes · 482 attractions · 2 defects (TEACHING dead, AESTHETIC starved)
+16 mechanisms · 101 gates (10 lit / 91 dim)
+72% documentation coverage · 16 undocumented mechanisms · 1 stale contract
+4 information edges · 1 signal cycle (skeletal→circulatory→cultvra→skeletal)
+73 GitHub issues (70 open, 3 closed)
 ```
+
+### What advanced since S48
+
+| Session | Commit | What |
+|---------|--------|------|
+| S52 | `0f9aba3` | Third function (`cultvra_logos.py`) + `cultvra--logos.yaml` + `cultvra--logos.md` + `test_cultvra_logos.py`. CHECK 19 cycle closable. QUERY starvation resolved. Mechanism count 15→16. |
+| S54 | (this) | Full audit. RELAY bridged. IRF completions logged. 2 stale items marked DONE. |
 
 ## What is next
 
 **Immediate** (next session):
-1. Run both functions at session start — **do not skip this again**:
-   - `python3 skeletal_define.py` (observation)
-   - `python3 circulatory_route.py` (routing snapshot)
-2. **IRF-AOR-001** (P1): Select and build the **third function** — closes CHECK 19.
-   - Derive from the most acute capability gap, not cycle-closure convenience
-   - Candidates per S47 analysis: immune--verify, nervous--propose
-   - The organism cannot govern itself (no judgment organ). QUERY is starved (no internal questioner). These point to the same vacuum.
-3. **IRF-AOR-007** (P2): Create GitHub issues for S47 embodiment work on project board.
-4. Address 3 structural defects: TEACHING (dead), AESTHETIC (starved), QUERY (starved).
+1. Run all three functions at session start:
+   - `python3 skeletal_define.py`
+   - `python3 circulatory_route.py`
+   - `python3 cultvra_logos.py`
+2. **CHECK 19 formal closure** — ≥3 functions exist. SEED.md is now unlockable for first review cycle.
+3. **IRF-AOR-009 (P0)**: Memory chezmoi tracking — **HUMAN ACTION NEEDED**. 13 files, local only. `chezmoi add ~/.claude/projects/-Users-4jp-Workspace-a-organvm/`
+4. **IRF-AOR-002 / AOR-003 (P2)**: Address remaining 2 structural defects (TEACHING dead, AESTHETIC starved).
 
-**Critical maintenance**:
-5. **VACUUM: a-organvm memory not tracked by chezmoi.** The `~/.claude/projects/-Users-4jp-Workspace-a-organvm/` directory has no entry in `domus-semper-palingenesis/private_dot_claude/projects/`. 7 memory files + MEMORY.md have no remote backup. If the machine dies, the session-continuity soul dies. **Human action needed**: add a-organvm memory to chezmoi tracking.
+**Temporal maturity chain** (Codex-identified, multi-session):
+5. Event spine → retrieval memory → proposal inbox → impact dispositions → external feedback loops. This is the path from documentation-prima to lived duration.
+
+**10-index debt** (from audit):
+6. Concordance: CLT-001 unregistered (IRF-AOR-019)
+7. Registry: a-organvm metadata stale (IRF-AOR-014)
+8. Seed contract: a-organvm has no seed.yaml (IRF-AOR-015)
+9. Omega: no a-organvm connection (IRF-AOR-011)
 
 **Do not**:
-- Add to SEED.md (still sealed until ≥3 functions)
+- Skip running all three functions at session start
+- Import predecessor formations — only bare intent crosses the firewall
 - Create gate contracts without matching issues
-- Skip the observations at session start
-- Import predecessor formations (names, API shapes, architectural patterns) — only bare intent crosses the firewall
+- Modify SEED.md without completing the CHECK 19 formal closure procedure first
 
 ## Read order
 
 1. `AGENTS.md` — who does what
 2. This file — what was done, what is next
-3. `SEED.md` — the genome (§II Procedure 1 for the third function)
-4. `signal-graph.yaml` — the wiring (2 functions, 1 edge)
-5. `circulatory_route.py` — run it: `python3 circulatory_route.py`
-6. `skeletal_define.py` — run it: `python3 skeletal_define.py`
-7. Claude Code memories — the philosophical grounding from S48
+3. `SEED.md` — the genome (CHECK 19 cycle now closable)
+4. `signal-graph.yaml` — the wiring (3 functions, 4 edges, 1 cycle)
+5. Run all three functions:
+   - `python3 skeletal_define.py`
+   - `python3 circulatory_route.py`
+   - `python3 cultvra_logos.py`
+6. Claude Code memories — philosophical grounding from S48 + state from S54
