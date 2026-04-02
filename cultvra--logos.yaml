@@ -1,0 +1,51 @@
+# cultvra--logos.yaml — formation gate contract
+
+identity:
+  name: cultvra--logos
+  mechanism: cultvra
+  verb: logos
+  signal_inputs: [KNOWLEDGE, STATE, TRACE]
+  signal_outputs: [QUERY, TRACE]
+
+sources:
+  - repo: a-organvm
+    modules: [signal-graph.yaml, skeletal_define.py, circulatory_route.py, "*--*.yaml"]
+    note: "Reads the organism's own structure as source material for documentation"
+  - repo: meta-organvm/organvm-corpvs-testamentvm
+    modules: [INST-INDEX-RERUM-FACIENDARUM.md]
+    note: "Work registry provides context for documentation state"
+
+gate:
+  - id: G1
+    check: READS_STRUCTURE
+    condition: "Function reads signal-graph.yaml and gate contracts to build documentation model"
+    status: PENDING
+
+  - id: G2
+    check: PRODUCES_DOCUMENTATION_STATE
+    condition: "Function outputs docs.jsonl with per-element documentation status (documented/stale/missing)"
+    status: PENDING
+
+  - id: G3
+    check: EMITS_QUERIES
+    condition: "Function produces QUERY signals identifying documentation gaps that feed back to skeletal"
+    status: PENDING
+
+  - id: G4
+    check: CYCLE_CLOSES
+    condition: "CHECK 19 passes — full signal cycle demonstrated end-to-end"
+    status: PENDING
+
+dna:
+  - "signal-graph.yaml reader — parse functions, edges, signal types into documentation model"
+  - "gate contract scanner — parse all *--*.yaml contracts into documentation inventory"
+  - "documentation state computer — compare existing docs against organism structure"
+  - "gap detector — identify undocumented, stale, or missing documentation"
+  - "QUERY emitter — output structural queries from documentation gaps"
+
+defect:
+  - "No prior documentation function exists — this is the first cultvra mechanism function"
+  - "No TEACHING or NARRATIVE signal type yet — function may discover new signal types"
+  - "cultvra has no biological analog — naming is self-derived, may need refinement"
+
+state: CALLING
