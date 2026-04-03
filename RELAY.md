@@ -1,37 +1,54 @@
-# RELAY.md — S54 (archaeology + full audit)
+# RELAY.md — S55 (verification audit + vacuum issuance)
 
 ## What was done
 
-Multi-agent session: Codex (archaeology/research) + Claude (audit/close).
+Verification-only session. No code written. Full 10-index audit with vacuum remediation.
 
-### Codex archaeology (sibling worker)
+### Verification pass
 
-Read-only research pass over the meta-organvm GitHub org surface, local organism state, and predecessor documents. Key findings:
+- Ran all 3 functions: output matches S54 exactly (no drift)
+- Ran all 82 tests: all pass (1.84s)
+- Read IRF (845 items, 20 domains), a-organvm section (15 active AOR items)
+- Read all 14 memory files: confirmed accurate modulo count discrepancy
 
-- Confirmed lineage: post-flood raw corpus → constitutional genome → BODY (meta-organvm) → SEED (a-organvm)
-- Diagnosed system as **documentation-prima**: strong at self-description, weak at temporal endurance
-- Ingest→digest→suggest chain is uneven: only `respiratory--ingest` converging; `digestive--measure` must split; `nervous--propose` has no intake mechanism
-- Memory preserves 400K+ words but cannot retrieve or operationalize
-- Temporal maturity sequence proposed: event spine → retrieval memory → proposal inbox → impact dispositions → external feedback loops
+### 10-index audit findings
 
-### Claude audit (this agent)
+| # | Index | Status | Finding |
+|---|-------|--------|---------|
+| 1 | IRF | OK | All AOR items present. Memory said 13 vacuums; actual is 15 (AOR-018/019 from S54 not in count) |
+| 2 | GitHub Issues | **FIXED** | 14 of 15 vacuum items lacked GH issues. Created #75-#88. All now tracked. |
+| 3 | Omega | N/A | No advancement |
+| 4 | Inquiry Log | N/A | No SGO work |
+| 5 | Testament | N/A | No significant event |
+| 6 | Concordance | N/A | No new IDs |
+| 7 | Registry | N/A | (AOR-014/#83 notes it IS stale) |
+| 8 | Seed contracts | N/A | (AOR-015/#84 notes a-organvm has no seed.yaml) |
+| 9 | CLAUDE.md | N/A | No architecture change |
+| 10 | Companion | N/A | Not built (AOR-016/#85) |
 
-Full session-close audit with 10-index check. Ran all 3 functions + all 82 tests. Findings:
+### Vacuum issuance (14 items)
 
-| Finding | Status |
-|---------|--------|
-| IRF-AOR-001 (third function) was DONE but not marked | **Marked DONE** |
-| IRF-AOR-004 (QUERY starvation) was DONE but not marked | **Marked DONE** |
-| IRF-AOR-009 ID collision (two items share same ID) | **Logged as IRF-AOR-018** |
-| RELAY.md was 4+ sessions stale (S48 → post-S52) | **Fixed (this file)** |
-| CLT-001 not registered in concordance | **Logged as IRF-AOR-019** |
-| Memory updated with current vitals | **Done** |
-| 13 active vacuums catalogued | **See IRF-AOR-002/003/005/007/009/010-017** |
+| IRF ID | GH Issue | Priority | Vacuum |
+|--------|----------|----------|--------|
+| AOR-002 | #75 | P2 | TEACHING dead signal |
+| AOR-003 | #76 | P2 | AESTHETIC starved signal |
+| AOR-005 | #77 | P2 | TRIPTYCH framing conflict |
+| AOR-007 | #78 | P2 | S47 board tracking |
+| AOR-010 | #79 | P2 | cultvra--logos.md role |
+| AOR-011 | #80 | P2 | Omega connection |
+| AOR-012 | #81 | P2 | Testament chain |
+| AOR-013 | #82 | P3 | Concordance principles |
+| AOR-014 | #83 | P2 | Registry stale |
+| AOR-015 | #84 | P2 | No seed.yaml |
+| AOR-016 | #85 | P3 | Companion indices |
+| AOR-017 | #86 | P3 | Inquiry log |
+| AOR-018 | #87 | P1 | Cultvra ontology |
+| AOR-019 | #88 | P2 | CLT-001 concordance |
+
+`vacuum` label created for organizational triage.
 
 ### Session waste
-
-- Codex session was pure research — no files written, no persistent output beyond this transcript
-- The Codex archaeology findings exist only in conversation context, not in any committed file
+None. All output is persistent (GH issues + this file + memory update).
 
 ### Organism vitals at close
 
@@ -42,42 +59,38 @@ Full session-close audit with 10-index check. Ran all 3 functions + all 82 tests
 8 routes · 482 attractions · 2 defects (TEACHING dead, AESTHETIC starved)
 16 mechanisms · 101 gates (10 lit / 91 dim)
 72% documentation coverage · 16 undocumented mechanisms · 1 stale contract
-4 information edges · 1 signal cycle (skeletal→circulatory→cultvra→skeletal)
-73 GitHub issues (70 open, 3 closed)
+4 information edges · 1 signal cycle (skeletal->circulatory->cultvra->skeletal)
+88 GitHub issues (84 open, 4 closed)
 ```
 
-### What advanced since S48
+### What advanced since S54
 
 | Session | Commit | What |
 |---------|--------|------|
-| S52 | `0f9aba3` | Third function (`cultvra_logos.py`) + `cultvra--logos.yaml` + `cultvra--logos.md` + `test_cultvra_logos.py`. CHECK 19 cycle closable. QUERY starvation resolved. Mechanism count 15→16. |
-| S54 | (this) | Full audit. RELAY bridged. IRF completions logged. 2 stale items marked DONE. |
+| S55 | (this) | Full audit. 14 vacuum GH issues created (#75-#88). Memory count fixed (13->15). `vacuum` label created. |
 
 ## What is next
 
 **Immediate** (next session):
-1. Run all three functions at session start:
-   - `python3 skeletal_define.py`
-   - `python3 circulatory_route.py`
-   - `python3 cultvra_logos.py`
-2. **CHECK 19 formal closure** — ≥3 functions exist. SEED.md is now unlockable for first review cycle.
-3. **IRF-AOR-009 (P0)**: Memory chezmoi tracking — **HUMAN ACTION NEEDED**. 13 files, local only. `chezmoi add ~/.claude/projects/-Users-4jp-Workspace-a-organvm/`
-4. **IRF-AOR-002 / AOR-003 (P2)**: Address remaining 2 structural defects (TEACHING dead, AESTHETIC starved).
+1. Run all three functions at session start
+2. **CHECK 19 formal closure** — still the structural unlock. >=3 functions exist. SEED.md is unlockable.
+3. **IRF-AOR-009 (P0)**: Memory chezmoi tracking — **HUMAN ACTION NEEDED**. `chezmoi add ~/.claude/projects/-Users-4jp-Workspace-a-organvm/`
+4. **AOR-018/#87 (P1)**: Cultvra ontology — define the Logos layer's meaning
+5. **AOR-002/#75 + AOR-003/#76 (P2)**: Resolve signal defects (TEACHING dead, AESTHETIC starved)
 
-**Temporal maturity chain** (Codex-identified, multi-session):
-5. Event spine → retrieval memory → proposal inbox → impact dispositions → external feedback loops. This is the path from documentation-prima to lived duration.
+**Temporal maturity chain** (multi-session):
+6. Event spine -> retrieval memory -> proposal inbox -> impact dispositions -> external feedback loops
 
-**10-index debt** (from audit):
-6. Concordance: CLT-001 unregistered (IRF-AOR-019)
-7. Registry: a-organvm metadata stale (IRF-AOR-014)
-8. Seed contract: a-organvm has no seed.yaml (IRF-AOR-015)
-9. Omega: no a-organvm connection (IRF-AOR-011)
+**10-index debt** (vacuum issues now tracked):
+7. AOR-019/#88: CLT-001 concordance registration
+8. AOR-014/#83: Registry metadata refresh
+9. AOR-015/#84: seed.yaml decision
 
 **Do not**:
 - Skip running all three functions at session start
 - Import predecessor formations — only bare intent crosses the firewall
 - Create gate contracts without matching issues
-- Modify SEED.md without completing the CHECK 19 formal closure procedure first
+- Modify SEED.md without completing CHECK 19 formal closure procedure first
 
 ## Read order
 
@@ -89,4 +102,4 @@ Full session-close audit with 10-index check. Ran all 3 functions + all 82 tests
    - `python3 skeletal_define.py`
    - `python3 circulatory_route.py`
    - `python3 cultvra_logos.py`
-6. Claude Code memories — philosophical grounding from S48 + state from S54
+6. Claude Code memories — philosophical grounding from S48 + state from S55
