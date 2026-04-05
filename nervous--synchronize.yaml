@@ -23,6 +23,11 @@ gate:
     condition: "Persist pipeline-manifest.json with last_run_at and stages_completed (Ref: IRF-MON-005)"
     status: PENDING
 
+  - id: G3
+    check: WRITE_COORDINATION
+    condition: "concurrent writers to shared state files are coordinated through a claims mechanism — no two processes may modify the same canonical file without a lock, reservation, or serialization guarantee; rebase-after-collision is recovery, not coordination"
+    status: PENDING
+
 dna:
   - "INST-INDEX-RERUM-FACIENDARUM.md — 1,408-line universal work registry, machine-parseable markdown tables"
   - "IRF parser identifies DONE-ID collision data — completed items use DONE-NNN format, detectable via parse_irf()"

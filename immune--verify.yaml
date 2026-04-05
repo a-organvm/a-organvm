@@ -32,6 +32,11 @@ gate:
     condition: "orchestration-start-here/scripts/organ-audit.py dissolved"
     status: PENDING
 
+  - id: G4
+    check: ADVERSARIAL_RECHECK
+    condition: "automated verification outputs are themselves verified — every machine-generated finding is cross-checked against primary evidence before being reported as fact; unverified claims are marked UNVERIFIED, not reported as findings"
+    status: PENDING
+
 dna:
   - 6-layer bottom-up infrastructure audit (filesystem, reconcile, seeds, edges, content, absorption) — tested with 22 test files
   - Formal verification with 4 logic layers (Hoare, temporal, linear, bounded model checking) — addresses vacuous truths, race conditions, idempotency

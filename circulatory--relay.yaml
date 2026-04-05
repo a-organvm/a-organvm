@@ -28,6 +28,11 @@ gate:
     condition: "NRV-005 + GEN-004 — the relay surface and AGENTS routing surface complete one handoff handshake: RELAY says what was completed, what is next, and the active boundary; AGENTS says which agent is allowed to take that next work"
     status: PENDING
 
+  - id: G4
+    check: TWO_PASS_CLOSE
+    condition: "relay handoff includes a mandatory second verification pass — first pass inventories and commits, second pass audits the first pass output for stale counts, missed indices, and unchecked vacuums; single-pass closure is treated as incomplete"
+    status: PENDING
+
 dna:
   - "NerveBundle subscription indexing — fast O(1) lookup by event type and subscriber (nerve.py, tested)"
   - "Subscription resolution from seed.yaml — walks all seeds, collects event subscriptions, builds dispatch graph"

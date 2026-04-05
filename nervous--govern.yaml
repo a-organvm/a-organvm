@@ -54,6 +54,11 @@ gate:
     condition: "upward trace to A6 (organizational closure) stated"
     status: PENDING
 
+  - id: G6
+    check: COEXISTENCE_DISCIPLINE
+    condition: "when a successor formation exists alongside its predecessor, governance enforces dual obligation — the predecessor is improved in earnest (not deferred to successor), and every constraint encountered is documented as evolutionary edge material for the successor; both live simultaneously"
+    status: PENDING
+
 dna:
   - governance/ — promotion state machine (LOCAL→CANDIDATE→PUBLIC_PROCESS→GRADUATED→ARCHIVED)
   - governance/dependency_graph.py — unidirectional flow enforcement (I→II→III)

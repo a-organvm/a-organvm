@@ -26,6 +26,11 @@ gate:
     condition: "All 117 repos mapped to biological mechanisms"
     status: PENDING
 
+  - id: G3
+    check: VACUUM_DETECTION
+    condition: "structural audits treat absence as signal, not silence — every field marked N/A, every index with no entry, every mechanism with no gate is classified as a vacuum and logged for investigation; absence of data is itself data"
+    status: PENDING
+
 dna:
   - IRF (Index Rerum Faciendarum) — 1,124 lines of universal work registry with IRF-prefixed IDs, priority/domain/status filtering
   - Governance trilemma declaration — formal recognition that speed/quality/scope cannot all be maximized simultaneously

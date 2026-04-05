@@ -27,6 +27,11 @@ gate:
     commit: aec93ac
     evidence: "47 passed in 0.92s"
 
+  - id: G3
+    check: ADDITIVE_AUDIT
+    condition: "when multiple agents modify shared artifacts, the watch system detects non-additive mutations — any change that overwrites existing content rather than appending triggers an audit finding"
+    status: PENDING
+
 dna:
   - 22 mythological regimes as governance philosophies — each with audit_rules, phaethon blind spots, health model, and narrative voice
   - Agon competitive deliberation: multiple regimes audit same state, consensus = constitutional law candidates
