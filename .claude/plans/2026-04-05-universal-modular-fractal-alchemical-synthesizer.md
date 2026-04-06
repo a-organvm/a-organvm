@@ -712,6 +712,33 @@ Each atom extracted from the operator's exact words. Each checked against what e
 
 ---
 
+## BIRTH REFRAMING (2026-04-06, late session)
+
+IRF-SYS-087 was written as "create empty space + secure with SEED.md." This is wrong. The birth is a COMPRESSION, not a creation from nothing.
+
+Before the directory exists, ALL accumulated foundational material must be surfaced:
+- 766K+ words of constitutional corpus (organvm-corpvs-testamentvm)
+- 160+ post-flood documents (foundational, pre-implementation)
+- 269 plan files across all organs
+- 23 SOPs (orchestration-start-here/docs/)
+- 99 SOPs (praxis-perpetua library)
+- 22 mythological regimes + 8 Watcher Orders (vigiles)
+- 28 JSON schemas (schema-definitions)
+- 25 operator-articulated atoms (this session)
+- Session exports, brainstorm documents, internal research — everything deeply nested in meta and taxis
+- External research references, post-flood specs (SPEC-000 through SPEC-023)
+- The pre-flood archive_original/ transcripts (LaTeX formalizations, mathematical models)
+
+The birth sequence:
+1. **Inventory** — catalogue every origin document across meta + taxis (deeply nested, not just top-level)
+2. **Atomize** — decompose each document into self-contained atoms with identity, type, edges
+3. **The atomized corpus IS the space** — the directory is born containing everything, not empty
+4. **Functions grow from the corpus** — the first functions read the atomized material and produce structure
+
+The space is born full. It contains the compressed memory of everything that came before. Nothing is lost. The birth is alchemical — raw material transformed into a new form, not discarded.
+
+---
+
 ## ATOM STATUS SUMMARY
 
 | Status | Count | Atoms |
