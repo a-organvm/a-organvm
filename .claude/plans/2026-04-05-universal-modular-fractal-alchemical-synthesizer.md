@@ -497,6 +497,247 @@ V1→V2: collapse orgs, dissolve dead weight (123→42). V2→V3: eliminate stat
 
 ---
 
+## ATOMIC DECOMPOSITION — Operator's Ideas as Self-Contained Implications
+
+Each atom extracted from the operator's exact words. Each checked against what exists in the system. Status: EXISTS (implemented), SPECIFIED (documented but not built), ABSENT (neither specified nor built), CONTRADICTED (exists but in conflicting form).
+
+---
+
+### FROM [1] — The Discipline Problem
+
+**ATOM-01: Unbreakable rules that allow full experimentation**
+*"how then do we build unbreakable rules that allow full experimentation, exploration, non-restrictive limits"*
+- Implication: axioms are immutable; everything below axioms is mutable. The constraint lives at the top only.
+- EXISTS: SEED.md 9 axioms (immutable). a-organvm gate contracts (mutable targets under immutable conditions).
+- ABSENT: no mechanism prevents axiom violation at runtime. Axioms are prose, not enforcement.
+- EVOLUTION: axioms need machine-checkable invariants (SPEC-003 INV-000-001 through 005 were drafted but only INV-000-001 is machine-checkable).
+
+**ATOM-02: Knowledge standards that withstand the fool**
+*"knowledge/data/information standards capable of withstanding evolutions and human--as fool"*
+- Implication: data formats must be versioned, validated, and resilient to careless operator writes.
+- EXISTS: schema-definitions/ (28 JSON schemas). registry-v2.json as SSOT. seed.yaml contracts.
+- EXISTS: engine `save_registry()` refuses to write <50 repos (fool-proof guard).
+- ABSENT: no similar guard on any other data file. CLAUDE.md, AGENTS.md, seed.yaml can all be corrupted by a careless write.
+- EVOLUTION: every canonical data file needs a write guard (minimum viable content check before overwrite).
+
+**ATOM-03: The atemporal mentor voice**
+*"discipline-expertise--an atemporal voice guiding through our process as wise mentor"*
+- Implication: the system should speak back to the operator with accumulated wisdom, not just execute commands.
+- EXISTS: close-protocol.yaml (12-step liturgical close). SOPs (23 formalized). RELAY.md "do not" lists.
+- SPECIFIED: heartbeat-affect grounding (post-flood) — "the affect is in the operator, not the system."
+- ABSENT: no runtime mechanism delivers the mentor voice. The wisdom exists as docs, not as active guidance.
+- EVOLUTION: a function that reads the operator's current action against accumulated SOPs/principles and surfaces relevant guidance. The conductor's oracle module (tool-interaction-design) was reaching toward this.
+
+**ATOM-04: Containerize the meta process around the fool**
+*"containerizes the meta process, knows phases of the life existing outside the system waiting for Anthony to fail as usual"*
+- Implication: the system's governance should constrain the OPERATOR, not just the CODE. The meta-process (how Anthony works) needs guardrails.
+- EXISTS: session lifecycle (FRAME→SHAPE→BUILD→PROVE). Close protocol. Vacuum fill protocol.
+- ABSENT: no mechanism detects "Anthony is spinning out" at runtime. The session lifecycle is opt-in, not enforced.
+- EVOLUTION: the pulse module (6,070 lines) was an attempt at this — sensing mood/density/rhythm. The idea was right; the implementation was metaphorical instead of operational.
+
+**ATOM-05: The Picasso principle — learn rules before breaking them**
+*"Picasso learns realism before disrupting his distilled alchemical synthesis render rules disrupted"*
+- Implication: the system must have mastered its own rules before permitting rule-breaking. Rule-breaking without mastery = chaos.
+- SPECIFIED: post-flood "the-core-mistake.md" — "canon, research formation, migration review, archive."
+- EXISTS: SOP lifecycle (REP→ABSORB→FORTIFY→PLACE→CHAIN) — you can't place an SOP until it's been run twice.
+- ABSENT: no equivalent for code or structural changes. You can restructure the entire system in one session without proving you understand its current rules.
+- EVOLUTION: a "mastery gate" — before any structural change, the agent must demonstrate understanding of the current structure's rules (run the dissection protocol first, then propose changes).
+
+**ATOM-06: Rules break meaningfully, cascade fractally**
+*"rules break meaningfully and with gravitas intentional sub and un and con conscious effects cascade fractally"*
+- Implication: when a rule is intentionally broken, the system should trace the cascade — what other rules are affected, at what scales.
+- EXISTS: engine governance/impact.py — blast-radius impact analysis.
+- ABSENT: the blast-radius analysis operates on repos, not on rules. No tool traces "if we break THIS invariant, what cascades?"
+- EVOLUTION: invariant dependency graph. Each invariant declares which other invariants it depends on. Breaking one shows the cascade.
+
+---
+
+### FROM [2] — The Artist-Enterprise Problem
+
+**ATOM-07: Input energy only into art, machine handles the rest**
+*"while only putting input energy into art itself, the machine processes and outputs programmable materia support-swarm systems"*
+- Implication: the shared operations (research, governance, distribution, community, applications) must be AUTOMATED, not manually operated.
+- EXISTS: contextmd/ (auto-generates CLAUDE.md/AGENTS.md). CI workflows. Dependabot.
+- ABSENT: no automated research. No automated grant writing. No automated community engagement. No automated distribution. These are specified as organs (V, VI, VII) but have 247 code files total — they don't run.
+- EVOLUTION: the shared operations must become actual running services, not empty repos with ceremony files. Each operation = a function in the synthesizer that runs on a schedule or trigger.
+
+**ATOM-08: The system lives around the art**
+*"the system lives around the art so the artist can continue living and new idea generating"*
+- Implication: products (art) are the center. Everything else orbits.
+- CONTRADICTED: the current system has the ENGINE (meta) at the center and products at the periphery. 65K lines of infrastructure, 526 lines in the largest product's src/ directory.
+- EVOLUTION: invert the gravity. Products at center, operations orbit them. The products/ directory in V3 is primary; functions/ serve products/, not the other way around.
+
+**ATOM-09: Never having to ask anything again**
+*"I build a path towards never having to ask anything again"*
+- Implication: the system must be able to produce grant applications, portfolio presentations, market analysis, community outreach WITHOUT the operator submitting to external gatekeepers.
+- ABSENT: no automated external-facing output. portfolio-site is 17 Astro files (static). No automated grant pipeline. No automated distribution. AdenHQ/Hive PR was a one-time manual effort.
+- EVOLUTION: the distribution function (Kerygma) + the presentation function (integumentary) + the institutional function (aerarium) must actually RUN. Currently they're names, not code.
+
+**ATOM-10: Control of system IS the product**
+*"control of system is in fact the system to speak on as prime thing of my labores"*
+- Implication: the orchestration layer (taxis) isn't support infrastructure — it's the primary creative output. The system that builds systems is itself the work.
+- EXISTS: tool-interaction-design (40.7K lines conductor OS). agentic-titan (119K lines multi-agent framework). These are real products.
+- EVOLUTION: reframe taxis from "ORGAN-IV: orchestration support" to "the flagship product of the synthesizer." Everything else either serves the conductor or is served by it.
+
+---
+
+### FROM [2-too] — The System as Art
+
+**ATOM-11: Too many rules kill what rules protect**
+*"too many rules, too many systems, too many--what i find to be pleasing to my fear of loss control"*
+- Implication: the 700 ceremony files, the 8-organ bureaucracy, the promotion pipeline — these are control anxiety, not governance.
+- EXISTS: the problem is manifested. 700 ceremony files. 381 ceremony across 123 dirs. Promotion pipeline that GRADUATED repos with 0 code.
+- EVOLUTION: ceremony elimination is V2→V3. Static ceremony → generated context on demand. 381→0 static ceremony files.
+
+**ATOM-12: Pulse as universal container**
+*"all pulses--from a world zoomed in absolutely pulse as our universal container and physical assembly"*
+- Implication: organize by TIME (which pulse), not by SPACE (which directory). Temporal structure over spatial structure.
+- EXISTS: engine/pulse/ (6,070 lines — heartbeat, rhythm, density, flow). engine/metrics/heartbeat.py.
+- SPECIFIED: post-flood heartbeat-affect spec. AMMOI sense cycle (observe→normalize→compare→infer→decide→revise→propagate→archive).
+- ABSENT: no actual temporal organization. The system is 100% spatial (directories, repos, orgs). Pulse module senses but doesn't organize.
+- EVOLUTION: temporal pruning (pulse timestamps → dormancy detection → auto-archive). Each entity's last-pulse determines its governance state, not a manually set promotion_status.
+
+**ATOM-13: Primitives assembled through nested hierarchical structures produce complex systems**
+*direct quote*
+- Implication: the atom→molecule→compound→organism scale is correct. Complex behavior emerges from composed primitives, not from top-down design.
+- EXISTS: a-organvm's atomic clock pattern. Gate contracts compose modules. Signal graph wires functions.
+- EVOLUTION: the governance boundary model (5 thresholds) formalizes this. Atoms self-describe, molecules compose via contract, compounds pass gates, substrate governs bidirectionally, synthesizer generates from axioms.
+
+---
+
+### FROM [2, institutional critique] — The Submission Problem
+
+**ATOM-14: The system replaces institutional gatekeepers**
+*"a submission or grant or application denied bc someone who reads yours through random assignment after that someone ate too big of a lunch"*
+- Implication: the system must produce outputs that bypass submission-based gatekeeping entirely. POSSE (Publish on Own Site, Syndicate Elsewhere), not submission-to-jury.
+- SPECIFIED: ORGAN-VII (Kerygma) was designed for this. POSSE architecture specified.
+- EXISTS: social-automation (32 files), distribution-strategy (26 files), kerygma-pipeline (8 files).
+- ABSENT: none of these are operational. Combined code: 88 files. They're configuration, not running services.
+- EVOLUTION: the distribution function must actually publish. Automated posting, automated syndication, automated engagement tracking. This is one of the 8 shared operations that needs to become a running function.
+
+**ATOM-15: Come to the table with everything done**
+*"emerging musicians and writers and artists must come to the table with their institutional fore-slavers with all the work done"*
+- Implication: when the system DOES interact with institutions (grants, applications, exhibitions), it should arrive with complete packages — not submissions, but presentations of fait accompli.
+- EXISTS: aerarium--res-publica has grant SOPs, funder-fit protocols, application templates. Creative Capital 2027 application in development.
+- ABSENT: no automated package assembly. Each application is manual.
+- EVOLUTION: the presentation function generates complete institutional packages from the corpus + products. The "never ask again" principle applied to grant writing.
+
+---
+
+### FROM [3] — The Unnamed Output
+
+**ATOM-16: Produce ideal forms that can't be named by their seeds**
+*"to create what cant be named by its seeds but by the outgrowth the seeds internal design governed"*
+- Implication: the system's output should be emergent, not predetermined. You don't specify the output — you specify the generative grammar, and the output surprises.
+- EXISTS: a-organvm SEED.md — "It has no memory of what produced it. Every structural decision is derived from axioms through formal procedures at the moment the decision is needed."
+- EVOLUTION: this IS the anti-system axiom (Axiom 4). Each call generates fresh structure. The ideal form is the attractor, never reached, always approached.
+
+**ATOM-17: Discover self through disruption parameters**
+*"discover object--self--via disruption parameters and output process through experienced existence"*
+- Implication: the system must support deliberate disruption — introducing entropy to discover what's robust and what collapses.
+- SPECIFIED: post-flood — meta-evolution architecture with "evolutionary throttling" (MAX_META_MUTATIONS_PER_WEEK = 2).
+- ABSENT: no disruption function exists. No chaos engineering. No deliberate perturbation to test robustness.
+- EVOLUTION: a "disruption function" that introduces controlled entropy — randomly removes a module, reverses an edge, breaks a contract — and measures what survives. The vigiles regimes (22 mythological governance philosophies auditing the same state) were reaching toward this from the philosophical side.
+
+---
+
+### FROM [a] — Voice at Every Scale
+
+**ATOM-18: Every unit speaks its own voice**
+*"each organizing containered systema must each speak a voice unique to smallest unit, smallest collective, module as whole"*
+- Implication: identity is fractal. An atom has voice. A molecule has voice. A compound has voice. Each scale's voice is distinct and self-describing.
+- EXISTS: vox--architectura-gubernatio (voice scorer, 58 code files, 11 anti-patterns, 8 invariants).
+- ABSENT: vox scores at the document level only. No mechanism for module-level, function-level, or atom-level voice identity.
+- EVOLUTION: voice becomes a property of every formation.yaml — each formation declares its voice constraints, and the voice scorer operates at every scale.
+
+**ATOM-19: Jurisdictional knowledge containment (uni/org/repo = planet/international/national)**
+*"uni - planet, org - international, repo - national"*
+- Implication: data flows are jurisdictional. Knowledge produced at repo level is nationally bound. It only flows to org level (international) through declared interfaces. And only to uni level (planet) through further thresholds.
+- ABSENT: no jurisdictional model exists. Data flows freely across all levels. Registry-v2.json is consumed directly by 16 repos (lateral imports at the same level — the anti-isotope violation).
+- EVOLUTION: the governance boundary model's threshold mechanisms (attraction→gates→migration→axiom-derivation) implement this. Each threshold is a jurisdictional border.
+
+---
+
+### FROM [b] — Start Local, Flow Upward
+
+**ATOM-20: Attraction as the intake mechanism**
+*"instincts tell me start local micro and up thresholds permitting external flow only through substrates for collecting via properties of attraction"*
+- Implication: material doesn't push upward — it's attracted upward. The higher level declares what it needs, and matching material is attracted.
+- EXISTS: a-organvm circulatory_route.py computes 482 attractions from declared signal types. This IS the mechanism.
+- EVOLUTION: attractions need to operate across the full system, not just within a-organvm's gate contracts. Every formation.yaml should declare signal needs; the routing function matches needs to producers.
+
+**ATOM-21: Compression from below forces matter reveals**
+*"then compression from below on upwards to force matter reveals and intentions"*
+- Implication: when enough material accumulates at a lower level, it compresses upward — forcing the higher level to acknowledge and integrate it.
+- SPECIFIED: SOP lifecycle (REP→ABSORB) — a process performed twice forces absorption. Gate contracts (enough evidence → gate passes).
+- ABSENT: no pressure mechanism. Material can accumulate indefinitely without forcing upward integration. The 2GB intake/ graveyard is material that accumulated but never compressed upward.
+- EVOLUTION: threshold pressure — when material at a level exceeds a count/size threshold, the system automatically triggers ingestion/compression. The respiratory function runs when intake pressure builds.
+
+---
+
+### FROM [c] — Top Directory Structure
+
+**ATOM-22: organvm / {organvm, meta, taxis} as three siblings**
+*"meta and taxis, i imagine require to be in the top directory"*
+- Implication: the synthesizer (organvm), the computational substrate (meta), and the orchestration layer (taxis) are co-equal siblings at the root.
+- ABSENT: currently scattered across ~/Workspace/meta-organvm/, ~/Workspace/organvm-iv-taxis/, ~/sovereign--ground/holds--same/a-organvm/
+- EVOLUTION: IRF-SYS-087 (P0, GH#310) — the birth. Create the space. Three siblings.
+
+---
+
+### FROM [d] — Anti-Sprawl
+
+**ATOM-23: Temporal pruning prevents spatial sprawl**
+*"designing how to prevent same directory context agreements bc simplicity"*
+- Implication: if everything is flat and simple, what prevents dumping-ground sprawl? Answer: temporal governance. Things that pulse stay; things that stop pulsing auto-archive.
+- EXISTS: engine/metrics/heartbeat.py senses activity. staleness-mapping SOP (SOP-IV-STL-001) formalizes the detection.
+- ABSENT: no auto-archive mechanism. Staleness is detected but not acted on. 29 zero-code repos continue to exist.
+- EVOLUTION: an automated dormancy detector that runs on schedule. Repos below activity threshold → flagged → if still dormant after grace period → auto-archived. The immune function's job.
+
+---
+
+### FROM [8 organs] — Cannibalistic Dissection
+
+**ATOM-24: The 8 organs are 3 layers + 1 substrate, not 8 departments**
+*"8 organs is either the answer or it was a fart in the wind"*
+- EXISTS: post-flood formal-topology-diagram.md already identified: Production Core (I-III), Control Plane (IV), Interface Layer (V-VII), Meta as zero-order.
+- EVOLUTION: the 8 energy types (Theoria, Poiesis, Ergon, Taxis, Logos, Koinonia, Kerygma, Mneme) persist as named functions, not as organizational containers. SPEC-019 specified this. V3 diagram implements it.
+
+**ATOM-25: Energy nodes producing generative energy changes**
+*"the system's living body, organs, cell intake energy > process energy > outputs energy...it's living is producing points of generative energy changes"*
+- Implication: each node in the system is an energy transformer. It takes input, processes, produces output. The output IS the generative energy.
+- EXISTS: signal-graph.yaml in a-organvm — functions have inputs and outputs, connected by typed signals.
+- SPECIFIED: post-flood knowledge-feedback-architecture — "Ideas → artifacts → instruments → evidence → theory refinement."
+- EVOLUTION: every formation.yaml declares signal_inputs and signal_outputs. The routing function computes the energy flow graph. Nodes that produce energy stay alive; nodes that consume without producing are parasitic (detected by immune function).
+
+---
+
+## ATOM STATUS SUMMARY
+
+| Status | Count | Atoms |
+|--------|-------|-------|
+| EXISTS (implemented) | 6 | 01 (partial), 02 (partial), 10, 13, 20, 24 |
+| SPECIFIED (documented, not built) | 5 | 03 (partial), 05, 14, 17, 21 |
+| ABSENT (neither specified nor built) | 10 | 04, 06, 07, 08, 09, 11, 12, 18, 19, 23 |
+| CONTRADICTED | 1 | 08 (system is infrastructure-centric, not art-centric) |
+| PARTIAL (some exists, gaps remain) | 3 | 15, 16, 22 |
+
+**The 10 ABSENT atoms are the implementation frontier:**
+- ATOM-04: Fool-containerization at runtime
+- ATOM-06: Invariant cascade tracing
+- ATOM-07: Automated shared operations (research, distribution, community)
+- ATOM-08: Art at center, infrastructure orbiting (gravity inversion)
+- ATOM-09: Automated external-facing output (never ask again)
+- ATOM-11: Ceremony elimination (381→0)
+- ATOM-12: Temporal organization (pulse over space)
+- ATOM-18: Fractal voice identity at every scale
+- ATOM-19: Jurisdictional knowledge containment
+- ATOM-23: Automated dormancy detection + auto-archive
+
+These 10 atoms are what the synthesizer needs to implement that doesn't exist in any form today.
+
+---
+
 ## Evidence Base (Census Data)
 
 The following sections contain verified structural measurements. Conclusions drawn from them are flagged as derivative above.
