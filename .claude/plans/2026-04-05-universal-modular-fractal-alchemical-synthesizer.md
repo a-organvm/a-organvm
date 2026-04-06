@@ -739,6 +739,27 @@ The space is born full. It contains the compressed memory of everything that cam
 
 ---
 
+## PATH FROM HIDDEN TO CLEAR
+
+### Problem
+12.6M words across 7,467 files in 123 directories across 9 workspaces. The operator cannot find their own work. Files are named generically. Tools are quarantined in one organ when they serve the whole system.
+
+### Solution sequence
+1. **DONE** — Inventory (birth-inventory.py → inventory-manifest.json, 7,467 entries)
+2. **DONE** — Search surface (birth-search.py queries the manifest)
+3. **NEXT** — Idea-graph: scan documents for cross-references, build `idea-graph.json` where nodes are manifest entries and edges are references between them. birth-search.py extended to traverse the graph ("show me everything connected to THIS").
+4. **THEN** — Cluster the graph into idea families (documents that reference each other densely = same idea from different angles). The clusters become the navigable map.
+5. **THEN** — Birth compression: the idea-graph + clustered manifest + atomized corpus become the content of the new directory. Files move from scattered paths into the synthesizer's corpus/, organized by idea, not by organ.
+6. **THEN** — Tools move to synthesizer root: birth-search, birth-inventory, and future functions live in `organvm/functions/` (or equivalent), accessible from anywhere.
+
+### What makes it clear vs hidden
+- **Hidden**: classification by PATH (which organ dir → which repo dir → which subdir). Path tells you where something was put, not what it IS.
+- **Clear**: classification by IDENTITY (self-describing atoms in a queryable graph). Identity tells you what it IS regardless of where it sits.
+
+The manifest is the bridge. It sits over the existing mess and makes it queryable without reorganizing anything yet. The birth is when the mess dissolves into organized corpus.
+
+---
+
 ## ATOM STATUS SUMMARY
 
 | Status | Count | Atoms |
