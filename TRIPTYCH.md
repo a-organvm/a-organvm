@@ -3,9 +3,10 @@
 Three directories. One transition. The old form dissolves. The new form emerges.
 
 ```
+/Users/4jp/system-system--system        THE FORMAL   — what adjudicates (laws, axioms, atoms, escrow)
 /Users/4jp/Workspace/meta-organvm        THE BODY     — what was built (engine, corpus, schemas, dashboard)
 /Users/4jp/Workspace/organvm-iv-taxis    THE MIND     — what orchestrated (conductor, skills, agents, governance)
-/Users/4jp/Workspace/a-organvm           THE SEED     — what grows (axioms, gate contracts, functions)
+/Users/4jp/sovereign--ground/holds--same/a-organvm   THE SEED     — what grows (axioms, gate contracts, functions)
 ```
 
 ## The Transition
@@ -29,15 +30,13 @@ The SEED contains gate contracts. Each contract CALLS code from the BODY or the 
 - Wave 1+2 of contribution ledger shipped (receipt, timecard, energy, scorecard, prompt patches)
 
 ### THE SEED (a-organvm)
-- 2 functions exist: `skeletal_define.py` (510 lines, 22 tests) + `circulatory_route.py` (255 lines, 27 tests)
-- 35 gate contracts in state CALLING
+- 1 function exists: `skeletal_define.py` (510 lines, 22 tests)
+- 36 gate contracts in state CALLING
 - 97 gates total (10 lit / 87 dim)
 - 15 mechanisms classified
-- 5 observations recorded
-- 5 signal types: QUERY, KNOWLEDGE, TRACE, CONTRACT, STATE
-- 1 INFORMATION edge: skeletal--define → circulatory--route
-- 453 signal attractions discovered, 3 structural defects detected
-- Third function: TBD (must close CHECK 19 cycle)
+- 3 observations recorded
+- Second function selected: `circulatory--route`
+- signal-graph edges: empty (activates at function 2)
 
 ## The Cocoon Map
 
@@ -73,6 +72,8 @@ The SEED contains gate contracts. Each contract CALLS code from the BODY or the 
 ## Portal Paths
 
 ```
+system-system--system/manifest.toml    → what the FORMAL contains
+system-system--system/LAWS.md          → the active laws of the system
 meta-organvm/ORGAN-REPORT.md           → what the BODY contains
 organvm-iv-taxis/ORGAN-REPORT.md       → what the MIND contains
 a-organvm/cocoon-map.yaml              → where everything goes

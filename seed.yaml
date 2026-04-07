@@ -1,0 +1,27 @@
+# seed.yaml — Automation Contract for a-organvm
+# Schema: seed/v1.0
+
+schema_version: '1.0'
+organ: SEED
+organ_name: Alpha-Organism
+repo: a-organvm
+org: sovereign--ground
+metadata:
+  implementation_status: ACTIVE
+  tier: standard
+  promotion_status: LOCAL
+  last_validated: '2026-04-07'
+  description: >-
+    The autopoietic seed of the ORGANVM successor. 
+    3 functions embodied (skeletal, circulatory, cultvra), 82 tests, 
+    107 gate contracts. Genome-driven growth.
+  stack:
+    - Python 3.14
+produces:
+- type: genome_signals
+  description: Signals derived from axioms and formal procedures.
+- type: embodiment_logic
+  description: Executable Python functions representing biological mechanisms.
+consumes:
+- type: predecessor_intent
+  description: Bare intent crossing the firewall from legacy organs (BODY/MIND).
