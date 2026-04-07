@@ -1,54 +1,35 @@
-# RELAY.md — S56 (taxis interaction fortification)
+# RELAY.md — S-empirical (empirical structure audit, 2026-04-06/07)
 
 ## What was done
 
-Verification-only session. No code written. Full 10-index audit with vacuum remediation.
+Empirical measurement session. Built bottom-up test suite, ran 13/21 exercises against 106 repos. Sovereign--ground analytical framework fully populated (22 files, 6 mereological categories). No code changes to a-organvm functions.
 
-### Verification pass
+### Empirical findings relevant to a-organvm
 
-- Ran all 3 functions: output matches S54 exactly (no drift)
-- Ran all 82 tests: all pass (1.84s)
-- Read IRF (845 items, 20 domains), a-organvm section (15 active AOR items)
-- Read all 14 memory files: confirmed accurate modulo count discrepancy
+1. **Organ boundaries carry zero structural load** — boundary misalignment 1.0000 for all 8 organs. Repos inside an organ are no more similar to each other than to repos outside. The 8-organ model is filing cabinet, not functional unit. (GH#315)
+2. **15 ideal functional forms classified** — sovereign--ground SYNTHESIS.md. These are attractors the organism reaches toward, not static categories. 6 mereological categories (holds, cuts, joins, bounds, lacks, moves) map to 6 of 16 a-organvm mechanisms. (GH#316)
+3. **Ceremony-as-specification correction** — non-code files that are unique to their repo = specification (future work intent). Only duplicated boilerplate = true ceremony. Gate contracts, SOPs, research docs are NOT overhead. (GH#317)
+4. **Modular synthesis mapping** — 4/7 real structural correspondences, 3/7 forced vocabulary. Oscillation thesis: system doesn't converge to fixed state.
+5. **Rosetta Stone** — 3 orthogonal classification systems (Registry functional_class, Gemini node_class, a-organvm mechanism). 23 repos are orphans.
 
-### 10-index audit findings
+### Vacuum closures from this session
 
-| # | Index | Status | Finding |
-|---|-------|--------|---------|
-| 1 | IRF | OK | All AOR items present. Memory said 13 vacuums; actual is 15 (AOR-018/019 from S54 not in count) |
-| 2 | GitHub Issues | **FIXED** | 14 of 15 vacuum items lacked GH issues. Created #75-#88. All now tracked. |
-| 3 | Omega | N/A | No advancement |
-| 4 | Inquiry Log | N/A | No SGO work |
-| 5 | Testament | N/A | No significant event |
-| 6 | Concordance | N/A | No new IDs |
-| 7 | Registry | N/A | (AOR-014/#83 notes it IS stale) |
-| 8 | Seed contracts | N/A | (AOR-015/#84 notes a-organvm has no seed.yaml) |
-| 9 | CLAUDE.md | N/A | No architecture change |
-| 10 | Companion | N/A | Not built (AOR-016/#85) |
+| Vacuum | Status | Action |
+|--------|--------|--------|
+| AOR-009 (P0) — Claude memory chezmoi tracking | **PARTIALLY CLOSED** | `chezmoi add` for organvm-iv-taxis memory (20 files, pushed to domus). a-organvm project memory still needs separate `chezmoi add`. |
+| organvm-orient not in chezmoi | **CLOSED** | `chezmoi add ~/.local/bin/organvm-orient` — committed and pushed to domus. |
+| GitHub issues for session findings | **CLOSED** | GH#315 (boundary misalignment), #316 (15 ideal forms), #317 (ceremony-as-specification). |
+| IRF not updated | **CLOSED** | IRF-SYS-098–101 added, DONE-337, statistics refreshed. Commit `8a24ee7`. |
+| system-system--system uncommitted changes | **LOST** | Worktree cleaned up. Changes not committed. Pre-existing issue, not from this session. |
 
-### Vacuum issuance (14 items)
+### IRF items added
 
-| IRF ID | GH Issue | Priority | Vacuum |
-|--------|----------|----------|--------|
-| AOR-002 | #75 | P2 | TEACHING dead signal |
-| AOR-003 | #76 | P2 | AESTHETIC starved signal |
-| AOR-005 | #77 | P2 | TRIPTYCH framing conflict |
-| AOR-007 | #78 | P2 | S47 board tracking |
-| AOR-010 | #79 | P2 | cultvra--logos.md role |
-| AOR-011 | #80 | P2 | Omega connection |
-| AOR-012 | #81 | P2 | Testament chain |
-| AOR-013 | #82 | P3 | Concordance principles |
-| AOR-014 | #83 | P2 | Registry stale |
-| AOR-015 | #84 | P2 | No seed.yaml |
-| AOR-016 | #85 | P3 | Companion indices |
-| AOR-017 | #86 | P3 | Inquiry log |
-| AOR-018 | #87 | P1 | Cultvra ontology |
-| AOR-019 | #88 | P2 | CLT-001 concordance |
-
-`vacuum` label created for organizational triage.
-
-### Session waste
-None. All output is persistent (GH issues + this file + memory update).
+| ID | GH Issue | Priority | Finding |
+|----|----------|----------|---------|
+| IRF-SYS-098 | #315 | P2 | Organ boundaries = zero structural load |
+| IRF-SYS-099 | #316 | P2 | 15 ideal functional forms |
+| IRF-SYS-100 | #317 | P2 | Ceremony-as-specification 3-way classification |
+| IRF-SYS-101 | — | P2 | Multiverse INSTANCE.toml (approved, not executed) |
 
 ### Organism vitals at close
 
@@ -60,38 +41,40 @@ None. All output is persistent (GH issues + this file + memory update).
 16 mechanisms · 107 gates (10 lit / 97 dim)
 72% documentation coverage · 16 undocumented mechanisms · 1 stale contract
 4 information edges · 1 signal cycle (skeletal->circulatory->cultvra->skeletal)
-88 GitHub issues (84 open, 4 closed)
+88 GitHub issues (84 open, 4 closed) + 3 new on corpus (#315-#317)
 ```
 
-### What advanced since S54
+### What advanced since S56
 
 | Session | Commit | What |
 |---------|--------|------|
-| S55 | — | Full audit. 14 vacuum GH issues created (#75-#88). Memory count fixed (13->15). `vacuum` label created. |
-| S56 | (this) | Fortification from taxis interaction data. 6 new gate conditions + 1 dna enrichment. 10 meta-learnings extracted, 7 injected (3 already captured). Gates: immune--watch G3, immune--verify G4, nervous--govern G6, skeletal--consolidate G3, circulatory--relay G4, nervous--synchronize G3. DNA: respiratory--ingest bidirectional intake. 101→107 gates. |
+| S56 | (prior) | Fortification from taxis interaction data. 6 new gate conditions + 1 dna enrichment. 101→107 gates. |
+| S-empirical | (this) | No a-organvm code changes. Empirical measurement of the material the organism absorbs. 4 new IRF items. 3 GH issues. AOR-009 partially closed. organvm-orient chezmoi-tracked. |
 
 ## What is next
 
 **Immediate** (next session):
 1. Run all three functions at session start
 2. **CHECK 19 formal closure** — still the structural unlock. >=3 functions exist. SEED.md is unlockable.
-3. **IRF-AOR-009 (P0)**: Memory chezmoi tracking — **HUMAN ACTION NEEDED**. `chezmoi add ~/.claude/projects/-Users-4jp-Workspace-a-organvm/`
+3. **AOR-009 remainder**: `chezmoi add ~/.claude/projects/-Users-4jp-Workspace-a-organvm/` (human action)
 4. **AOR-018/#87 (P1)**: Cultvra ontology — define the Logos layer's meaning
 5. **AOR-002/#75 + AOR-003/#76 (P2)**: Resolve signal defects (TEACHING dead, AESTHETIC starved)
 
-**Temporal maturity chain** (multi-session):
-6. Event spine -> retrieval memory -> proposal inbox -> impact dispositions -> external feedback loops
+**Empirical integration** (multi-session):
+6. Wire the 6-exercise results into a-organvm's immune--verify or immune--watch mechanisms — the organism should be able to measure its own material
+7. The 3-way ceremony classification (IRF-SYS-100) could inform excretory--filter criteria
+8. 15 ideal forms → potential enrichment of skeletal--define's model
 
-**10-index debt** (vacuum issues now tracked):
-7. AOR-019/#88: CLT-001 concordance registration
-8. AOR-014/#83: Registry metadata refresh
-9. AOR-015/#84: seed.yaml decision
+**Structural insights from empirical audit**:
+9. Organ boundaries don't predict structure → a-organvm's absorption (cocoon-map.yaml) should use functional clusters, not organ labels
+10. Real coupling is: core engine (META+IV), personal output (4444J99), outer ring (V+VI+VII)
 
 **Do not**:
 - Skip running all three functions at session start
 - Import predecessor formations — only bare intent crosses the firewall
 - Create gate contracts without matching issues
 - Modify SEED.md without completing CHECK 19 formal closure procedure first
+- Treat the 8-organ model as structural truth — it's organizational taxonomy only
 
 ## Read order
 
@@ -103,4 +86,4 @@ None. All output is persistent (GH issues + this file + memory update).
    - `python3 skeletal_define.py`
    - `python3 circulatory_route.py`
    - `python3 cultvra_logos.py`
-6. Claude Code memories — philosophical grounding from S48 + state from S55
+6. Claude Code memories — philosophical grounding from S48 + empirical grounding from S-empirical
