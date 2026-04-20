@@ -1,28 +1,28 @@
-# RELAY.md — S57 (Governance and Issue Alignment)
+# RELAY.md — S58 (Signal Graph Ignition)
 
 ## What was done
 
-Alignment and accountability session. Focused on surfacing hidden findings and ensuring tripartite convergence (IRF, Repo, GitHub).
+Phase transition session. The signal graph was lit — signal propagation across all three functions is now proven by integration test.
 
-### 1. GitHub Issue Alignment
-- **MCP Prompt Injection (IRF-SYS-062)**: Issued as [GH#156](https://github.com/organvm-iv-taxis/orchestration-start-here/issues/156) in orchestration-start-here.
-- **Empirical Structure Audit Findings**: Summarized as [GH#157](https://github.com/organvm-iv-taxis/orchestration-start-here/issues/157) in orchestration-start-here. (Matches meta-organvm #315, #316, #317).
+### 1. Signal Propagation Test (`test_signal_propagation.py`)
+- 9 integration tests proving end-to-end signal flow
+- **Signal chain**: skeletal(KNOWLEDGE) → circulatory(STATE) → cultvra(QUERY) → skeletal(feedback)
+- **TestSignalChain**: verifies each function produces expected signal types
+- **TestSignalChain::test_full_chain_signals_flow**: runs all 3 functions, verifies cross-function signal consumption and the QUERY→KNOWLEDGE feedback loop
+- **TestSignalGraphIntegrity**: verifies structural consistency (all edges reference valid functions/signals, no routing defects in live functions, feedback loop exists)
+- **Result**: 91/91 tests pass (22 skeletal + 33 circulatory + 27 cultvra + 9 signal propagation)
 
-### 2. IRF Propagation
-- Moved **IRF-SYS-098, 099, 100** to Completed (DONE-341).
-- Updated **IRF-SYS-062** with GitHub issue reference.
-- Logged session S57 as **DONE-341**.
+### 2. Signal Graph Product Record
+- Added `signal-propagation-proof` to `signal-graph.yaml:products`
+- Documents: chain, signals verified, feedback loop specifics
 
-### 3. Repository Relay
-- Created **sovereign--ground/RELAY.md** to track measurement suite state.
-- Updated this file (**a-organvm/RELAY.md**) to S57.
-
-### 4. Chezmoi Audit (AOR-009)
-- **organvm-orient**: Tracked in chezmoi but needs verification of sync/apply status.
-- **a-organvm memory**: Confirmed NOT tracked by chezmoi. **P0 HUMAN ACTION NEEDED**: `chezmoi add ~/.claude/projects/-Users-4jp-Workspace-a-organvm/`.
+### 3. Prior Session State (S57)
+- CHECK 19 (end-to-end signal cycle) can now be considered CLOSED — the integration test IS the proof
+- AOR-009 (chezmoi tracking) remains HUMAN ACTION NEEDED
 
 ## What is next
 
-1. **AOR-009 (P0)**: Human action for chezmoi tracking.
-2. **IRF-SYS-101 (P2)**: Multiverse INSTANCE.toml implementation (approved but not executed).
-3. **CHECK 19 formal closure**: Verify end-to-end signal cycle after S56 fortification.
+1. **AOR-009 (P0)**: Human action for chezmoi tracking (unchanged from S57).
+2. **Fourth function selection**: The organism has 3 functions (skeletal, circulatory, cultvra). The cocoon map defines 15 mechanisms. Next function candidate: `nervous--orchestrate` or `immune--verify`.
+3. **Products refinement**: Signal graph `products` section now has its first entry. Future functions should add their own products as they prove signal consumption.
+4. **Governance enforcement**: CI workflow created in orchestration-start-here — validates Article I (schema), Article VI (promotion FSM), and count consistency.
