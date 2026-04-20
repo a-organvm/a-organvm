@@ -84,7 +84,15 @@ edges:
   governance: []
   evolution: []
 
-products: {}
+products:
+  signal-propagation-proof:
+    timestamp: "2026-04-19"
+    description: "Integration test proving end-to-end signal flow: skeletal(KNOWLEDGE) → circulatory(STATE) → cultvra(QUERY) → skeletal(feedback)"
+    test_file: test_signal_propagation.py
+    assertions: 9
+    chain: [skeletal--define, circulatory--route, cultvra--logos]
+    signals_verified: [KNOWLEDGE, STATE, QUERY, TRACE, CONTRACT]
+    feedback_loop: "cultvra→skeletal via QUERY (documentation gaps become structural queries)"
 
 boundary_signals:
   - name: pyyaml

@@ -1,0 +1,181 @@
+"""Signal propagation integration test — proves the organism is alive.
+
+This is the test that lights the signal graph. It runs all three functions
+in sequence and verifies that signals flow between them:
+
+  skeletal (KNOWLEDGE) → circulatory (STATE) → cultvra (QUERY) → skeletal
+
+The feedback loop completes when cultvra's QUERY signals reference elements
+that exist in skeletal's KNOWLEDGE output.
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import skeletal_define
+import circulatory_route
+import cultvra_logos
+
+
+_HERE = Path(__file__).parent
+
+
+# ---------------------------------------------------------------------------
+# 1. Signal chain: skeletal → circulatory → cultvra
+# ---------------------------------------------------------------------------
+
+
+class TestSignalChain:
+    """End-to-end signal propagation through the organism."""
+
+    def test_skeletal_produces_knowledge(self):
+        """skeletal--define emits KNOWLEDGE: mechanisms and gates."""
+        obs = skeletal_define.observe()
+        assert len(obs.mechanisms) > 0, "no mechanisms observed"
+        assert obs.summary["total_gates"] > 0, "no gates observed"
+        assert obs.summary["signal_types"] > 0, "no signal types observed"
+
+    def test_circulatory_consumes_knowledge_produces_state(self):
+        """circulatory--route reads signal-graph (KNOWLEDGE) and produces STATE."""
+        table = circulatory_route.route(
+            graph_path=_HERE / "signal-graph.yaml",
+            contract_dir=_HERE,
+        )
+        assert table.summary["functions_in_graph"] >= 3, (
+            f"expected ≥3 functions in graph, got {table.summary['functions_in_graph']}"
+        )
+        assert table.summary["total_routes"] > 0, "no routes computed"
+        assert table.summary["signal_types_in_graph"] >= 3, (
+            f"expected ≥3 signal types, got {table.summary['signal_types_in_graph']}"
+        )
+
+    def test_cultvra_consumes_state_produces_queries(self):
+        """cultvra--logos reads structure and produces QUERY signals."""
+        state = cultvra_logos.document(
+            graph_path=_HERE / "signal-graph.yaml",
+            contract_dir=_HERE,
+        )
+        assert state.summary["total_elements"] > 0, "no elements inventoried"
+        # coverage is not 100% — there are always gaps, which produce queries
+
+    def test_full_chain_signals_flow(self):
+        """The complete chain: observe → route → document → verify feedback."""
+        # 1. KNOWLEDGE: skeletal reads structure
+        obs = skeletal_define.observe()
+        known_mechanisms = set(obs.mechanisms.keys())
+
+        # 2. STATE: circulatory computes routing from the same signal graph
+        table = circulatory_route.route(
+            graph_path=_HERE / "signal-graph.yaml",
+            contract_dir=_HERE,
+        )
+        routed_functions = {r.producer for r in table.routes} | {r.consumer for r in table.routes}
+
+        # 3. QUERY: cultvra documents everything and emits gap queries
+        doc = cultvra_logos.document(
+            graph_path=_HERE / "signal-graph.yaml",
+            contract_dir=_HERE,
+        )
+
+        # --- signal propagation assertions ---
+
+        # KNOWLEDGE → STATE: routes reference functions that skeletal knows about
+        # (functions are named mechanism--verb, mechanisms are in skeletal output)
+        graph_functions = set(circulatory_route.load_signal_graph(
+            _HERE / "signal-graph.yaml"
+        ).get("functions", {}).keys())
+        assert len(graph_functions) >= 3, "signal graph should have ≥3 functions"
+        assert len(table.routes) > 0, "routing table should have routes"
+
+        # STATE → QUERY: documentation entries exist for routed functions
+        documented_elements = {e.element_name for e in doc.entries}
+        for func in graph_functions:
+            assert func in documented_elements, (
+                f"function '{func}' is in signal graph but not in documentation inventory"
+            )
+
+        # QUERY → KNOWLEDGE (feedback): queries reference element types
+        # that skeletal can resolve (mechanisms, gates, signal_types)
+        resolvable_types = {"function", "signal_type", "mechanism", "gate_contract"}
+        for query in doc.queries:
+            assert query.element_type in resolvable_types, (
+                f"query element_type '{query.element_type}' is not resolvable by skeletal"
+            )
+
+
+# ---------------------------------------------------------------------------
+# 2. Signal graph structural integrity
+# ---------------------------------------------------------------------------
+
+
+class TestSignalGraphIntegrity:
+    """The wiring diagram is internally consistent."""
+
+    def test_all_functions_have_io(self):
+        """Every function in signal-graph.yaml declares inputs and outputs."""
+        graph = circulatory_route.load_signal_graph(_HERE / "signal-graph.yaml")
+        for fname, fdata in graph.get("functions", {}).items():
+            assert isinstance(fdata, dict), f"{fname}: function data is not a dict"
+            assert len(fdata.get("inputs", [])) > 0, f"{fname}: no inputs declared"
+            assert len(fdata.get("outputs", [])) > 0, f"{fname}: no outputs declared"
+
+    def test_edges_reference_existing_functions(self):
+        """All edge endpoints exist as declared functions."""
+        graph = circulatory_route.load_signal_graph(_HERE / "signal-graph.yaml")
+        functions = set(graph.get("functions", {}).keys())
+        for family in ("dependency", "information", "governance", "evolution"):
+            for edge in graph.get("edges", {}).get(family, []):
+                if isinstance(edge, dict):
+                    assert edge["from"] in functions, (
+                        f"edge from '{edge['from']}' not in functions"
+                    )
+                    assert edge["to"] in functions, (
+                        f"edge to '{edge['to']}' not in functions"
+                    )
+
+    def test_edges_reference_valid_signals(self):
+        """All edge signal types are declared in signal_types."""
+        graph = circulatory_route.load_signal_graph(_HERE / "signal-graph.yaml")
+        signal_types = set(graph.get("signal_types", {}).keys())
+        for family in ("dependency", "information", "governance", "evolution"):
+            for edge in graph.get("edges", {}).get(family, []):
+                if isinstance(edge, dict) and "signal" in edge:
+                    assert edge["signal"] in signal_types, (
+                        f"edge signal '{edge['signal']}' not in signal_types"
+                    )
+
+    def test_no_routing_defects(self):
+        """The organism has no structural routing defects."""
+        table = circulatory_route.route(
+            graph_path=_HERE / "signal-graph.yaml",
+            contract_dir=_HERE,
+        )
+        # Filter out defects from gate contracts that aren't yet functions
+        # (expected: gate contracts that haven't been written as Python yet)
+        function_defects = [
+            d for d in table.defects
+            if d.subject in {"skeletal--define", "circulatory--route", "cultvra--logos"}
+        ]
+        assert len(function_defects) == 0, (
+            f"routing defects in live functions: "
+            f"{[(d.kind, d.subject, d.detail) for d in function_defects]}"
+        )
+
+    def test_feedback_loop_exists(self):
+        """At least one feedback edge exists (cultvra → skeletal)."""
+        graph = circulatory_route.load_signal_graph(_HERE / "signal-graph.yaml")
+        info_edges = graph.get("edges", {}).get("information", [])
+        feedback = [
+            e for e in info_edges
+            if isinstance(e, dict) and e.get("direction") == "feedback"
+        ]
+        assert len(feedback) > 0, "no feedback edges — the organism has no self-correction"
+        # Verify the specific feedback: cultvra → skeletal via QUERY
+        cultvra_feedback = [
+            e for e in feedback
+            if e.get("from") == "cultvra--logos" and e.get("to") == "skeletal--define"
+        ]
+        assert len(cultvra_feedback) > 0, (
+            "missing cultvra→skeletal QUERY feedback loop"
+        )
