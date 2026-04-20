@@ -27,6 +27,14 @@ signal_types:
     description: "the current configuration of the organism's elements at a point in time — routing tables, connection maps, defect inventories"
     discovered_by: circulatory--route
 
+  REPORT:
+    description: "a structured finding about the organism's health — errors, warnings, informational observations across 4 dimensions (structural, temporal, governance, coherence)"
+    discovered_by: immune--verify
+
+  VALIDATION:
+    description: "a pass/fail verdict on a specific integrity check — the immune system's judgment on whether an aspect of the organism is internally consistent"
+    discovered_by: immune--verify
+
 functions:
   skeletal--define:
     inputs: [QUERY]
@@ -58,6 +66,16 @@ functions:
       upward: "A3 + A7: the organism must persist (A3) and serve the operator (A7) — an organism that cannot describe itself cannot be operated"
       downward: "documentation state inventory (docs.jsonl) + QUERY signals for documentation gaps + README.md as bootstrap artifact"
 
+  immune--verify:
+    inputs: [TRACE, STATE, CONTRACT, KNOWLEDGE]
+    outputs: [REPORT, VALIDATION]
+    mechanism: immune
+    temporal_mode: on-demand
+    ontological_type: Capability
+    traceability:
+      upward: "A3 + A5: the organism must persist (A3) and maintain integrity (A5) — an organism that cannot detect its own inconsistencies cannot self-correct"
+      downward: "verification reports (verifications.jsonl) + VALIDATION signals (pass/fail per check) + REPORT signals (findings with severity)"
+
 edges:
   dependency: []
   information:
@@ -81,6 +99,21 @@ edges:
       signal: QUERY
       direction: feedback
       rationale: "documentation gaps become structural queries — what is undocumented? what is stale?"
+    - from: skeletal--define
+      to: immune--verify
+      signal: KNOWLEDGE
+      direction: feedfront
+      rationale: "the verifier reads the structure to check consistency"
+    - from: circulatory--route
+      to: immune--verify
+      signal: STATE
+      direction: feedfront
+      rationale: "the verifier reads routing state to check signal flow health"
+    - from: immune--verify
+      to: skeletal--define
+      signal: REPORT
+      direction: feedback
+      rationale: "verification findings become structural queries — what is broken? what is inconsistent?"
   governance: []
   evolution: []
 
