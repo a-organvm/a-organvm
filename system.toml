@@ -1,0 +1,296 @@
+# a-organvm system declaration
+#
+# Like NixOS configuration.nix — the ENTIRE system described flat.
+# Structure lives in the data, not in the filesystem.
+# The engine reads this and derives everything else.
+
+[identity]
+name = "a-organvm"
+description = "The missing organs wrapping around the flawed organism"
+principal = "4444j99"
+github_org = "a-organvm"
+local_path = "organvm"
+
+# ─────────────────────────────────────────────────
+# ELEMENTS (the periodic table — discovered, not chosen)
+# ─────────────────────────────────────────────────
+
+[elements.intake]
+symbol = "In"
+operation = "bring signal into the system"
+status = "discovered"
+
+[elements.store]
+symbol = "St"
+operation = "hold signal across time"
+status = "discovered"
+
+[elements.retrieve]
+symbol = "Re"
+operation = "access what is stored"
+status = "discovered"
+
+[elements.evaluate]
+symbol = "Ev"
+operation = "compare signal against criteria"
+status = "discovered"
+
+[elements.transform]
+symbol = "Tr"
+operation = "change signal form"
+status = "discovered"
+
+[elements.synthesize]
+symbol = "Sy"
+operation = "combine many signals into one"
+status = "discovered"
+
+[elements.route]
+symbol = "Ro"
+operation = "direct signal to destination"
+status = "discovered"
+
+[elements.authorize]
+symbol = "Au"
+operation = "gate — allow or block passage"
+status = "discovered"
+
+[elements.bind]
+symbol = "Bi"
+operation = "connect two things"
+status = "discovered"
+
+[elements.emit]
+symbol = "Em"
+operation = "send signal out of the system"
+status = "discovered"
+
+# ─────────────────────────────────────────────────
+# COMPOUNDS (named compositions of elements)
+# ─────────────────────────────────────────────────
+
+[compounds.assessor]
+formula = ["In", "Ev", "Em"]
+domain = "protective"
+operation = "evaluate situation against normative frame"
+
+[compounds.guardian]
+formula = ["In", "Ev", "Em"]
+modifier = "loop"
+domain = "protective"
+operation = "maintain watchlist, trigger alerts on threshold"
+
+[compounds.ledger]
+formula = ["In", "St", "Re"]
+domain = "economic"
+operation = "record and maintain authoritative state of value flows"
+
+[compounds.archivist]
+formula = ["In", "St", "Re"]
+modifier = "permanent"
+domain = "epistemic"
+operation = "capture, preserve, index institutional memory"
+
+[compounds.counselor]
+formula = ["In", "Sy", "Em"]
+domain = "epistemic"
+operation = "synthesize assessments into integrated recommendation"
+
+[compounds.mandator]
+formula = ["Au", "Em"]
+domain = "structural"
+operation = "formalize decisions into executable directives"
+
+[compounds.appraiser]
+formula = ["In", "Ev", "Em"]
+modifier = "market-frame"
+domain = "economic"
+operation = "determine exchange value in market context"
+
+[compounds.optimizer]
+formula = ["In", "Ev", "Sy"]
+domain = "economic"
+operation = "determine optimal resource allocation given constraints"
+
+[compounds.allocator]
+formula = ["Re", "Ro", "Em"]
+domain = "economic"
+operation = "distribute resources across competing demands"
+
+[compounds.collector]
+formula = ["Re", "Ev", "Ro", "Em"]
+domain = "economic"
+operation = "track and execute conversion of receivables into value"
+
+[compounds.auditor]
+formula = ["Re", "Ev", "Em"]
+domain = "epistemic"
+operation = "independently verify accuracy of records and processes"
+
+[compounds.negotiator]
+formula = ["In", "Ev", "Sy", "Em"]
+domain = "relational"
+operation = "conduct structured position exchange toward agreement"
+
+[compounds.representative]
+formula = ["Re", "Tr", "Em"]
+domain = "relational"
+operation = "present consistent identity to external parties"
+
+[compounds.registrar]
+formula = ["In", "St", "Re"]
+domain = "relational"
+operation = "maintain records of formal relationships and standing"
+
+[compounds.liaison]
+formula = ["In", "St", "Re", "Em"]
+domain = "relational"
+operation = "maintain ongoing bidirectional relationship channel"
+
+[compounds.advocate]
+formula = ["Re", "Sy", "Em"]
+domain = "protective"
+operation = "construct arguments for specific audience on behalf of principal"
+
+[compounds.insulator]
+formula = ["Au", "Ro"]
+domain = "structural"
+operation = "create structural separation between domains"
+
+[compounds.incorporator]
+formula = ["Bi", "St", "Au"]
+domain = "structural"
+operation = "create and maintain formal organizational structures"
+
+[compounds.enforcer]
+formula = ["Ev", "Au", "Em"]
+domain = "structural"
+operation = "detect violations and initiate escalation"
+
+[compounds.strategist]
+formula = ["In", "Ev", "Sy"]
+modifier = "positional"
+domain = "structural"
+operation = "model position in larger systems, identify advantage moves"
+
+# ─────────────────────────────────────────────────
+# FORMATIONS (wired compound compositions)
+# ─────────────────────────────────────────────────
+
+[formations.aegis]
+description = "defensive perimeter"
+compounds = ["guardian", "assessor", "counselor", "mandator", "archivist"]
+wiring = "guardian → [assessor(legal) || assessor(financial)] → counselor → mandator"
+trigger = "threat detected by guardian AND stakes >= significant"
+
+[formations.oikonomia]
+description = "survival economics"
+compounds = ["ledger", "appraiser", "optimizer", "allocator", "collector", "auditor"]
+wiring = "ledger → appraiser → optimizer → allocator → collector"
+trigger = "cash flow below sustainability OR position opaque"
+
+[formations.praxis]
+description = "income generation engine"
+compounds = ["assessor", "strategist", "appraiser", "negotiator", "incorporator", "insulator", "archivist"]
+wiring = "assessor → strategist → appraiser → negotiator → incorporator → insulator"
+trigger = "income insufficient OR strategic repositioning"
+
+[formations.tessera]
+description = "identity and standing"
+compounds = ["registrar", "representative", "advocate", "liaison", "insulator"]
+wiring = "registrar → [insulator ⊃ representative] → advocate → liaison"
+trigger = "need to interface with formal systems"
+
+# ─────────────────────────────────────────────────
+# GOVERNANCE (sovereignty cascade — 10 levels, flat)
+# ─────────────────────────────────────────────────
+
+[governance.natural-law]
+level = 1
+description = "discovered truth — cannot be violated"
+contains = ["observations", "empirical-laws", "conservation", "symmetries", "constraints"]
+source = "PERIODIC-TABLE.md, codebase scans"
+
+[governance.theory]
+level = 2
+description = "explains why natural law works — testable, falsifiable"
+contains = ["hypotheses", "models", "paradigms", "proofs", "isomorphisms", "falsification"]
+source = "sovereign--ground, system-system--system--monad, scale-threshold-emergence"
+
+[governance.methodology]
+level = 3
+description = "how we discover and validate"
+contains = ["scientific-method", "peer-review", "reproducibility", "provenance", "falsification-gates", "discovery-protocol"]
+
+[governance.constitution]
+level = 4
+description = "foundational social contract — chosen, not discovered"
+contains = ["preamble", "articles", "bill-of-rights", "amendment-process", "ratification"]
+source = "system-system--system (7 LAWS, 9 proofs, 21 derivations)"
+
+[governance.treaties]
+level = 5
+description = "agreements with external entities"
+contains = ["api-contracts", "licenses", "terms-of-service", "partnerships", "obligations"]
+
+[governance.legislation]
+level = 6
+description = "specific rules derived from constitution"
+contains = ["acts", "regulations", "standards", "codes", "schedules"]
+source = "governance-rules.json, INST-FORMATION"
+
+[governance.executive]
+level = 7
+description = "operational decisions and standing policies"
+contains = ["directives", "policies", "procedures", "guidelines", "delegations"]
+
+[governance.judicial]
+level = 8
+description = "interpretation and dispute resolution"
+contains = ["precedent", "opinions", "reviews", "appeals", "dissent"]
+
+[governance.custom]
+level = 9
+description = "unwritten norms made explicit"
+contains = ["naming-conventions", "coding-patterns", "communication", "aesthetic", "rituals"]
+
+[governance.record]
+level = 10
+description = "the memory of all governance"
+contains = ["decision-log", "audit-trail", "changelog", "fossil-record", "errata"]
+
+# ─────────────────────────────────────────────────
+# NAMING (algorithmic — names computed from properties)
+# ─────────────────────────────────────────────────
+
+[naming]
+protocol = "names are functions of properties, not human choices"
+element_pattern = "single lowercase word"
+compound_pattern = "{formula}--{function}"
+formation_pattern = "single latin/greek noun at crystallization"
+product_pattern = "human-readable market name (the only exception)"
+repo_pattern = "{domain}--{descriptor}"
+variable_resolution = true
+
+# ─────────────────────────────────────────────────
+# COMPOSITION (the 4 operators)
+# ─────────────────────────────────────────────────
+
+[composition.operators]
+chain = "→"
+parallel = "||"
+envelope = "⊃"
+feedback = "↻"
+
+[composition.interface]
+input = ["context", "frame", "principal_position"]
+output = ["result", "confidence", "escalation_flag", "audit_trail"]
+
+# ─────────────────────────────────────────────────
+# SIGNAL (the voltage — what flows through everything)
+# ─────────────────────────────────────────────────
+
+[signal]
+type = "state"
+description = "the principal's current situation, context, position"
+schema = "signal.schema.json"
