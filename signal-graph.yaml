@@ -161,12 +161,27 @@ edges:
 products:
   signal-propagation-proof:
     timestamp: "2026-04-19"
-    description: "Integration test proving end-to-end signal flow: skeletal(KNOWLEDGE) → circulatory(STATE) → cultvra(QUERY) → skeletal(feedback)"
+    description: "Integration test proving 3-function signal flow (original ignition)"
     test_file: test_signal_propagation.py
     assertions: 9
     chain: [skeletal--define, circulatory--route, cultvra--logos]
     signals_verified: [KNOWLEDGE, STATE, QUERY, TRACE, CONTRACT]
-    feedback_loop: "cultvra→skeletal via QUERY (documentation gaps become structural queries)"
+    feedback_loop: "cultvra→skeletal via QUERY"
+
+  five-function-propagation-proof:
+    timestamp: "2026-04-21"
+    description: "Integration test proving 5-function signal web: all functions chain, 3 feedback loops, 2 governance edges, 9 signal types verified"
+    test_file: test_signal_propagation.py
+    assertions: 14
+    chain: [skeletal--define, circulatory--route, cultvra--logos, immune--verify, respiratory--ingest]
+    signals_verified: [QUERY, KNOWLEDGE, TRACE, CONTRACT, STATE, REPORT, VALIDATION, SOURCE, MIGRATION]
+    feedback_loops:
+      - "cultvra→skeletal via QUERY"
+      - "immune→skeletal via REPORT"
+      - "respiratory→skeletal via KNOWLEDGE"
+    governance_edges:
+      - "immune→skeletal via VALIDATION"
+      - "immune→circulatory via VALIDATION"
 
 boundary_signals:
   - name: pyyaml

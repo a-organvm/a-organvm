@@ -1,0 +1,50 @@
+# digestive--index.yaml — formation gate contract (split from digestive--measure G1)
+#
+# Structural analysis: AST scanning, cross-system linking, code indexing,
+# isomorphism detection. These modules share a common concern: analyzing
+# the structural shape of code and data, not its content or metrics.
+
+identity:
+  name: digestive--index
+  mechanism: digestive
+  verb: index
+  signal_inputs: [SOURCE, KNOWLEDGE]
+  signal_outputs: [KNOWLEDGE, STATE]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [atoms/, indexer/, trivium/, ecosystem/, domain/]
+    lines: 7335
+    note: structural analysis modules — shape, not measurement
+
+gate:
+  - id: G1
+    check: SPLIT_FROM_MEASURE
+    condition: "digestive--measure G1 (GRANULARITY) resolved by this split"
+    status: PASS
+    resolved: 2026-04-21
+    evidence: "split into digestive--measure (metrics), digestive--index (structure), digestive--parse (text)"
+
+  - id: G2
+    check: SIGNAL_DECLARED
+    condition: "each module's inputs/outputs classified"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "atoms, indexer, trivium, ecosystem, domain test suites pass"
+    status: PENDING
+
+dna:
+  - atoms/ — cross-system linking pipeline (Jaccard matching, git reconciliation)
+  - indexer/ — code structure AST analysis (repo-to-leaf scanning)
+  - trivium/ — 8-dialect universal logic translation (structural isomorphisms)
+  - ecosystem/ — product business profiles, competitive matrix
+  - domain/ — domain fingerprinting
+
+defect:
+  - trivium/ is conceptually rich but may belong in a separate mechanism (theoria?)
+  - ecosystem/ business profiles overlap with commercial concerns (organ III)
+  - domain/ is only 35 lines — may be too small for a standalone module
+
+state: CALLING

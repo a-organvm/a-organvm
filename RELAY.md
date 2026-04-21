@@ -1,52 +1,66 @@
-# RELAY.md — S59 (Fifth Function: respiratory--ingest)
+# RELAY.md — S59b (5-Function Integration + Digestive Split)
 
 ## What was done
 
-The organism's fifth function — respiratory--ingest — was built, tested, and wired into the signal graph. The organism now absorbs external material. This is the first function that reaches outward — the boundary between organism and environment.
+Three tiers of forward propulsion after the fifth function was built.
 
-### 1. respiratory_ingest.py (fifth function)
-- 5 operations:
-  - **Source discovery:** reads gate contracts' `sources:` sections, checks local availability
-  - **Channel enumeration:** assesses the 4-phase alchemia pipeline (intake/absorb/alchemize/channels)
-  - **Pipeline assessment:** determines phase reachability from predecessor repo
-  - **Migration tracking:** reads cocoon-map.yaml state transitions (PLANNED→ERECTED→MOLTING→EMERGED)
-  - **Recording:** appends to ingestions.jsonl
-- Consumes: SOURCE, MIGRATION (2 new signal types — stuff from outside the organism)
-- Produces: SOURCE (processed inventory), KNOWLEDGE (ingestion metadata)
-- Result: 54 sources discovered (50 available / 2 unreachable / 2 absorbed), 4/4 channels reachable, 79 migrations tracked
+### Tier 1: Metadata parity — every record reflects 5 functions
 
-### 2. test_respiratory_ingest.py (CHECK 22)
-- 23 tests: 5 source discovery + 4 channel enumeration + 3 pipeline assessment + 4 migration tracking + 4 integration + 3 recording
-- Full suite: 135/135 pass (22 skeletal + 27 circulatory + 33 cultvra + 9 signal propagation + 21 immune + 23 respiratory)
+1. **seed.yaml** — "3 functions, 82 tests" → "5 functions, 135 tests"
+2. **CLAUDE.md** — comprehensive update:
+   - Commands: all 5 test files + all 5 function invocations
+   - Function table: 2 → 5 entries (added cultvra, immune, respiratory)
+   - Signal types: "Five" → "Nine" (QUERY/KNOWLEDGE/TRACE/CONTRACT/STATE/REPORT/VALIDATION/SOURCE/MIGRATION)
+   - CHECK number: 16 → 22
+   - Temporal artifacts: added verifications.jsonl, ingestions.jsonl
+   - Session protocol: "Run both functions" → "Run all five functions"
+   - SEED.md seal: lifted (≥3 functions achieved, 5 embodied)
+   - Edge summary: 10 information + 2 governance + 3 feedback loops
 
-### 3. Signal graph updated
-- 2 new signal types: SOURCE, MIGRATION (first external-facing signals)
-- 3 new information edges: skeletal→respiratory (KNOWLEDGE), respiratory→circulatory (SOURCE), respiratory→skeletal (KNOWLEDGE feedback)
-- Third feedback loop: respiratory→skeletal joins cultvra→skeletal and immune→skeletal
-- 2 governance edges added: immune→skeletal (VALIDATION), immune→circulatory (VALIDATION)
-- 5 functions · 9 signal types · 10 information edges · 2 governance edges · 3 feedback loops
+### Tier 2: Signal propagation proof — 5-function integration tests
 
-### 4. Gate contract updated
-- respiratory--ingest.yaml state: CONVERGING → EMERGED (all 3/3 gates were PASS)
+3. **test_signal_propagation.py** — expanded from 9 → 14 tests:
+   - 2 new chain tests: immune + respiratory in signal flow
+   - `test_full_chain_signals_flow`: runs all 5 functions, verifies cross-function signal consumption
+   - `test_three_feedback_loops_exist`: verifies cultvra→skeletal, immune→skeletal, respiratory→skeletal
+   - `test_governance_edges_exist`: verifies immune→skeletal, immune→circulatory
+   - `test_nine_signal_types_declared`: all 9 types present
+   - `test_five_functions_declared`: all 5 functions present
+   - Defects filter updated to cover all 5 live functions
+   - Assertions tightened: ≥3 → ≥5 functions, ≥3 → ≥9 signal types
+4. **signal-graph.yaml products** — added `five-function-propagation-proof` entry
 
-### 5. Gitignore updated
-- Added verifications.jsonl and ingestions.jsonl to temporal artifacts
+### Tier 3: Digestive split — unblocking the sixth function
+
+5. **digestive--measure.yaml** — narrowed to metrics core only (4,780 lines)
+   - G1 GRANULARITY: PENDING → PASS (split performed)
+   - Removed atoms/, indexer/, trivium/, ecosystem/, domain/, prompts/, session/, plans/, deadlines/, irf/, sop/, content/, distill/
+6. **digestive--index.yaml** — NEW gate contract (structural analysis, 7,335 lines)
+   - atoms/, indexer/, trivium/, ecosystem/, domain/
+   - G1 SPLIT_FROM_MEASURE: PASS
+7. **digestive--parse.yaml** — NEW gate contract (text parsing, 9,880 lines)
+   - prompts/, session/, plans/, deadlines/, irf/, sop/, content/, distill/
+   - G1 SPLIT_FROM_MEASURE: PASS
+   - G4 MEMORY_BOUNDARY: PENDING (session/prompts may belong in memory)
 
 ## Organism vitals at close
 
 ```
 5 functions · ~1,810 lines of living code
-135 tests passing (22 skeletal + 27 circulatory + 33 cultvra + 9 signal + 21 immune + 23 respiratory)
-9 signal types (graph) · 10 information edges · 2 governance edges · 3 feedback loops
+140 tests passing (22 skeletal + 27 circulatory + 33 cultvra + 14 signal + 21 immune + 23 respiratory)
+9 signal types · 10 information edges · 2 governance edges · 3 feedback loops
 5 mechanisms active (skeletal, circulatory, cultvra, immune, respiratory)
-16 mechanisms total · 107 gates (10 lit / 97 dim)
+16 mechanisms total · 114 gates (13 lit / 101 dim)
+22 routes · 544 attractions · 2 defects (TEACHING dead, AESTHETIC starved)
+69 elements · 75% documentation coverage · 17 QUERY signals
 Organism HEALTHY (6/6 immune checks pass, 0 errors, 0 warnings)
 ```
 
 ## What is next
 
 1. **AOR-009 (P0)**: Human action for chezmoi tracking (unchanged).
-2. **Sixth function selection**: 5 functions cover structure, flow, documentation, verification, ingestion. Remaining high-value mechanisms: `nervous--orchestrate` (conductor mapping, 1/6 gates PASS), `digestive--measure` (metrics/atomization, 0/4 gates PASS, must split into 3+).
-3. **Signal propagation test update**: test_signal_propagation.py should be extended to include the respiratory→circulatory→cultvra chain (SOURCE flows to routing).
-4. **Evolution edges**: signal-graph.yaml evolution[] is still empty — no function has been replaced or dissolved yet.
-5. **INQ-2026-012**: Formal research commission continues tracking dissolution work.
+2. **Sixth function**: digestive--measure is now viable (G1 PASS, 3 remaining gates). Also digestive--index and digestive--parse are candidates. The most ready has 1/3 gates lit.
+3. **2 signal defects**: TEACHING (dead — produced but never consumed) and AESTHETIC (starved — consumed but never produced). These are natural gaps that will close as more functions are built.
+4. **17 documentation queries**: All 16 mechanisms lack dedicated .md documentation. cultvra--logos has identified the gaps.
+5. **Evolution edges**: signal-graph.yaml evolution[] is still empty.
+6. **INQ-2026-012**: Formal research commission continues tracking dissolution work.

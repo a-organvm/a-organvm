@@ -1,18 +1,21 @@
-# digestive--measure.yaml — formation gate contract
+# digestive--measure.yaml — formation gate contract (narrowed after G1 split)
+#
+# Metrics core: system metric calculation, propagation, timeseries,
+# variable resolution. After the granularity split, this contract
+# covers only measurement — indexing goes to digestive--index,
+# parsing goes to digestive--parse.
 
 identity:
   name: digestive--measure
   mechanism: digestive
   verb: measure
   signal_inputs: [SOURCE, KNOWLEDGE, TRACE]
-  signal_outputs: [KNOWLEDGE, STATE, SYNTHESIS]
+  signal_outputs: [KNOWLEDGE, STATE]
 
 sources:
   - repo: meta-organvm/organvm-engine
-    modules: [metrics/, atoms/, indexer/, ecosystem/, trivium/, plans/,
-              prompts/, session/, deadlines/, irf/, sop/, content/,
-              domain/, distill/]
-    lines: 21485
+    modules: [metrics/]
+    lines: 4400
   - repo: meta-organvm/organvm-ontologia
     modules: [metrics/]
     lines: 380
@@ -20,17 +23,19 @@ sources:
 gate:
   - id: G1
     check: GRANULARITY
-    condition: "15 modules under one mechanism — granularity rule may require split into measure + index + parse"
-    status: PENDING
+    condition: "15 modules under one mechanism — split into measure + index + parse"
+    status: PASS
+    resolved: 2026-04-21
+    evidence: "split into digestive--measure (4,780 lines), digestive--index (7,335 lines), digestive--parse (9,880 lines)"
 
   - id: G2
     check: SIGNAL_DECLARED
-    condition: "each sub-module's inputs/outputs declared"
+    condition: "metrics/ module inputs/outputs declared"
     status: PENDING
 
   - id: G3
     check: TESTS_PASS
-    condition: "all 15 module test suites pass"
+    condition: "metrics/ test suite passes"
     status: PENDING
 
   - id: G4
@@ -40,22 +45,9 @@ gate:
 
 dna:
   - metrics/ — system metric calculation, propagation, timeseries, variable resolution
-  - atoms/ — cross-system linking pipeline (Jaccard matching, git reconciliation)
-  - indexer/ — code structure AST analysis
-  - ecosystem/ — product business profiles, competitive matrix
-  - trivium/ — 8-dialect universal logic translation
-  - plans/ — plan file atomization, indexing, overlap detection
-  - session/ — multi-agent transcript parsing (Claude, Gemini, Codex)
-  - prompts/ — prompt extraction, classification, narrative threading
-  - deadlines/ — deadline parsing from rolling-todo.md
-  - irf/ — IRF parser for Index Rerum Faciendarum
 
 defect:
-  - 15 modules under one mechanism violates granularity rule — MUST split into 3+
   - orchestration-start-here/scripts/calculate-metrics.py is isotope — engine is canonical
-  - session/ and prompts/ may belong in memory--remember, not digestive--measure
-  - 21,485 lines is too heavy for a single cocoon — the split is mandatory, not optional
-  - Some modules (distill/, sop/) are barely tested or used
+  - SYNTHESIS signal type removed from outputs (moved to digestive--parse)
 
 state: CALLING
-expected_splits: [digestive--measure, digestive--index, digestive--parse]

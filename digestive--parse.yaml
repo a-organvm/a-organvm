@@ -1,0 +1,61 @@
+# digestive--parse.yaml — formation gate contract (split from digestive--measure G1)
+#
+# Text parsing: prompts, sessions, plans, deadlines, IRF items, SOPs,
+# content pipeline discovery, pattern distillation. These modules share
+# a common concern: extracting structured data from human-written text.
+
+identity:
+  name: digestive--parse
+  mechanism: digestive
+  verb: parse
+  signal_inputs: [SOURCE, TRACE]
+  signal_outputs: [KNOWLEDGE, SYNTHESIS]
+
+sources:
+  - repo: meta-organvm/organvm-engine
+    modules: [prompts/, session/, plans/, deadlines/, irf/, sop/,
+              content/, distill/]
+    lines: 9880
+    note: text parsing modules — extract structure from natural language
+
+gate:
+  - id: G1
+    check: SPLIT_FROM_MEASURE
+    condition: "digestive--measure G1 (GRANULARITY) resolved by this split"
+    status: PASS
+    resolved: 2026-04-21
+    evidence: "split into digestive--measure (metrics), digestive--index (structure), digestive--parse (text)"
+
+  - id: G2
+    check: SIGNAL_DECLARED
+    condition: "each module's inputs/outputs classified"
+    status: PENDING
+
+  - id: G3
+    check: TESTS_PASS
+    condition: "prompts, session, plans, deadlines, irf, sop, content, distill test suites pass"
+    status: PENDING
+
+  - id: G4
+    check: MEMORY_BOUNDARY
+    condition: "session/ and prompts/ confirmed as digestive (parsing) not memory (persistence)"
+    status: PENDING
+    note: "defect from digestive--measure: these modules might belong in memory--remember"
+
+dna:
+  - prompts/ — prompt extraction, classification, narrative threading
+  - session/ — multi-agent transcript parsing (Claude, Gemini, Codex)
+  - plans/ — plan file atomization, indexing, overlap detection
+  - deadlines/ — deadline parsing from rolling-todo.md
+  - irf/ — IRF parser for Index Rerum Faciendarum
+  - sop/ — SOP discovery and lifecycle tracking
+  - content/ — content pipeline discovery
+  - distill/ — pattern taxonomy distillation
+
+defect:
+  - session/ and prompts/ may belong in memory--remember, not digestive--parse
+  - sop/ and content/ are barely tested
+  - distill/ pattern taxonomy is experimental
+  - SYNTHESIS signal type not yet discovered — will be defined when function is built
+
+state: CALLING
