@@ -46,4 +46,4 @@ defect:
   - synthesize.py::ORGAN_MAP was isotope of organ_config — DISSOLVED (G2 PASS)
   - gdocs-auth OAuth flow incomplete — token refresh untested in production
 
-state: CONVERGING
+state: EMERGED

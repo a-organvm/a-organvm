@@ -19,6 +19,8 @@ Thumbs.db
 observations.jsonl
 routes.jsonl
 docs.jsonl
+verifications.jsonl
+ingestions.jsonl
 scope-*.svg
 
 # Environment (secrets live in 1Password, not files)
