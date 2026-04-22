@@ -1,0 +1,31 @@
+# INSTANCE.toml — a-organvm (The Organism)
+# The living computational organism. Five functions, 140 tests, CUE declaration layer.
+# Schema: piece/v2 | Protocol: IRF-SYS-117
+
+[instance]
+name = "a-organvm"
+type = "organism"
+sigma = 0                          # Foundational — the thing itself
+created = "2026-04-16"
+
+[identity]
+description = "A computational organism with 5 biological functions (skeletal, circulatory, cultvra, immune, respiratory) + CUE declaration layer. The living proof that ORGANVM's theoretical substrate can self-implement."
+function = "self-implementation"
+mode = "energeia"                  # actuality — the organism in operation
+
+[composition]
+parent = "~/Workspace/"
+siblings = ["system-system--system", "organvm-ontologia"]
+canonical_path = "~/Workspace/a-organvm/"
+
+[organism]
+functions = ["skeletal--define", "circulatory--route", "cultvra--logos", "immune--verify", "respiratory--ingest"]
+tests = 140
+gate_contracts = 35
+signal_types = 7
+declaration_language = "CUE"
+
+[laws]
+schema = "piece/v2"
+instance_protocol = "IRF-SYS-117"
+governance = "system-system--system/LAWS.md"
