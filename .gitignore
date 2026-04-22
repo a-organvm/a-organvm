@@ -26,3 +26,4 @@ scope-*.svg
 # Environment (secrets live in 1Password, not files)
 .env
 .env.*
+*.txt
