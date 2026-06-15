@@ -9,10 +9,10 @@
 name = "a-organvm"
 version = "0.0.1"
 requires-python = ">=3.11"
-dependencies = ["pyyaml>=6.0"]
+dependencies = ["pyyaml>=6.0.3"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "ruff>=0.4"]
+dev = ["pytest>=9.0.3", "ruff>=0.15.17"]
 
 [tool.pytest.ini_options]
 # D=1: tests are siblings in the flat namespace, not nested
